@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Win10 安装 JDK 及配置环境变量]]></title>
+    <url>%2F2019%2F04%2F20%2Fjdk-install-tutorial%2F</url>
+    <content type="text"><![CDATA[✎下载 JDK 下载地址：Oracle 官网 可能需要登录，分享一个账号，方便下载 用户名：2696671285@qq.com 密码：Oracle123 ✎安装 JDK、JRE 安装过程非常简单，首先双击打开 JDK 可执行文件 jdk-8u211-windows-x64.exe。JDK 默认安装在 C:\Program Files 目录下，可以修改安装路径，然后点击 &lt;下一步&gt;，等待安装完成即可。 JDK 安装完成后，会进入如下界面。该界面是安装与 JDK 同版本的 JRE，其实在 JDK 中已经包含 JRE 了，因此这个 JRE 实际上并没有起什么作用，安装也没有什么问题。在这里，我们选择安装，点击 &lt;下一步&gt;，等待安装完成即可。 安装完成后，会进入如下界面。如果有需要的话，点击 &lt;后续步骤&gt;，将会访问教程、API 文档和开发人员指南等内容；否则的话，直接点击 &lt;关闭&gt; 就 ojbk 啦！ ✎配置环境变量 “此电脑”右击选择“属性” -&gt; 高级系统设置 -&gt; 高级 -&gt; 环境变量 -&gt; 新建 新建变量，变量名为 JAVA_HOME，变量值为 C:\Program Files\Java\jdk1.8.0_211 ( 即 JDK 安装目录 )，点击 &lt;确定&gt;，然后打开 PATH 变量进行编辑，将 ;%JAVA_HOME%\bin 追加到 PATH 变量值的最后面。 ✎验证 打开 cmd，输入 java -version 和 javac -version，结果如下图则说明 JDK 安装及环境变量配置成功。]]></content>
+      <categories>
+        <category>Java学习</category>
+      </categories>
+      <tags>
+        <tag>tutorial</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java 从入门到放弃]]></title>
+    <url>%2F2019%2F04%2F20%2Fjava-learning-history%2F</url>
+    <content type="text"><![CDATA[吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！ ✎开发环境搭建 ✎安装 JDK 和 JRE 参考 Win10 安装 JDK 及配置环境变量 JDK ( Java Development Kit ) : java 开发工具包，是程序员使用 java 语言编写的 java 程序所需的开发工具包，是提供给程序员使用的。JDK 包含了JRE、编译 java 源码的编译器javac、java 程序调试和分析的工具：jconsole，jvisualvm等工具软件，还包含了java 程序编写所需的文档和 demo 例子程序。 JRE ( Java Runtime Environment ) : java 运行时环境，包含了 java 虚拟机、java 基础类库。是使用 java 语言编写的程序运行所需要的软件环境，是提供给想运行 java 程序的用户使用的。]]></content>
+      <categories>
+        <category>Java学习</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo 下 Markdown 的配置与学习]]></title>
+    <url>%2F2019%2F04%2F14%2Fhexo-md%2F</url>
+    <content type="text"><![CDATA[本篇 更换 Hexo 下的 Markdown 渲染插件 学习 Markdown 基本语法 ✎更换 Markdown 渲染插件 ✎原因 Hexo 内置的默认渲染插件是 hexo-renderer-marked，缺少很多功能，比如 GFM (GitHub Flavored Markdown)、上下标、脚注、emoji 等 ✎hexo-renderer-markdown-it 插件 hexo-renderer-markdown-it 插件支持大量扩展功能，可以实现 Hexo 博客的 footnote 功能。 hexo-renderer-markdown-it ✎安装，配置插件 参考 Wiki 文档 先卸载原有的 hexo-renderer-marked 插件 1$ npm un hexo-renderer-marked --save 安装 hexo-renderer-markdown-it 插件 1$ npm i hexo-renderer-markdown-it --save 使用 Advanced configuration，向 站点配置文件 添加 12345678910111213141516171819202122# Markdown-it config## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wikimarkdown: render: html: true xhtmlOut: false breaks: true linkify: true typographer: true quotes: &apos;“”‘’&apos; plugins: - markdown-it-abbr - markdown-it-footnote - markdown-it-ins - markdown-it-sub - markdown-it-sup anchors: level: 2 collisionSuffix: &apos;v&apos; permalink: true permalinkClass: header-anchor permalinkSymbol: ¶ ✎Markdown 基本语法 ✎文章头基本格式 123456789---title: 如何搭建个人博客网站(二)date: 2019-04-13 23:46:39tags: - tutorial - github - hexocategories: 教程--- ✎斜体和粗体 12*斜体***粗体** 渲染效果：这是 斜体，这是 粗体 ✎分级标题 格式一： 1234567这是一个一级标题============================这是一个二级标题--------------------------------------------------### 这是一个三级标题 格式二： 123456# H1## H2### H3#### H4##### H5###### H6 ✎分割线 在单独的一行使用 *** 或者 --- 表示分割线 ✎删除线 1~~应该不经常用~~ 渲染效果：应该不经常用 ✎超链接 插入文字超链接 1[显示文字](链接地址) 插入图片 1![图片说明](图片地址) 插入音频，使用插件 hexo-tag-aplayer 1&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xx%, lrc:xxx] %&#125; 具体使用方法参考：hexo-tag-aplayer 使用文档 插入视频，使用 iframe 代码 12&lt;script src=&quot;/js/youtube-autoresizer.js&quot;&gt;&lt;/script&gt;&lt;iframe width=&quot;800&quot; height=&quot;450&quot; src=&quot;视频链接&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt; ✎转义符 \ 后面的文字解析为纯文本格式，用来显示特殊符号。 例如： ## 不会解析为标题 ✎引用 使用 &gt; 来显示文字引用 渲染效果： 世界上只有一种真正的英雄主义，那就是在认识生活的真相后依然热爱生活。 ✎脚注 使用 [^1] [^1]: 的脚注对来表示（1 只是标识，用其他字符也行，但要相对应） 12Here is a footnote reference.[^note][^note]: Here is the footnote. Here is a footnote reference.[1] ✎列表与表格 ✎无序列表 使用 * + - 表示无序列表 123456+ 无序列表项 一 - 子无序列表 一 - 子无序列表 二 * 子无序列表 三+ 无序列表项 二+ 无序列表项 三 渲染效果： 无序列表项 一 子无序列表项 一 子无序列表项 二 子子无序列表项 一 无序列表项 二 无序列表项 三 ✎有序列表 使用 数字 和 . 表示有序列表 123451. 有序列表项 一 1. 子有序列表项 一 2. 子有序列表项 二2. 有序列表项 二3. 有序列表项 三 渲染效果： 有序列表项 一 子有序列表项 一 子有序列表项 二 有序列表项 二 有序列表项 三 ✎表格 绘制表格格式如下，| 控制分列，- 控制分行，: 控制对齐方式 12345| SID | Name | grade || :-- | ---: | :---: || 001 | Bob | 65 || 002 | Andy | 80 || 003 | John | 77 | 渲染效果: SID Name grade 001 Bob 65 002 Andy 80 003 John 77 ✎代码块 ✎行内代码块 使用 `codes` 表示行内代码块 ✎多行代码块 将代码块置于两个 ``` 中间（可在第一个 ``` 后面指定代码所属的编程语言） 支持多种编程语言的语法高亮的显示，行号显示 非代码示例： 1This is a code block. c++ 示例： 1234567#include &lt;iostream&gt;using namespace std;int main()&#123; cout &lt;&lt; "Hello World!" &lt;&lt; endl; return 0;&#125; Here is the footnote. ↩]]></content>
+      <categories>
+        <category>教程篇</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何搭建个人博客网站(二)]]></title>
+    <url>%2F2019%2F04%2F13%2Fbuild-my-website02%2F</url>
+    <content type="text"><![CDATA[本篇 更换个人博客网站的主题，使 UI 更符合个人审美 开始写博客 ✎更换主题 ✎挑选你的主题 Hexo Themes My choice: hexo-theme-next ✎下载 Next 主题 克隆整个 hexo-theme-next 仓库 12$ cd hexo$ git clone https://github.com/theme-next/hexo-theme-next themes/next ✎启用主题 与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。 ✎验证主题 123$ hexo clean #清除Hexo缓存$ hexo g #生成静态文件$ hexo s #启动服务器 此时即可使用浏览器访问 http://localhost:4000，检查站点是否正确运行。 ✎主题设定 可以个性化设置主题的 Scheme、语言、菜单、侧栏、头像等; 具体操作参考 NexT 使用文档 最后效果： ✎写博客啦 ✎创建一个博客 1$ hexo new &apos;first-blog&apos; 此时在 username.github.io/source/_posts 目录下新建了一个 first-blog.md 的 Markdown 文件，打开 md 文件后编辑即可。 ✎编辑博客 Hexo 的博客都是用 Markdown 写的 Markdown 语法可参考我的下一篇博客：Hexo 下 Markdown 的配置与学习]]></content>
+      <categories>
+        <category>教程篇</category>
+      </categories>
+      <tags>
+        <tag>tutorial</tag>
+        <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何搭建个人博客网站(一)]]></title>
+    <url>%2F2019%2F04%2F13%2Fbuild-my-website01%2F</url>
+    <content type="text"><![CDATA[本篇基于 Github 和 Hexo 搭建个人博客网站。 系统：Windows 10 ✎环境前提 Node.js: 直接在官网下载安装，下载地址 Github, Git: 推荐 Github入门教程 ✎新建个人 Blog 主页的仓库 打开 Github 首页，登录后新建一个 repository, 名称为 username.github.io ( [username] 必须为 Github 账号，比如我的账号为 JozeOu, 那么仓库名必须为 jozeou.github.io) ✎使用 Hexo 创建 Blog 项目 使用 npm 安装 hexo 1$ npm install -g hexo-cli 在存放 Blog 项目的目录下 Git Bash Here, 初始化 Blog 项目 12$ hexo init username.github.io$ cd username.github.io 安装依赖包 1$ npm install 安装 Git 部署 1$ npm install hexo-deployer-git --save 本地查看 12$ hexo g #生成静态文件$ hexo s #启动服务器。默认情况下，访问网址为：http://localhost:4000/ ✎将 Blog 项目部署到 Github 复制 username.github.io 仓库的 SSH 码 编辑站点配置文件：打开 Blog 项目目录中的_config.yml 文件，把刚刚复制的 SSH 码粘贴到 repository（注意冒号后要空一格） 1234deploy: type: git repository: git@github.com:username/username.github.io.git branch: master 部署 1234$ hexo g #生成静态文件$ hexo d #部署或$ hexo g -d #文件生成后立即部署网站 部署成功后即可在浏览器中输入 username.github.io 访问 如何配置网站信息及 Hexo 项目文件结构解释参考 Hexo 官方文档]]></content>
+      <categories>
+        <category>教程篇</category>
+      </categories>
+      <tags>
+        <tag>tutorial</tag>
+        <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
