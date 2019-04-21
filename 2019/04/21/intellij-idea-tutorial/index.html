@@ -96,18 +96,37 @@
 
 
 
-  <meta name="description" content="吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！">
-<meta name="keywords" content="java">
+  <meta name="description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
+<meta name="keywords" content="tutorial,idea,java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 从入门到放弃">
-<meta property="og:url" content="http://yoursite.com/2019/04/20/java-learning-history/index.html">
+<meta property="og:title" content="IntelliJ IDEA 安装及使用教程">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/intellij-idea-tutorial/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！">
+<meta property="og:description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-21T06:43:42.025Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/04.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/05.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/06.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/07.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/08.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/09.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/15.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/16.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/17.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/18.png">
+<meta property="og:updated_time" content="2019-04-21T06:43:39.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 从入门到放弃">
-<meta name="twitter:description" content="吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！">
+<meta name="twitter:title" content="IntelliJ IDEA 安装及使用教程">
+<meta name="twitter:description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png">
 
 
 
@@ -115,7 +134,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/20/java-learning-history/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/intellij-idea-tutorial/">
 
 
 
@@ -125,7 +144,7 @@
   };
 </script>
 
-  <title>Java 从入门到放弃 | Joze's Blog</title>
+  <title>IntelliJ IDEA 安装及使用教程 | Joze's Blog</title>
   
 
 
@@ -384,7 +403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/java-learning-history/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/intellij-idea-tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ruizhi Ou">
@@ -401,7 +420,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java 从入门到放弃
+          <h1 class="post-title" itemprop="name headline">IntelliJ IDEA 安装及使用教程
 
               
             
@@ -427,24 +446,12 @@
                 
               
 
-              <time title="创建时间：2019-04-20 16:50:38" itemprop="dateCreated datePublished" datetime="2019-04-20T16:50:38+08:00">2019-04-20</time>
+              <time title="创建时间：2019-04-21 09:56:26 / 修改时间：14:43:39" itemprop="dateCreated datePublished" datetime="2019-04-21T09:56:26+08:00">2019-04-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-21 14:43:42" itemprop="dateModified" datetime="2019-04-21T14:43:42+08:00">2019-04-21</time>
               
             
           </span>
@@ -461,7 +468,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java学习/" itemprop="url" rel="index"><span itemprop="name">Java学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java开发环境搭建/" itemprop="url" rel="index"><span itemprop="name">Java开发环境搭建</span></a></span>
 
                 
                 
@@ -490,7 +497,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">694</span>
+                <span title="本文字数">1.2k</span>
               
 
               
@@ -524,34 +531,64 @@
       
 
       
-        <p>吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。</p>
-<p>路漫漫其修远兮，吾将上下而求索。</p>
-<p>本篇将记录自己的 Java 学习历程，保持持续更新！</p>
+        <h2 id="前言"><a class="header-anchor" href="#前言">✎</a>前言</h2>
+<p>IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。</p>
+<p>来开始领略 IntelliJ IDEA 的魅力吧！</p>
 <a id="more"></a>
 <hr>
-<h2 id="开发环境搭建"><a class="header-anchor" href="#开发环境搭建">✎</a>开发环境搭建</h2>
-<p>工欲善其事，必先利其器。</p>
-<h3 id="安装-jdk-和-jre"><a class="header-anchor" href="#安装-jdk-和-jre">✎</a>安装 JDK 和 JRE</h3>
-<p>参考 <a href="https://jozeou.github.io/2019/04/20/jdk-install-tutorial/" target="_blank" rel="noopener">Win10 安装 JDK 及配置环境变量</a></p>
+<h2 id="idea-安装全过程"><a class="header-anchor" href="#idea-安装全过程">✎</a>IDEA 安装全过程</h2>
+<p>系统环境：Windows 10</p>
+<h3 id="下载"><a class="header-anchor" href="#下载">✎</a>下载</h3>
+<p>在哪下载？ <a href="https://www.jetbrains.com/idea/download" target="_blank" rel="noopener">IntelliJ IDEA 官网</a></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png" alt></p>
+<p>在 Download IntelliJ IDEA 页面，我们可以看到 IntelliJ IDEA 分为两个版本，分别为：</p>
 <ul>
-<li>
-<p>JDK ( Java Development Kit ) : java 开发工具包，是程序员使用 java 语言编写的 java 程序所需的开发工具包，是提供给程序员使用的。JDK 包含了JRE、编译 java 源码的编译器javac、java 程序调试和分析的工具：jconsole，jvisualvm等工具软件，还包含了java 程序编写所需的文档和 demo 例子程序。</p>
-</li>
-<li>
-<p>JRE ( Java Runtime Environment ) : java 运行时环境，包含了 java 虚拟机、java 基础类库。是使用 java 语言编写的程序运行所需要的软件环境，是提供给想运行 java 程序的用户使用的。</p>
-</li>
+<li>旗舰版（Ultimate）</li>
+<li>社区版（Community）</li>
 </ul>
-<h3 id="ide-选择与安装"><a class="header-anchor" href="#ide-选择与安装">✎</a>IDE 选择与安装</h3>
+<p>其中，旗舰版为收费版本，有 30 天试用期。社区版则是免费的，但功能较旗舰版少了很多。如果想用 IntelliJ IDEA 进行大型项目开发的的话，上旗舰版准没错。</p>
+<h3 id="安装"><a class="header-anchor" href="#安装">✎</a>安装</h3>
+<p>双击打开 <code>.exe</code> 文件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/02.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/03.png" alt></p>
+<p>软件占用空间较大，可修改安装目录，避免占用 <code>C盘</code> 存储空间</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/04.png" alt></p>
+<p>Options 的含义：</p>
 <ul>
-<li>
-<p>My choice: <code>IntelliJ IDEA</code></p>
-<p>IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。</p>
-</li>
-<li>
-<p>安装与使用</p>
-<p>参考 <a href="https://jozeou.github.io/2019/04/21/intellij-idea-tutorial/" target="_blank" rel="noopener">IntelliJ IDEA 安装及使用教程</a></p>
-</li>
+<li>标注 1：表示在桌面上创建一个 IntelliJ IDEA 的快捷方式</li>
+<li>标注 2：表示将启动器添加到环境变量中</li>
+<li>标注 3：表示在右键菜单中添加 <code>open folder as project</code> 选项</li>
+<li>标注 4：表示关联 <code>.java</code>、<code>.groovy</code> 和 <code>.kt</code> 文件</li>
+<li>标注 5：表示下载和安装 <code>JBR x86</code></li>
 </ul>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/05.png" alt></p>
+<p>在这里，选择默认的 <code>JetBrains</code> 文件夹就可以，点击 <code>Install</code>，进行安装：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/06.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/07.png" alt></p>
+<p>安装完成！</p>
+<h3 id="激活"><a class="header-anchor" href="#激活">✎</a>激活</h3>
+<p>若资金允许，请 <a href="https://www.jetbrains.com/idea/buy/" target="_blank" rel="noopener">购买正版</a>，<strong>支持正版，人人有责</strong></p>
+<p>在 <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">IntelliJ IDEA 注册码</a> 下载破解补丁</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/08.png" alt></p>
+<p>将 破解补丁 放置到 IntelliJ IDEA 安装目录下</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/09.png" alt></p>
+<p>进入 <code>bin</code> 目录，找到 <code>idea.exe.vmoptions</code> 和 <code>idea64.exe.vmoptions</code> 两个文件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/10.png" alt></p>
+<p>用文本编辑器打开这两个文件，在末尾添加 <code>-javaagent:[破解补丁的文件路径]</code></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/11.png" alt></p>
+<p>保存后打开软件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/12.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/13.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/14.png" alt></p>
+<p>在此处，选择 Darcula 黑色 UI 主题（个人喜好）并点击 <code>Next: Default plugins</code>，进入到默认插件配置页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/15.png" alt></p>
+<p>跳过，点击 <code>Next: Featured plugins</code>，进入到特色插件配置页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/16.png" alt></p>
+<p>跳过，点击 <code>Start using IntelliJ IDEA</code>，进入激活页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/17.png" alt></p>
+<p>在 <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">IntelliJ IDEA 注册码</a> 复制注册码（该注册码一段时间后会过期，后续激活 也是找到该网站继续获取注册码填入即可），点击 <code>OK</code>，进入 IntelliJ IDEA 的启动界面，待进度条走完之后，就可以使用 IntelliJ IDEA 来打代码啦！</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/18.png" alt></p>
+<h2 id="使用-idea"><a class="header-anchor" href="#使用-idea">✎</a>使用 IDEA</h2>
 
       
     </div>
@@ -575,6 +612,10 @@
       
         <div class="post-tags">
           
+            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+          
+            <a href="/tags/idea/" rel="tag"># idea</a>
+          
             <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
@@ -588,8 +629,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/14/hexo-md/" rel="next" title="Hexo 下 Markdown 的配置与学习">
-                <i class="fa fa-chevron-left"></i> Hexo 下 Markdown 的配置与学习
+              <a href="/2019/04/20/jdk-install-tutorial/" rel="next" title="Win10 安装 JDK 及配置环境变量">
+                <i class="fa fa-chevron-left"></i> Win10 安装 JDK 及配置环境变量
               </a>
             
           </div>
@@ -597,10 +638,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/20/jdk-install-tutorial/" rel="prev" title="Win10 安装 JDK 及配置环境变量">
-                Win10 安装 JDK 及配置环境变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -785,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境搭建"><span class="nav-number">1.</span> <span class="nav-text">✎开发环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-jdk-和-jre"><span class="nav-number">1.1.</span> <span class="nav-text">✎安装 JDK 和 JRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ide-选择与安装"><span class="nav-number">1.2.</span> <span class="nav-text">✎IDE 选择与安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">✎前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-安装全过程"><span class="nav-number">2.</span> <span class="nav-text">✎IDEA 安装全过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.1.</span> <span class="nav-text">✎下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.2.</span> <span class="nav-text">✎安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激活"><span class="nav-number">2.3.</span> <span class="nav-text">✎激活</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-idea"><span class="nav-number">3.</span> <span class="nav-text">✎使用 IDEA</span></a></li></ol></div>
             
 
           </div>
