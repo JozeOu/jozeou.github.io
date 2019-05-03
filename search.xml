@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IntelliJ IDEA 上传项目到 Github]]></title>
+    <url>%2F2019%2F05%2F03%2Fidea%2Fidea-add-git%2F</url>
+    <content type="text"><![CDATA[环境前提：IntelliJ IDEA, Github 账号，Git 配置 ✎配置 Git 和 Github File -&gt; Setting -&gt; Version Control -&gt;Git 在 Path to Git executable 选择 git 安装后的 git.exe 文件，然后点击 Test，测试设置是否成功 File -&gt; Setting -&gt; Version Control -&gt;GitHub 点击 + 进行 Add account, 填写 Github 账号的用户名和密码，Log in ✎创建本地仓库 VCS -&gt; Import into Version Control -&gt; Create Git Repository… 在弹窗中选择项目所在的本地目录，点击 OK，此时项目文件全部变成红色 ✎上传项目到本地仓库 项目上右键 -&gt; Git -&gt; Add, 此时项目文件变成绿色（文件处于暂存区，并没有进入到版本库） 项目上右键 -&gt; Git -&gt; Commit Directory 在弹窗中输入 Commit Message，点击 commit，此时项目文件从暂存区进入版本库中，项目文件变成白色 ✎上传项目到 Github 远程仓库 VCS -&gt; Import into Version Control -&gt; Share Project on GitHub 在弹窗中输入仓库名和描述，点击 Share, 即开始在 Github 中创建远程仓库并上传项目文件（若未配置 Github, 会弹窗要求输入用户名和密码） 注意：会进行语法检查，若存在错误或警告会给出确认提示，点击 Commit 即可 上传成功后 IDEA 右下角会给出提示 查看 Github 远程仓库，项目上传成功！ ✎提交修改 项目上右键 -&gt; Git -&gt; Add, 将修改加入本地仓库暂存区 项目上右键 -&gt; Git -&gt; Commit Directory, 查看有变动的文件并输入 Commit Message, 点击 Commit and Push… 弹出 Push 框，点击 Push 查看 Github 远程仓库，提交修改成功！ ✎其他仓库操作]]></content>
+      <categories>
+        <category>IDEA 配置</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IntelliJ IDEA 创建 Maven Web App 项目]]></title>
+    <url>%2F2019%2F04%2F26%2Fidea%2Fidea-add-maven%2F</url>
+    <content type="text"><![CDATA[✎安装 Maven ✎下载 Maven 在哪下载？ Maven 官网 下载完成后，将 tar.gz 压缩包解压即可。 ✎配置环境变量 老生常谈，懒得写了！ 配置完，验证： Maven 安装完成！ ✎配置 Maven 本地仓库 ✎在 IntelliJ IDEA 中配置 Maven File -&gt; Settings ✎创建 Web App 项目 以 秒杀系统 (seckill) 项目为例 Create New Project 项目创建完成！]]></content>
+      <categories>
+        <category>IDEA 配置</category>
+      </categories>
+      <tags>
+        <tag>tutorial</tag>
+        <tag>idea</tag>
+        <tag>maven</tag>
+        <tag>webapp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IntelliJ IDEA 安装及使用教程]]></title>
-    <url>%2F2019%2F04%2F21%2Fintellij-idea-tutorial%2F</url>
-    <content type="text"><![CDATA[✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！ ✎IDEA 安装全过程 系统环境：Windows 10 ✎下载 在哪下载？ IntelliJ IDEA 官网 在 Download IntelliJ IDEA 页面，我们可以看到 IntelliJ IDEA 分为两个版本，分别为： 旗舰版（Ultimate） 社区版（Community） 其中，旗舰版为收费版本，有 30 天试用期。社区版则是免费的，但功能较旗舰版少了很多。如果想用 IntelliJ IDEA 进行大型项目开发的的话，上旗舰版准没错。 ✎安装 双击打开 .exe 文件 软件占用空间较大，可修改安装目录，避免占用 C盘 存储空间 Options 的含义： 标注 1：表示在桌面上创建一个 IntelliJ IDEA 的快捷方式 标注 2：表示将启动器添加到环境变量中 标注 3：表示在右键菜单中添加 open folder as project 选项 标注 4：表示关联 .java、.groovy 和 .kt 文件 标注 5：表示下载和安装 JBR x86 在这里，选择默认的 JetBrains 文件夹就可以，点击 Install，进行安装： 安装完成！ ✎激活 若资金允许，请 购买正版，支持正版，人人有责 在 IntelliJ IDEA 注册码 下载破解补丁 将 破解补丁 放置到 IntelliJ IDEA 安装目录下 进入 bin 目录，找到 idea.exe.vmoptions 和 idea64.exe.vmoptions 两个文件 用文本编辑器打开这两个文件，在末尾添加 -javaagent:[破解补丁的文件路径] 保存后打开软件 在此处，选择 Darcula 黑色 UI 主题（个人喜好）并点击 Next: Default plugins，进入到默认插件配置页面： 跳过，点击 Next: Featured plugins，进入到特色插件配置页面： 跳过，点击 Start using IntelliJ IDEA，进入激活页面： 在 IntelliJ IDEA 注册码 复制注册码（该注册码一段时间后会过期，后续激活 也是找到该网站继续获取注册码填入即可），点击 OK，进入 IntelliJ IDEA 的启动界面，待进度条走完之后，就可以使用 IntelliJ IDEA 来打代码啦！ ✎使用 IDEA ✎界面详述、创建项目 打开 IntelliJ IDEA，首先迎接我们的就是这个界面： Create New Project : 创建一个新的项目； Import Project : 导入一个已有的项目，用于导入不属于 idea 模型的项目，如 Eclipse, Maven 项目； Open : 打开一个已有的项目，用于打开 idea 项目； Check out from Version Control :可以通过服务器上的项目地址 Checkout（俗称：检出） 项目。 点击 Create New Project，进入如下界面： 标注 1：IntelliJ IDEA 支持的框架及语言； 标注 2：与 标注 1 相对应的框架或语言的进一步分类。 选择 Java -&gt; Java EE，在 Project SDK 选择接下来我们的项目中所使用的 SDK（在这里是事先安装好的 JDK），然后点击 Next，进入下一步： 可以选择 Create project from template 快速创建项目 Command Line App 会自动创建一个带有main方法的类； Java Hello World 会自动创建一个带有main方法的并且会打印输出 Hello World 的类。 在这里，我们们不勾选使用模板，手工创建，直接点击 Next，进入如下界面： Project name : 项目名称（自定义，一般都小写，多个单词用下划线连接） Project location : 项目存储地址 Module name : 模块名称（默认与项目名称相同） Content root : 内容根路径 Module file location : 模块文件存储地址 Project format : 项目格式 （在 IntelliJ IDEA 中，Project 是最大单元，没有类似于 Eclipse 的工作空间（Workspace）的概念，但是我们可以在一个 Project 下创建多个 Module，默认是一个 Project 下创建一个Module，因此才出现项目名称与模块名称默认相同的现象。一般情况下，我们不需要在 More Settings 中进行修改。） 接下来，点击 Finish，完成项目的创建： （对于首次创建或打开的新项目，IntelliJ IDEA 都会创建项目索引，大型项目在创建索引的过程中可能会出现卡顿的现象，因此强烈建议在 IntelliJ IDEA 创建索引的过程中不要动项目。） 标注 1：项目结构图 标注 2：外部库 在项目结构图中，src 目录为默认的 Source root，我们一般在该目录下创建包和类；在外部库中，显示了我们导入的 JDK 1.8 版本。 编辑 Hello World 项目： 创建包：将鼠标移动到 src 目录上，然后点击右键，选择 New，再选择 Package，输入包名 demo，点击 OK; 新建类：将鼠标移动到 src 目录上，然后点击右键，选择 New，再选择 Java Class，输入类名 HelloWorld（一般情况下，如果类名出现多个单词的话，则每个单词的首字母都大写），点击 OK; 类创建完之后，在编辑区敲入代码，点击鼠标右键，选择 Run 'HelloWorld.main()'，运行。 标注 1：存放 Module 编译文件的 out 目录。 标注 2：demo包 和 HelloWorld类 标注 3：代码编辑区 标注 4：运行结果，输出&quot;Hello World!&quot; .idea：Project 的配置文件目录，配置文件以 XML 文件的形式存在，因此我们也可以通过了解这些 XML 文件来了解 IntelliJ IDEA 的相关配置。 hello_world.iml：IntelliJ IDEA 为每个 Module 自动生成的配置文件，一般情况下，我们不需要动它。 （IntelliJ IDEA 是一个没有 Ctrl + S 的 IDE，因此每次修改完代码之后，咱们只管运行或者调试即可，无需担心保存或者丢失代码的问题。） ✎设置主题和字体]]></content>
+    <url>%2F2019%2F04%2F21%2Fidea%2Fintellij-idea-tutorial%2F</url>
+    <content type="text"><![CDATA[✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！ ✎IDEA 安装全过程 系统环境：Windows 10 ✎下载 在哪下载？ IntelliJ IDEA 官网 在 Download IntelliJ IDEA 页面，我们可以看到 IntelliJ IDEA 分为两个版本，分别为： 旗舰版（Ultimate） 社区版（Community） 其中，旗舰版为收费版本，有 30 天试用期。社区版则是免费的，但功能较旗舰版少了很多。如果想用 IntelliJ IDEA 进行大型项目开发的的话，上旗舰版准没错。 ✎安装 双击打开 .exe 文件 软件占用空间较大，可修改安装目录，避免占用 C盘 存储空间 Options 的含义： 标注 1：表示在桌面上创建一个 IntelliJ IDEA 的快捷方式 标注 2：表示将启动器添加到环境变量中 标注 3：表示在右键菜单中添加 open folder as project 选项 标注 4：表示关联 .java、.groovy 和 .kt 文件 标注 5：表示下载和安装 JBR x86 在这里，选择默认的 JetBrains 文件夹就可以，点击 Install，进行安装： 安装完成！ ✎激活 若资金允许，请 购买正版，支持正版，人人有责 在 IntelliJ IDEA 注册码 下载破解补丁 将 破解补丁 放置到 IntelliJ IDEA 安装目录下 进入 bin 目录，找到 idea.exe.vmoptions 和 idea64.exe.vmoptions 两个文件 用文本编辑器打开这两个文件，在末尾添加 -javaagent:[破解补丁的文件路径] 保存后打开软件 在此处，选择 Darcula 黑色 UI 主题（个人喜好）并点击 Next: Default plugins，进入到默认插件配置页面： 跳过，点击 Next: Featured plugins，进入到特色插件配置页面： 跳过，点击 Start using IntelliJ IDEA，进入激活页面： 在 IntelliJ IDEA 注册码 复制注册码（该注册码一段时间后会过期，后续激活 也是找到该网站继续获取注册码填入即可），点击 OK，进入 IntelliJ IDEA 的启动界面，待进度条走完之后，就可以使用 IntelliJ IDEA 来打代码啦！ ✎使用 IDEA ✎界面详述、创建项目 打开 IntelliJ IDEA，首先迎接我们的就是这个界面： Create New Project : 创建一个新的项目； Import Project : 导入一个已有的项目，用于导入不属于 idea 模型的项目，如 Eclipse, Maven 项目； Open : 打开一个已有的项目，用于打开 idea 项目； Check out from Version Control :可以通过服务器上的项目地址 Checkout（俗称：检出） 项目。 点击 Create New Project，进入如下界面： 标注 1：IntelliJ IDEA 支持的框架及语言； 标注 2：与 标注 1 相对应的框架或语言的进一步分类。 选择 Java -&gt; Java EE，在 Project SDK 选择接下来我们的项目中所使用的 SDK（在这里是事先安装好的 JDK），然后点击 Next，进入下一步： 可以选择 Create project from template 快速创建项目 Command Line App 会自动创建一个带有main方法的类； Java Hello World 会自动创建一个带有main方法的并且会打印输出 Hello World 的类。 在这里，我们们不勾选使用模板，手工创建，直接点击 Next，进入如下界面： Project name : 项目名称（自定义，一般都小写，多个单词用下划线连接） Project location : 项目存储地址 Module name : 模块名称（默认与项目名称相同） Content root : 内容根路径 Module file location : 模块文件存储地址 Project format : 项目格式 （在 IntelliJ IDEA 中，Project 是最大单元，没有类似于 Eclipse 的工作空间（Workspace）的概念，但是我们可以在一个 Project 下创建多个 Module，默认是一个 Project 下创建一个Module，因此才出现项目名称与模块名称默认相同的现象。一般情况下，我们不需要在 More Settings 中进行修改。） 接下来，点击 Finish，完成项目的创建： （对于首次创建或打开的新项目，IntelliJ IDEA 都会创建项目索引，大型项目在创建索引的过程中可能会出现卡顿的现象，因此强烈建议在 IntelliJ IDEA 创建索引的过程中不要动项目。） 标注 1：项目结构图 标注 2：外部库 在项目结构图中，src 目录为默认的 Source root，我们一般在该目录下创建包和类；在外部库中，显示了我们导入的 JDK 1.8 版本。 编辑 Hello World 项目： 创建包：将鼠标移动到 src 目录上，然后点击右键，选择 New，再选择 Package，输入包名 demo，点击 OK; 新建类：将鼠标移动到 src 目录上，然后点击右键，选择 New，再选择 Java Class，输入类名 HelloWorld（一般情况下，如果类名出现多个单词的话，则每个单词的首字母都大写），点击 OK; 类创建完之后，在编辑区敲入代码，点击鼠标右键，选择 Run 'HelloWorld.main()'，运行。 标注 1：存放 Module 编译文件的 out 目录。 标注 2：demo包 和 HelloWorld类 标注 3：代码编辑区 标注 4：运行结果，输出&quot;Hello World!&quot; .idea：Project 的配置文件目录，配置文件以 XML 文件的形式存在，因此我们也可以通过了解这些 XML 文件来了解 IntelliJ IDEA 的相关配置。 hello_world.iml：IntelliJ IDEA 为每个 Module 自动生成的配置文件，一般情况下，我们不需要动它。 （IntelliJ IDEA 是一个没有 Ctrl + S 的 IDE，因此每次修改完代码之后，咱们只管运行或者调试即可，无需担心保存或者丢失代码的问题。） ✎使用技巧 学习慕课网课程 IntelliJ IDEA神器使用技巧，总结出的思维导图]]></content>
       <categories>
         <category>Java开发环境搭建</category>
       </categories>
@@ -15,21 +41,21 @@
   </entry>
   <entry>
     <title><![CDATA[Win10 安装 JDK 及配置环境变量]]></title>
-    <url>%2F2019%2F04%2F20%2Fjdk-install-tutorial%2F</url>
+    <url>%2F2019%2F04%2F20%2Fjava%2Fjdk-install-tutorial%2F</url>
     <content type="text"><![CDATA[✎下载 JDK 下载地址：Oracle 官网 可能需要登录，分享一个账号，方便下载 用户名：2696671285@qq.com 密码：Oracle123 ✎安装 JDK、JRE 安装过程非常简单，首先双击打开 JDK 可执行文件 jdk-8u211-windows-x64.exe。JDK 默认安装在 C:\Program Files 目录下，可以修改安装路径，然后点击 &lt;下一步&gt;，等待安装完成即可。 JDK 安装完成后，会进入如下界面。该界面是安装与 JDK 同版本的 JRE，其实在 JDK 中已经包含 JRE 了，因此这个 JRE 实际上并没有起什么作用，安装也没有什么问题。在这里，我们选择安装，点击 &lt;下一步&gt;，等待安装完成即可。 安装完成后，会进入如下界面。如果有需要的话，点击 &lt;后续步骤&gt;，将会访问教程、API 文档和开发人员指南等内容；否则的话，直接点击 &lt;关闭&gt; 就 ojbk 啦！ ✎配置环境变量 “此电脑”右击选择“属性” -&gt; 高级系统设置 -&gt; 高级 -&gt; 环境变量 -&gt; 新建 新建变量，变量名为 JAVA_HOME，变量值为 C:\Program Files\Java\jdk1.8.0_211 ( 即 JDK 安装目录 )，点击 &lt;确定&gt;，然后打开 PATH 变量进行编辑，将 ;%JAVA_HOME%\bin 追加到 PATH 变量值的最后面。 ✎验证 打开 cmd，输入 java -version 和 javac -version，结果如下图则说明 JDK 安装及环境变量配置成功。]]></content>
       <categories>
         <category>Java开发环境搭建</category>
       </categories>
       <tags>
         <tag>tutorial</tag>
-        <tag>jdk</tag>
         <tag>java</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Java 从入门到放弃]]></title>
-    <url>%2F2019%2F04%2F20%2Fjava-learning-history%2F</url>
-    <content type="text"><![CDATA[吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！ ✎开发环境搭建 工欲善其事，必先利其器。 ✎安装 JDK 和 JRE 参考 Win10 安装 JDK 及配置环境变量 JDK ( Java Development Kit ) : java 开发工具包，是程序员使用 java 语言编写的 java 程序所需的开发工具包，是提供给程序员使用的。JDK 包含了JRE、编译 java 源码的编译器javac、java 程序调试和分析的工具：jconsole，jvisualvm等工具软件，还包含了java 程序编写所需的文档和 demo 例子程序。 JRE ( Java Runtime Environment ) : java 运行时环境，包含了 java 虚拟机、java 基础类库。是使用 java 语言编写的程序运行所需要的软件环境，是提供给想运行 java 程序的用户使用的。 ✎IDE 选择与安装 My choice: IntelliJ IDEA IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 安装与使用 参考 IntelliJ IDEA 安装及使用教程]]></content>
+    <url>%2F2019%2F04%2F20%2Fjava%2Fjava-learning-history%2F</url>
+    <content type="text"><![CDATA[吾日三省吾身，三次都发现自己菜得抠脚，遂决定踏上 Java 工程师的修炼之路。 路漫漫其修远兮，吾将上下而求索。 本篇将记录自己的 Java 学习历程，保持持续更新！ ✎开发环境搭建 工欲善其事，必先利其器。 ✎安装 JDK 和 JRE 参考 Win10 安装 JDK 及配置环境变量 JDK ( Java Development Kit ) : java 开发工具包，是程序员使用 java 语言编写的 java 程序所需的开发工具包，是提供给程序员使用的。JDK 包含了JRE、编译 java 源码的编译器javac、java 程序调试和分析的工具：jconsole，jvisualvm等工具软件，还包含了java 程序编写所需的文档和 demo 例子程序。 JRE ( Java Runtime Environment ) : java 运行时环境，包含了 java 虚拟机、java 基础类库。是使用 java 语言编写的程序运行所需要的软件环境，是提供给想运行 java 程序的用户使用的。 ✎IDE 选择与安装 My choice: IntelliJ IDEA IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 安装与使用 参考 IntelliJ IDEA 安装及使用教程 ✎入门篇 ✎Java 语法 如何学习？ Runoob 网站 网站可以让你对任意一门语言完成快速的语法门。 My method：快速浏览 Runoob 网站的 Java 教程，跟 C++ 语法对照着进行学习。（C++ 已学） ✎Java 核心技术 如何学习？ 网课：现在有很多 Java 课程，挑选一个完整地学习即可； 书：《Java 核心技术》 卷 Ⅰ 和 卷 Ⅱ，跳过一些过时的内容； 代码实践：尽量把网课和书中的代码实现一遍。 ✎初级篇]]></content>
       <categories>
         <category>Java学习</category>
       </categories>
@@ -39,40 +65,40 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo 下 Markdown 的配置与学习]]></title>
-    <url>%2F2019%2F04%2F14%2Fhexo-md%2F</url>
+    <url>%2F2019%2F04%2F14%2Fhexo%2Fhexo-md%2F</url>
     <content type="text"><![CDATA[本篇 更换 Hexo 下的 Markdown 渲染插件 学习 Markdown 基本语法 ✎更换 Markdown 渲染插件 ✎原因 Hexo 内置的默认渲染插件是 hexo-renderer-marked，缺少很多功能，比如 GFM (GitHub Flavored Markdown)、上下标、脚注、emoji 等 ✎hexo-renderer-markdown-it 插件 hexo-renderer-markdown-it 插件支持大量扩展功能，可以实现 Hexo 博客的 footnote 功能。 hexo-renderer-markdown-it ✎安装，配置插件 参考 Wiki 文档 先卸载原有的 hexo-renderer-marked 插件 1$ npm un hexo-renderer-marked --save 安装 hexo-renderer-markdown-it 插件 1$ npm i hexo-renderer-markdown-it --save 使用 Advanced configuration，向 站点配置文件 添加 12345678910111213141516171819202122# Markdown-it config## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wikimarkdown: render: html: true xhtmlOut: false breaks: true linkify: true typographer: true quotes: &apos;“”‘’&apos; plugins: - markdown-it-abbr - markdown-it-footnote - markdown-it-ins - markdown-it-sub - markdown-it-sup anchors: level: 2 collisionSuffix: &apos;v&apos; permalink: true permalinkClass: header-anchor permalinkSymbol: ¶ ✎Markdown 基本语法 ✎文章头基本格式 123456789---title: 如何搭建个人博客网站(二)date: 2019-04-13 23:46:39tags: - tutorial - github - hexocategories: 教程--- ✎斜体和粗体 12*斜体***粗体** 渲染效果：这是 斜体，这是 粗体 ✎分级标题 格式一： 1234567这是一个一级标题============================这是一个二级标题--------------------------------------------------### 这是一个三级标题 格式二： 123456# H1## H2### H3#### H4##### H5###### H6 ✎分割线 在单独的一行使用 *** 或者 --- 表示分割线 ✎删除线 1~~应该不经常用~~ 渲染效果：应该不经常用 ✎超链接 插入文字超链接 1[显示文字](链接地址) 插入图片 1![图片说明](图片地址) 插入音频，使用插件 hexo-tag-aplayer 1&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xx%, lrc:xxx] %&#125; 具体使用方法参考：hexo-tag-aplayer 使用文档 插入视频，使用 iframe 代码 12&lt;script src=&quot;/js/youtube-autoresizer.js&quot;&gt;&lt;/script&gt;&lt;iframe width=&quot;800&quot; height=&quot;450&quot; src=&quot;视频链接&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt; ✎转义符 \ 后面的文字解析为纯文本格式，用来显示特殊符号。 例如： ## 不会解析为标题 ✎引用 使用 &gt; 来显示文字引用 渲染效果： 世界上只有一种真正的英雄主义，那就是在认识生活的真相后依然热爱生活。 ✎脚注 使用 [^1] [^1]: 的脚注对来表示（1 只是标识，用其他字符也行，但要相对应） 12Here is a footnote reference.[^note][^note]: Here is the footnote. Here is a footnote reference.[1] ✎列表与表格 ✎无序列表 使用 * + - 表示无序列表 123456+ 无序列表项 一 - 子无序列表 一 - 子无序列表 二 * 子无序列表 三+ 无序列表项 二+ 无序列表项 三 渲染效果： 无序列表项 一 子无序列表项 一 子无序列表项 二 子子无序列表项 一 无序列表项 二 无序列表项 三 ✎有序列表 使用 数字 和 . 表示有序列表 123451. 有序列表项 一 1. 子有序列表项 一 2. 子有序列表项 二2. 有序列表项 二3. 有序列表项 三 渲染效果： 有序列表项 一 子有序列表项 一 子有序列表项 二 有序列表项 二 有序列表项 三 ✎表格 绘制表格格式如下，| 控制分列，- 控制分行，: 控制对齐方式 12345| SID | Name | grade || :-- | ---: | :---: || 001 | Bob | 65 || 002 | Andy | 80 || 003 | John | 77 | 渲染效果: SID Name grade 001 Bob 65 002 Andy 80 003 John 77 ✎代码块 ✎行内代码块 使用 `codes` 表示行内代码块 ✎多行代码块 将代码块置于两个 ``` 中间（可在第一个 ``` 后面指定代码所属的编程语言） 支持多种编程语言的语法高亮的显示，行号显示 非代码示例： 1This is a code block. c++ 示例： 1234567#include &lt;iostream&gt;using namespace std;int main()&#123; cout &lt;&lt; "Hello World!" &lt;&lt; endl; return 0;&#125; Here is the footnote. ↩]]></content>
       <categories>
-        <category>教程篇</category>
+        <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[如何搭建个人博客网站(二)]]></title>
-    <url>%2F2019%2F04%2F13%2Fbuild-my-website02%2F</url>
+    <url>%2F2019%2F04%2F13%2Fhexo%2Fbuild-my-website02%2F</url>
     <content type="text"><![CDATA[本篇 更换个人博客网站的主题，使 UI 更符合个人审美 开始写博客 ✎更换主题 ✎挑选你的主题 官网：Hexo Themes Github：Themes hexojs 知乎：有哪些好看的 Hexo 主题? My choice: hexo-theme-next ✎下载 Next 主题 克隆整个 hexo-theme-next 仓库 12$ cd hexo$ git clone https://github.com/theme-next/hexo-theme-next themes/next ✎启用主题 与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。 ✎验证主题 123$ hexo clean #清除Hexo缓存$ hexo g #生成静态文件$ hexo s #启动服务器 此时即可使用浏览器访问 http://localhost:4000，检查站点是否正确运行。 ✎主题设定 可以个性化设置主题的 Scheme、语言、菜单、侧栏、头像等; 具体操作参考 NexT 使用文档 最后效果： ✎写博客啦 ✎创建一个博客 1$ hexo new &apos;first-blog&apos; 此时在 username.github.io/source/_posts 目录下新建了一个 first-blog.md 的 Markdown 文件，打开 md 文件后编辑即可。 ✎编辑博客 Hexo 的博客都是用 Markdown 写的 Markdown 语法可参考我的下一篇博客：Hexo 下 Markdown 的配置与学习]]></content>
       <categories>
-        <category>教程篇</category>
+        <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[如何搭建个人博客网站(一)]]></title>
-    <url>%2F2019%2F04%2F13%2Fbuild-my-website01%2F</url>
+    <url>%2F2019%2F04%2F13%2Fhexo%2Fbuild-my-website01%2F</url>
     <content type="text"><![CDATA[本篇基于 Github 和 Hexo 搭建个人博客网站。 系统：Windows 10 ✎环境前提 Node.js: 直接在官网下载安装，下载地址 Github, Git: 推荐 Github入门教程 ✎新建个人 Blog 主页的仓库 打开 Github 首页，登录后新建一个 repository, 名称为 username.github.io ( [username] 必须为 Github 账号，比如我的账号为 JozeOu, 那么仓库名必须为 jozeou.github.io) ✎使用 Hexo 创建 Blog 项目 使用 npm 安装 hexo 1$ npm install -g hexo-cli 在存放 Blog 项目的目录下 Git Bash Here, 初始化 Blog 项目 12$ hexo init username.github.io$ cd username.github.io 安装依赖包 1$ npm install 安装 Git 部署 1$ npm install hexo-deployer-git --save 本地查看 12$ hexo g #生成静态文件$ hexo s #启动服务器。默认情况下，访问网址为：http://localhost:4000/ ✎将 Blog 项目部署到 Github 复制 username.github.io 仓库的 SSH 码 编辑站点配置文件：打开 Blog 项目目录中的_config.yml 文件，把刚刚复制的 SSH 码粘贴到 repository（注意冒号后要空一格） 1234deploy: type: git repository: git@github.com:username/username.github.io.git branch: master 部署 1234$ hexo g #生成静态文件$ hexo d #部署或$ hexo g -d #文件生成后立即部署网站 部署成功后即可在浏览器中输入 username.github.io 访问 如何配置网站信息及 Hexo 项目文件结构解释参考 Hexo 官方文档]]></content>
       <categories>
-        <category>教程篇</category>
+        <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>

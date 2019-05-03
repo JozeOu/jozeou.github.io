@@ -96,23 +96,43 @@
 
 
 
-  <meta name="description" content="本篇基于 Github 和 Hexo 搭建个人博客网站。 系统：Windows 10">
-<meta name="keywords" content="hexo,tutorial,github">
+  <meta name="description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
+<meta name="keywords" content="tutorial,java,idea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建个人博客网站(一)">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/build-my-website01/index.html">
+<meta property="og:title" content="IntelliJ IDEA 安装及使用教程">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/idea/intellij-idea-tutorial/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="本篇基于 Github 和 Hexo 搭建个人博客网站。 系统：Windows 10">
+<meta property="og:description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/01.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/02.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/04.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/05.png">
-<meta property="og:updated_time" content="2019-04-14T13:10:44.920Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/04.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/05.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/06.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/07.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/08.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/09.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/15.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/16.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/17.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/18.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/19.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/20.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/21.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/22.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/23.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/24.png">
+<meta property="og:updated_time" content="2019-05-03T14:58:45.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何搭建个人博客网站(一)">
-<meta name="twitter:description" content="本篇基于 Github 和 Hexo 搭建个人博客网站。 系统：Windows 10">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/01.png">
+<meta name="twitter:title" content="IntelliJ IDEA 安装及使用教程">
+<meta name="twitter:description" content="✎前言 IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。 来开始领略 IntelliJ IDEA 的魅力吧！">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png">
 
 
 
@@ -120,7 +140,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/13/build-my-website01/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/idea/intellij-idea-tutorial/">
 
 
 
@@ -130,7 +150,7 @@
   };
 </script>
 
-  <title>如何搭建个人博客网站(一) | Joze's Blog</title>
+  <title>IntelliJ IDEA 安装及使用教程 | Joze's Blog</title>
   
 
 
@@ -389,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/build-my-website01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/idea/intellij-idea-tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ruizhi Ou">
@@ -406,7 +426,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何搭建个人博客网站(一)
+          <h1 class="post-title" itemprop="name headline">IntelliJ IDEA 安装及使用教程
 
               
             
@@ -432,7 +452,7 @@
                 
               
 
-              <time title="创建时间：2019-04-13 20:55:25" itemprop="dateCreated datePublished" datetime="2019-04-13T20:55:25+08:00">2019-04-13</time>
+              <time title="创建时间：2019-04-21 09:56:26" itemprop="dateCreated datePublished" datetime="2019-04-21T09:56:26+08:00">2019-04-21</time>
             
 
             
@@ -449,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-14 21:10:44" itemprop="dateModified" datetime="2019-04-14T21:10:44+08:00">2019-04-14</time>
+                <time title="修改时间：2019-05-03 22:58:45" itemprop="dateModified" datetime="2019-05-03T22:58:45+08:00">2019-05-03</time>
               
             
           </span>
@@ -466,7 +486,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程篇/" itemprop="url" rel="index"><span itemprop="name">教程篇</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java开发环境搭建/" itemprop="url" rel="index"><span itemprop="name">Java开发环境搭建</span></a></span>
 
                 
                 
@@ -495,7 +515,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">945</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -509,7 +529,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -529,61 +549,123 @@
       
 
       
-        <p>本篇基于 Github 和 Hexo 搭建个人博客网站。<br>
-系统：Windows 10</p>
+        <h2 id="前言"><a class="header-anchor" href="#前言">✎</a>前言</h2>
+<p>IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。</p>
+<p>来开始领略 IntelliJ IDEA 的魅力吧！</p>
 <a id="more"></a>
 <hr>
-<h2 id="环境前提"><a class="header-anchor" href="#环境前提">✎</a>环境前提</h2>
+<h2 id="idea-安装全过程"><a class="header-anchor" href="#idea-安装全过程">✎</a>IDEA 安装全过程</h2>
+<p>系统环境：Windows 10</p>
+<h3 id="下载"><a class="header-anchor" href="#下载">✎</a>下载</h3>
+<p>在哪下载？ <a href="https://www.jetbrains.com/idea/download" target="_blank" rel="noopener">IntelliJ IDEA 官网</a></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/01.png" alt></p>
+<p>在 Download IntelliJ IDEA 页面，我们可以看到 IntelliJ IDEA 分为两个版本，分别为：</p>
 <ul>
-<li>Node.js: 直接在官网下载安装，<a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a></li>
-<li>Github, Git: 推荐 <a href="https://blog.csdn.net/qq_35246620/article/details/66973794" target="_blank" rel="noopener">Github入门教程</a></li>
+<li>旗舰版（Ultimate）</li>
+<li>社区版（Community）</li>
 </ul>
-<h2 id="新建个人-blog-主页的仓库"><a class="header-anchor" href="#新建个人-blog-主页的仓库">✎</a>新建个人 Blog 主页的仓库</h2>
-<p>打开 Github 首页，登录后新建一个 repository, 名称为 <a href="http://username.github.io" target="_blank" rel="noopener">username.github.io</a> ( [username] 必须为 Github 账号，比如我的账号为 JozeOu, 那么仓库名必须为 <a href="http://jozeou.github.io" target="_blank" rel="noopener">jozeou.github.io</a>)</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/01.png" alt></p>
-<h2 id="使用-hexo-创建-blog-项目"><a class="header-anchor" href="#使用-hexo-创建-blog-项目">✎</a>使用 Hexo 创建 Blog 项目</h2>
+<p>其中，旗舰版为收费版本，有 30 天试用期。社区版则是免费的，但功能较旗舰版少了很多。如果想用 IntelliJ IDEA 进行大型项目开发的的话，上旗舰版准没错。</p>
+<h3 id="安装"><a class="header-anchor" href="#安装">✎</a>安装</h3>
+<p>双击打开 <code>.exe</code> 文件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/02.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/03.png" alt></p>
+<p>软件占用空间较大，可修改安装目录，避免占用 <code>C盘</code> 存储空间</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/04.png" alt></p>
+<p>Options 的含义：</p>
 <ul>
-<li>
-<p>使用 npm 安装 hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>在存放 Blog 项目的目录下 Git Bash Here, 初始化 Blog 项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init username.github.io</span><br><span class="line">$ cd username.github.io</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>安装依赖包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>安装 Git 部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>本地查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  #生成静态文件</span><br><span class="line">$ hexo s  #启动服务器。默认情况下，访问网址为：http://localhost:4000/</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>标注 1</strong>：表示在桌面上创建一个 IntelliJ IDEA 的快捷方式</li>
+<li><strong>标注 2</strong>：表示将启动器添加到环境变量中</li>
+<li><strong>标注 3</strong>：表示在右键菜单中添加 <code>open folder as project</code> 选项</li>
+<li><strong>标注 4</strong>：表示关联 <code>.java</code>、<code>.groovy</code> 和 <code>.kt</code> 文件</li>
+<li><strong>标注 5</strong>：表示下载和安装 <code>JBR x86</code></li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/02.png" alt><br>
-<img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/04.png" alt></p>
-<h2 id="将-blog-项目部署到-github"><a class="header-anchor" href="#将-blog-项目部署到-github">✎</a>将 Blog 项目部署到 Github</h2>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/05.png" alt></p>
+<p>在这里，选择默认的 <code>JetBrains</code> 文件夹就可以，点击 <code>Install</code>，进行安装：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/06.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/07.png" alt></p>
+<p>安装完成！</p>
+<h3 id="激活"><a class="header-anchor" href="#激活">✎</a>激活</h3>
+<p>若资金允许，请 <a href="https://www.jetbrains.com/idea/buy/" target="_blank" rel="noopener">购买正版</a>，<strong>支持正版，人人有责</strong></p>
+<p>在 <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">IntelliJ IDEA 注册码</a> 下载破解补丁</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/08.png" alt></p>
+<p>将 破解补丁 放置到 IntelliJ IDEA 安装目录下</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/09.png" alt></p>
+<p>进入 <code>bin</code> 目录，找到 <code>idea.exe.vmoptions</code> 和 <code>idea64.exe.vmoptions</code> 两个文件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/10.png" alt></p>
+<p>用文本编辑器打开这两个文件，在末尾添加 <code>-javaagent:[破解补丁的文件路径]</code></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/11.png" alt></p>
+<p>保存后打开软件</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/12.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/13.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/14.png" alt></p>
+<p>在此处，选择 Darcula 黑色 UI 主题（个人喜好）并点击 <code>Next: Default plugins</code>，进入到默认插件配置页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/15.png" alt></p>
+<p>跳过，点击 <code>Next: Featured plugins</code>，进入到特色插件配置页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/16.png" alt></p>
+<p>跳过，点击 <code>Start using IntelliJ IDEA</code>，进入激活页面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/17.png" alt></p>
+<p>在 <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">IntelliJ IDEA 注册码</a> 复制注册码（该注册码一段时间后会过期，后续激活 也是找到该网站继续获取注册码填入即可），点击 <code>OK</code>，进入 IntelliJ IDEA 的启动界面，待进度条走完之后，就可以使用 IntelliJ IDEA 来打代码啦！</p>
+<h2 id="使用-idea"><a class="header-anchor" href="#使用-idea">✎</a>使用 IDEA</h2>
+<h3 id="界面详述-创建项目"><a class="header-anchor" href="#界面详述-创建项目">✎</a>界面详述、创建项目</h3>
+<p>打开 IntelliJ IDEA，首先迎接我们的就是这个界面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/18.png" alt></p>
 <ul>
-<li>复制 <a href="http://username.github.io" target="_blank" rel="noopener">username.github.io</a> 仓库的 SSH 码</li>
+<li><strong>Create New Project</strong> : 创建一个新的项目；</li>
+<li><strong>Import Project</strong> : 导入一个已有的项目，用于导入不属于 idea 模型的项目，如 Eclipse, Maven 项目；</li>
+<li><strong>Open</strong> : 打开一个已有的项目，用于打开 idea 项目；</li>
+<li><strong>Check out from Version Control</strong> :可以通过服务器上的项目地址 Checkout（俗称：检出） 项目。</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/build-my-website01/05.png" alt></p>
+<p>点击 <code>Create New Project</code>，进入如下界面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/19.png" alt></p>
 <ul>
-<li>
-<p>编辑站点配置文件：打开 Blog 项目目录中的_config.yml 文件，把刚刚复制的 SSH 码粘贴到 repository（注意冒号后要空一格）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  #生成静态文件</span><br><span class="line">$ hexo d  #部署</span><br><span class="line">或</span><br><span class="line">$ hexo g -d  #文件生成后立即部署网站</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>标注 1</strong>：IntelliJ IDEA 支持的框架及语言；</li>
+<li><strong>标注 2</strong>：与 标注 1 相对应的框架或语言的进一步分类。</li>
 </ul>
-<p>部署成功后即可在浏览器中输入 <a href="http://username.github.io" target="_blank" rel="noopener">username.github.io</a> 访问</p>
-<hr>
-<p>如何配置网站信息及 Hexo 项目文件结构解释参考 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 官方文档</a></p>
+<p>选择 <code>Java -&gt; Java EE</code>，在 <code>Project SDK</code> 选择接下来我们的项目中所使用的 SDK（在这里是事先安装好的 JDK），然后点击 <code>Next</code>，进入下一步：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/20.png" alt></p>
+<p>可以选择 <code>Create project from template</code> 快速创建项目</p>
+<ul>
+<li><code>Command Line App</code> 会自动创建一个带有main方法的类；</li>
+<li><code>Java Hello World</code> 会自动创建一个带有main方法的并且会打印输出 Hello World 的类。</li>
+</ul>
+<p>在这里，我们们不勾选使用模板，手工创建，直接点击 <code>Next</code>，进入如下界面：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/21.png" alt></p>
+<ul>
+<li><strong>Project name</strong> : 项目名称（自定义，一般都小写，多个单词用下划线连接）</li>
+<li><strong>Project location</strong> : 项目存储地址</li>
+<li><strong>Module name</strong> : 模块名称（默认与项目名称相同）</li>
+<li><strong>Content root</strong> : 内容根路径</li>
+<li><strong>Module file location</strong> : 模块文件存储地址</li>
+<li><strong>Project format</strong> : 项目格式</li>
+</ul>
+<p>（在 IntelliJ IDEA 中，<code>Project</code> 是最大单元，没有类似于 Eclipse 的工作空间（<code>Workspace</code>）的概念，但是我们可以在一个 <code>Project</code> 下创建多个 <code>Module</code>，默认是一个 <code>Project</code> 下创建一个<code>Module</code>，因此才出现项目名称与模块名称默认相同的现象。一般情况下，我们不需要在 <code>More Settings</code> 中进行修改。）</p>
+<p>接下来，点击 <code>Finish</code>，完成项目的创建：</p>
+<p>（对于首次创建或打开的新项目，IntelliJ IDEA 都会创建项目索引，大型项目在创建索引的过程中可能会出现卡顿的现象，因此强烈建议在 IntelliJ IDEA 创建索引的过程中不要动项目。）</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/22.png" alt></p>
+<ul>
+<li><strong>标注 1</strong>：项目结构图</li>
+<li><strong>标注 2</strong>：外部库</li>
+</ul>
+<p>在项目结构图中，<code>src</code> 目录为默认的 <code>Source root</code>，我们一般在该目录下创建包和类；在外部库中，显示了我们导入的 JDK 1.8 版本。</p>
+<p>编辑 Hello World 项目：</p>
+<ul>
+<li>创建包：将鼠标移动到 <code>src</code> 目录上，然后点击右键，选择 <code>New</code>，再选择 <code>Package</code>，输入包名 <code>demo</code>，点击 <code>OK</code>;</li>
+<li>新建类：将鼠标移动到 <code>src</code> 目录上，然后点击右键，选择 <code>New</code>，再选择 <code>Java Class</code>，输入类名 <code>HelloWorld</code>（一般情况下，如果类名出现多个单词的话，则每个单词的首字母都大写），点击 <code>OK</code>;</li>
+<li>类创建完之后，在编辑区敲入代码，点击鼠标右键，选择 <code>Run 'HelloWorld.main()'</code>，运行。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/23.png" alt></p>
+<ul>
+<li><strong>标注 1</strong>：存放 Module 编译文件的 <code>out</code> 目录。</li>
+<li><strong>标注 2</strong>：<code>demo</code>包 和 <code>HelloWorld</code>类</li>
+<li><strong>标注 3</strong>：代码编辑区</li>
+<li><strong>标注 4</strong>：运行结果，输出&quot;Hello World!&quot;</li>
+<li><strong>.idea</strong>：Project 的配置文件目录，配置文件以 XML 文件的形式存在，因此我们也可以通过了解这些 XML 文件来了解 IntelliJ IDEA 的相关配置。</li>
+<li><strong>hello_world.iml</strong>：IntelliJ IDEA 为每个 Module 自动生成的配置文件，一般情况下，我们不需要动它。</li>
+</ul>
+<p>（IntelliJ IDEA 是一个没有 Ctrl + S 的 IDE，因此每次修改完代码之后，咱们只管运行或者调试即可，无需担心保存或者丢失代码的问题。）</p>
+<h3 id="使用技巧"><a class="header-anchor" href="#使用技巧">✎</a>使用技巧</h3>
+<p>学习慕课网课程 <a href="https://www.imooc.com/learn/924" target="_blank" rel="noopener">IntelliJ IDEA神器使用技巧</a>，总结出的思维导图</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/intellij-idea-tutorial/24.png" alt></p>
 
       
     </div>
@@ -607,11 +689,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
             <a href="/tags/tutorial/" rel="tag"># tutorial</a>
           
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/idea/" rel="tag"># idea</a>
           
         </div>
       
@@ -624,14 +706,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/20/java/jdk-install-tutorial/" rel="next" title="Win10 安装 JDK 及配置环境变量">
+                <i class="fa fa-chevron-left"></i> Win10 安装 JDK 及配置环境变量
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/13/build-my-website02/" rel="prev" title="如何搭建个人博客网站(二)">
-                如何搭建个人博客网站(二) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/26/idea/idea-add-maven/" rel="prev" title="IntelliJ IDEA 创建 Maven Web App 项目">
+                IntelliJ IDEA 创建 Maven Web App 项目 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -703,7 +789,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -726,7 +812,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -757,7 +849,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -817,7 +913,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境前提"><span class="nav-number">1.</span> <span class="nav-text">✎环境前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建个人-blog-主页的仓库"><span class="nav-number">2.</span> <span class="nav-text">✎新建个人 Blog 主页的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-hexo-创建-blog-项目"><span class="nav-number">3.</span> <span class="nav-text">✎使用 Hexo 创建 Blog 项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将-blog-项目部署到-github"><span class="nav-number">4.</span> <span class="nav-text">✎将 Blog 项目部署到 Github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">✎前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-安装全过程"><span class="nav-number">2.</span> <span class="nav-text">✎IDEA 安装全过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.1.</span> <span class="nav-text">✎下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.2.</span> <span class="nav-text">✎安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激活"><span class="nav-number">2.3.</span> <span class="nav-text">✎激活</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-idea"><span class="nav-number">3.</span> <span class="nav-text">✎使用 IDEA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面详述-创建项目"><span class="nav-number">3.1.</span> <span class="nav-text">✎界面详述、创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用技巧"><span class="nav-number">3.2.</span> <span class="nav-text">✎使用技巧</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -850,7 +946,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">10k</span>
   
 
   
@@ -859,7 +955,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
   
 </div>
 
