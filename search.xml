@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IntelliJ IDEA 配置 Tomcat 运行 Java Web 项目]]></title>
+    <url>%2F2019%2F05%2F04%2Fidea%2Fidea-add-tomcat%2F</url>
+    <content type="text"><![CDATA[✎Tomcat 下载、安装 ✎下载 Tomcat 在哪下载？ Tomcat 官网，点击左侧 Download 下的对应版本 进入 Tomcat 9 下载页面，zip 是免安装版，installer 是安装版 ✎安装 Tomcat zip: 直接解压缩即可；找到目录 bin 下的 startup.bat：启动 Tomcat；shutdown.bat：关闭 Tomcat。 installer: 打开 exe 安装文件，一路 Next 即可。 ✎验证 启动 Tomcat，打开浏览器，键入 http://localhost:8080，能打开页面则表示安装成功！ ✎IDEA 配置 Tomcat Run -&gt; Edit Configurations… -&gt; Templates -&gt; Tomcat Server -&gt; Local 标注1：点击 Configure, 在弹窗中选择 Tomcat 安装目录； 标注2：当 Tomcat 启动后，idea 会按照配置的地址打开浏览器页面； 标注3：当修改 java 文件后，如何处理？选择重启服务器； 标注4：jre 选择，最好选择本地的 jdk 中的 jre。 ✎配置项目部署 点击 + 号 -&gt; Tomcat Server -&gt; Local 切换到 Deployment 选项卡，点击右边 + 号，选择 Artifact 选择要部署的项目（如果要用 Tomcat 运行多个项目，直接在这里添加即可，注意 Application context 的选择） 点击 OK，配置完成！ ✎运行 Web 项目 如下图，选中 tomcat，点击运行按钮即可自动部署项目，可以看到启动日志 部署完成后会自动打开浏览器 项目部署成功！]]></content>
+      <categories>
+        <category>IDEA 配置</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IntelliJ IDEA 上传项目到 Github]]></title>
     <url>%2F2019%2F05%2F03%2Fidea%2Fidea-add-git%2F</url>
     <content type="text"><![CDATA[环境前提：IntelliJ IDEA, Github 账号，Git 配置 ✎配置 Git 和 Github File -&gt; Setting -&gt; Version Control -&gt;Git 在 Path to Git executable 选择 git 安装后的 git.exe 文件，然后点击 Test，测试设置是否成功 File -&gt; Setting -&gt; Version Control -&gt;GitHub 点击 + 进行 Add account, 填写 Github 账号的用户名和密码，Log in ✎创建本地仓库 VCS -&gt; Import into Version Control -&gt; Create Git Repository… 在弹窗中选择项目所在的本地目录，点击 OK，此时项目文件全部变成红色 ✎上传项目到本地仓库 项目上右键 -&gt; Git -&gt; Add, 此时项目文件变成绿色（文件处于暂存区，并没有进入到版本库） 项目上右键 -&gt; Git -&gt; Commit Directory 在弹窗中输入 Commit Message，点击 commit，此时项目文件从暂存区进入版本库中，项目文件变成白色 ✎上传项目到 Github 远程仓库 VCS -&gt; Import into Version Control -&gt; Share Project on GitHub 在弹窗中输入仓库名和描述，点击 Share, 即开始在 Github 中创建远程仓库并上传项目文件（若未配置 Github, 会弹窗要求输入用户名和密码） 注意：会进行语法检查，若存在错误或警告会给出确认提示，点击 Commit 即可 上传成功后 IDEA 右下角会给出提示 查看 Github 远程仓库，项目上传成功！ ✎提交修改 项目上右键 -&gt; Git -&gt; Add, 将修改加入本地仓库暂存区 项目上右键 -&gt; Git -&gt; Commit Directory, 查看有变动的文件并输入 Commit Message, 点击 Commit and Push… 弹出 Push 框，点击 Push 查看 Github 远程仓库，提交修改成功！ ✎其他仓库操作]]></content>
@@ -8,8 +20,9 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>idea</tag>
+        <tag>git</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +33,8 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>idea</tag>
+        <tag>tutorial</tag>
         <tag>maven</tag>
         <tag>webapp</tag>
       </tags>
@@ -34,8 +47,8 @@
         <category>Java开发环境搭建</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>idea</tag>
+        <tag>tutorial</tag>
         <tag>java</tag>
       </tags>
   </entry>
@@ -83,8 +96,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>tutorial</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -96,8 +109,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>tutorial</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
