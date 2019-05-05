@@ -83,8 +83,8 @@
       </categories>
       <tags>
         <tag>tutorial</tag>
-        <tag>jdk</tag>
         <tag>java</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -106,8 +106,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -118,9 +118,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -131,9 +131,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>

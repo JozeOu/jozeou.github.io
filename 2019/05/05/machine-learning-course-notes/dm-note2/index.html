@@ -104,16 +104,16 @@
 <meta property="og:site_name" content="Joze&#39;s Blog">
 <meta property="og:description" content="线性回归 (Linear regression) 是一种以线性模型来建模自变量与因变量关系的方法。 分为：  单变量线性回归 (Linear regression with one variable)：只有一个自变量； 多变量线性回归 (Linear regression with multiple variable)：有多个自变量。  本篇先从单变量线性回归入手。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/01.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/02.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/03.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/04.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/05.png">
-<meta property="og:updated_time" content="2019-05-05T15:09:26.388Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/04.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/05.png">
+<meta property="og:updated_time" content="2019-05-05T15:18:44.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning 笔记（二）：单变量线性回归">
 <meta name="twitter:description" content="线性回归 (Linear regression) 是一种以线性模型来建模自变量与因变量关系的方法。 分为：  单变量线性回归 (Linear regression with one variable)：只有一个自变量； 多变量线性回归 (Linear regression with multiple variable)：有多个自变量。  本篇先从单变量线性回归入手。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/01.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/01.png">
 
 
 
@@ -433,7 +433,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 15:33:04 / 修改时间：23:09:26" itemprop="dateCreated datePublished" datetime="2019-05-05T15:33:04+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 15:33:04 / 修改时间：23:18:44" itemprop="dateCreated datePublished" datetime="2019-05-05T15:33:04+08:00">2019-05-05</time>
             
 
             
@@ -530,7 +530,7 @@
 <h2 id="模型表达-model-representation"><a class="header-anchor" href="#模型表达-model-representation">✎</a>模型表达 (Model representation)</h2>
 <p>一个预测房价的例子：</p>
 <p>给定某地不同面积房子的价格的数据集，希望通过该数据集构建一个模型，该模型能根据房子的面积来预测其价格。</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/01.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/01.png" alt></p>
 <p>该例子属于 <code>有监督学习</code> 中的 <code>回归</code> 问题。</p>
 <p>使用如下标记描述回归问题：</p>
 <ul>
@@ -541,14 +541,14 @@
 <li><strong>(x<sup>(i)</sup>,y<sup>(i)</sup>)</strong> - ith training example （第 i 个训练样例）</li>
 <li><strong>h (hypothesis)</strong> - h<sub>θ</sub>(x) = θ<sub>0</sub>+θ<sub>1</sub>x （学习算法的解决方案或函数，将 x’s 映射到 y’s）</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/02.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/02.png" alt></p>
 <h2 id="损失函数-cost-function"><a class="header-anchor" href="#损失函数-cost-function">✎</a>损失函数 (Cost function)</h2>
 <p>Hypothesis: h<sub>θ</sub>(x) = θ<sub>0</sub>+θ<sub>1</sub>x , 参数 θ<sub>i</sub>’s 如何选择？</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/03.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/03.png" alt></p>
 <p>情形一：假定 θ<sub>0</sub> = 0，Cost function 变为 J(θ<sub>1</sub>)</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/04.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/04.png" alt></p>
 <p>情形二：θ<sub>0</sub>，θ<sub>1</sub> 都可变，Cost function 为 J(θ<sub>0</sub>, θ<sub>1</sub>)</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/data-mining-course-notes/05.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/machine-learning-course-notes/05.png" alt></p>
 <h2 id="none"><a class="header-anchor" href="#none">✎</a></h2>
 
       
