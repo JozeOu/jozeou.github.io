@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Machine Learning 笔记（二）：单变量线性回归]]></title>
+    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fdm-note2%2F</url>
+    <content type="text"><![CDATA[线性回归 (Linear regression) 是一种以线性模型来建模自变量与因变量关系的方法。 分为： 单变量线性回归 (Linear regression with one variable)：只有一个自变量； 多变量线性回归 (Linear regression with multiple variable)：有多个自变量。 本篇先从单变量线性回归入手。 ✎模型表达 (Model representation) 一个预测房价的例子： 给定某地不同面积房子的价格的数据集，希望通过该数据集构建一个模型，该模型能根据房子的面积来预测其价格。 该例子属于 有监督学习 中的 回归 问题。 使用如下标记描述回归问题： m = Number of training examples （训练样例的数量） x’s = “input” variable / features （输入变量 / 特征） y’s = “output” variable / “target” variable （输出变量 / 目标变量） (x,y) - one training example （一个训练样例） (x(i),y(i)) - ith training example （第 i 个训练样例） h (hypothesis) - hθ(x) = θ0+θ1x （学习算法的解决方案或函数，将 x’s 映射到 y’s） ✎损失函数 (Cost function) Hypothesis: hθ(x) = θ0+θ1x , 参数 θi’s 如何选择？ 情形一：假定 θ0 = 0，Cost function 变为 J(θ1) 情形二：θ0，θ1 都可变，Cost function 为 J(θ0, θ1) ✎]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Machine Learning 笔记（一）：背景，应用领域，基本概念]]></title>
+    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fdm-note1%2F</url>
+    <content type="text"><![CDATA[人工智能、机器学习，数据挖掘，神经网络之间的关系： ✎关于课程内容 ✎实践的机器学习和数据挖掘技术 基本概念，核心工具 学习系统的框架, 优化方法, 分类, 回归, 聚类,关联规则， 链接分析 主流技术，典型实际问题的解决方法 深度神经网络， Boosting/随机森林+决策树 并行化机器学习算法（大数据下的机器学习） 应用: 搜索引擎、推荐系统、图像搜索，量化交易等 Kaggle, PASCAL VOC，腾讯社交广告预测比赛，百度快速人像 识别比赛经验分享 ✎Machine Learning Part Optimization method（优化方法） Gradient descent（梯度下降） Stochastic gradient descent（随机梯度下降） Coordinate descent（坐标下降） Regression Linear regression（线性回归） Classification（分类） Logistic Regression (Parallelization)（逻辑回归（并行化）） Boosting + decision trees, Random Forest (Parallelization) Deep Neural Networks（深度神经网络） Clustering（聚类） K-means Recommendation Systems（推荐系统） matrix factorization / field-aware factorization machines ✎Data Mining Part Association Rules Similarity Search Learning to hash Link Analysis Page Rank ✎背景 ✎软件的现状 过去十多年，我们开发的软件系统主要是收集数据 ERP系统=单据电子化 邮件系统=信件电子化 企业运作产生大量的数据 互联网的网页/图片/视频数据 互联网/移动应用中的用户行为数据 金融行情/交易数据，各种经济数据，上市公司财务数据 监控摄像头（小区，交通，商铺）或其他传感器产生的数据 医疗数据 … ✎软件的未来 从收集数据到分析数据，市场上需要“聪明”的软件 能否给我推荐我喜欢的电影/衣服/新闻/游戏/朋友？ 汽车/无人机能否自动驾驶？工业机器人能否代替工人？ 机器能否理解图片内容、视频内容、自然语言？ 机器能否代替人工决策？ … ✎工业中的机器学习 大规模数据+人工特征+线性模型为主 高质量的人工特征（特征工程）+并行化训练+高吞吐量 预测 中等规模的数据，可用非线性模型（如Boosting+决策树， 随机森林） 深度学习 在一些难以获得高质量人工特征的应用中获得巨大成功 图像/视频/语音/自然语言理解，广告点击率预估 关键技术 并行化（分布式）学习算法，内存/训练时间限制 典型场景：给你1000台机器， 10000GB数据，要求你的算法在1小时内完 成训练 高吞吐量预测 典型场景：每个CPU每秒钟要完成800-1000个预测 模型稳定性 增量训练 机器学习人才需求 Developer：负责实现并行化、高吞吐量的算法；特征工程 Researcher：设计新的机器学习算法，提升算法的效果（如准确率） ✎应用成果 微软的“同声翻译” Google 的语言机器人助手 AlphaGo 击败人类顶尖棋手 网页分类 垃圾邮件过滤 手写识别 人脸识别 搜索引擎结果排序 机器翻译 广告排序，广告推荐 相似图片搜索 相机中的人脸检测 ✎基本概念 ✎machine learning vs. data mining 机器学习：从数据中自动分析获得规律，并利用规律对未知数据进行预测 数据挖掘：“数据模型”的发现过程，即从数据中发现有用的“规律” 机器学习擅长的典型场景是人们对数据中的寻找目标（规律）几乎一无所知，例如Netflix电影推荐。但是，当挖掘的目标能够比较清楚地描述时，机器学习的方法并不成功。例如“在web上定位人们的简历”，基于规则的方法优于机器学习方法。 ✎机器学习类型 有监督学习 (Supervised Learning)：从标签化的训练数据集中推导出预测函数的过程，即对训练数据集中的每个样本，都给出对应的“正确答案”（标签 (label)）。 可根据输出变量的类型分为 分类 和 回归 两类： 分类 (classification)：离散变量预测，为定性输出； 回归 (regression)：连续变量预测，为定量输出。 无监督学习 (Unsupervised Learning)：从无标签的训练数据集中推导出预测函数的过程，即只给定训练数据集，不给结果（标签）。 聚类 (clustering)：无监督学习的方法。聚类的结果是产生一组集合，一个集合中的对象与同集合中的对象彼此相似，与其他集合中的对象相异。 半监督学习 (Semi-supervised learning)：有监督学习和无监督学习的中间带。对于半监督学习，其训练数据一部分是有标签的，另一部分没有，而且没标签的数据量一般远大于有标签的数据量（这符合现实情况）。隐藏在半监督学习下的基本规律：数据的分布必然不是完全随机的，通过一些有标签数据的局部特征，以及更多没标签数据的整体分布，就可以得到可以接受甚至是非常好的分类结果。 可根据不同的学习场景分为四大类： 半监督分类 (Semi-supervised classification)：在无标签样本的帮助下使用有标签样本进行训练，获得比只用有标签样本训练得到的分类器性能更优的分类器，弥补有标签样本的数据量不足的缺陷，其中标签取有限离散值。 半监督回归 (Semi-supervised regression)：在无标签样本的帮助下使用有标签样本进行训练，获得比只用有标签样本训练得到的回归器性能更优的回归器，弥补有标签样本的数据量不足的缺陷，其中标签取连续值。 半监督聚类 (Semi-supervised clustering)：在有标签样本的信息帮助下，获得比只用无标签的样本得到的结果更好的簇，提高聚类的精度。 半监督降维 (Semi-supervised dimensionality reduction)：在有标签的样本的信息帮助下找到高维输入数据的低维结构，同时保持原始高维数据和成对约束 (Pair-wise constraints) 的结构不变，即在高维空间中满足正约束 (Must-link constraints) 的样例在低维空间中相距很近，在高维空间中满足负约束 (Cannot-link constraints) 的样例在低维空间中距离很远。 开启 Machine Learning 学习之旅！]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>machine learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IntelliJ IDEA 配置 Tomcat 运行 Java Web 项目]]></title>
     <url>%2F2019%2F05%2F04%2Fidea%2Fidea-add-tomcat%2F</url>
     <content type="text"><![CDATA[✎Tomcat 下载、安装 ✎下载 Tomcat 在哪下载？ Tomcat 官网，点击左侧 Download 下的对应版本 进入 Tomcat 9 下载页面，zip 是免安装版，installer 是安装版 ✎安装 Tomcat zip: 直接解压缩即可；找到目录 bin 下的 startup.bat：启动 Tomcat；shutdown.bat：关闭 Tomcat。 installer: 打开 exe 安装文件，一路 Next 即可。 ✎验证 启动 Tomcat，打开浏览器，键入 http://localhost:8080，能打开页面则表示安装成功！ ✎IDEA 配置 Tomcat Run -&gt; Edit Configurations… -&gt; Templates -&gt; Tomcat Server -&gt; Local 标注1：点击 Configure, 在弹窗中选择 Tomcat 安装目录； 标注2：当 Tomcat 启动后，idea 会按照配置的地址打开浏览器页面； 标注3：当修改 java 文件后，如何处理？选择重启服务器； 标注4：jre 选择，最好选择本地的 jdk 中的 jre。 ✎配置项目部署 点击 + 号 -&gt; Tomcat Server -&gt; Local 切换到 Deployment 选项卡，点击右边 + 号，选择 Artifact 选择要部署的项目（如果要用 Tomcat 运行多个项目，直接在这里添加即可，注意 Application context 的选择） 点击 OK，配置完成！ ✎运行 Web 项目 如下图，选中 tomcat，点击运行按钮即可自动部署项目，可以看到启动日志 部署完成后会自动打开浏览器 项目部署成功！]]></content>
@@ -20,9 +42,9 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
+        <tag>github</tag>
         <tag>idea</tag>
         <tag>git</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -33,8 +55,8 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
-        <tag>idea</tag>
         <tag>tutorial</tag>
+        <tag>idea</tag>
         <tag>maven</tag>
         <tag>webapp</tag>
       </tags>
@@ -47,8 +69,8 @@
         <category>Java开发环境搭建</category>
       </categories>
       <tags>
-        <tag>idea</tag>
         <tag>tutorial</tag>
+        <tag>idea</tag>
         <tag>java</tag>
       </tags>
   </entry>
@@ -61,8 +83,8 @@
       </categories>
       <tags>
         <tag>tutorial</tag>
-        <tag>java</tag>
         <tag>jdk</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -84,8 +106,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>markdown</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -96,9 +118,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>github</tag>
-        <tag>tutorial</tag>
         <tag>hexo</tag>
+        <tag>tutorial</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -109,9 +131,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>github</tag>
-        <tag>tutorial</tag>
         <tag>hexo</tag>
+        <tag>tutorial</tag>
+        <tag>github</tag>
       </tags>
   </entry>
 </search>
