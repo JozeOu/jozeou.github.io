@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[NLP 笔记（三）：]]></title>
+    <url>%2F2019%2F05%2F09%2Fnlp-course-notes%2Fnlp-note3%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ml-note3]]></title>
+    <url>%2F2019%2F05%2F08%2Fmachine-learning-course-notes%2Fml-note3%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[NLP 笔记（二）：基本文字处理]]></title>
+    <url>%2F2019%2F05%2F06%2Fnlp-course-notes%2Fnlp-note2%2F</url>
+    <content type="text"><![CDATA[✎知识讲解 ✎正则表达式 正则表达式 (Regular Expressions) 是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个规定字符串。 ✎基本语法 析取：字符集合[]，范围表示[A-Z] Pattern Matches [wW]oodchuck Woodchuck, woodchuck [1234567890] 任一数字 [A-Z] 任一大写字母 [a-z] 任一小写字母 [0-9] 任一数字 否定析取：[^Ss] (仅当&quot;^&quot;出现在字符集合模式[]的第一个字符时) Pattern Matches [^A-Z] 任一非大写字母 [^Ss] 既不是&quot;S&quot;也不是&quot;s&quot; a^b 与字段相同 其他析取：析取中的“|”，对匹配条件进行逻辑“或”运算 Pattern Matches groundhog|woodchuck groundhog 或 woodchuck a|b|c = [abc] 特殊字符：? * + . ^ $（要表示这些特殊符号本身，需要在其前加一个\进行转义） Pattern Matches ？ 匹配前面的子表达式一次或零次 * 匹配前面的子表达式任意次 + 匹配前面的子表达式一次或多次 . 匹配除&quot;\n&quot;和&quot;\r&quot;之外的任意单个字符 ^ 匹配输入字行首，如果设置了RegExp对象的Multiline属性，也匹配“\n”或“\r”之后的位置 $ 匹配输入字行尾，如果设置了RegExp对象的Multiline属性，也匹配“\n”或“\r”之前的位置 ✎举例 例子：找到文本中“the”的所有实例。 错解： [tT]he ，错误返回其他词汇，即匹配本不应被匹配的字符串（there，then，other） 错误类型：False positives（误报 Type I） the ，遗漏了大写字母开头的实例，即没有匹配到本应被匹配的字符串（The） 错误类型：False negatives（漏报 Type II） 处理错误：降低应用程序中的错误率通常涉及两种对立的工作： 提高准确性或精确度（最小化False positives） 提高覆盖率或召回度（最小化False negatives） ✎总结 正则表达式起着至关重要的作用。对于任何的文本处理来说，正则表达式通常是复杂序列的首选模型； 对于许多困难的任务，我们使用机器学习分类器，但是正则表达式将作为分类器中的特征值，在获取一般化时非常有用。 ✎字标记 ✎文本归一化 每个NLP任务都需要做文本归一化（Text Normalization）处理： 在运行文本中对单词进行分段、标记 规范字格式 在运行文本中对句子进行分段 ✎分词 问题：语言问题。不同语言差异较大，很难统一算法。 中文分词： 中文词汇是由汉字组成的，汉字通常含有一个音节和一个语素，每个词汇平均由2.4个汉字组成； 标准基线分割算法：最大匹配算法（也称贪心算法 - Greedy） ，对英语不适用 给定一个中文词汇表和一个字符串 在字符串开头启动指针 在字典中找到与从指针开始的字符串匹配的最长单词 将指针移动至越过此单词 跳至第 2 步重复此过程 ✎词语规范化 规范化 (Normalization)：信息检索需要规范化用语，索引文本 &amp; 查询字词必须有相同的格式。 大写转换 (Case folding)：由于用户倾向于使用小写字母，经常将所有字母转换为小写；对于情感分析，MT，信息提取等，字母的大小写转换是非常有帮助的。 词形还原 (Lemmatization)：将变形或变体形式转换为基本形式（如：am, are, is → be，car, cars, car’s, cars’ → car）。 语素： 构成单词的微小而有意义的单元 词干（stems）：核心含义单位 词缀（Affixes）：依附于词干上的单元，通常具有语法功能 ✎词干提取 定义：在信息检索中，将词语缩短至其词干形式。词干提取即是对词缀的粗略删减。 e.g. automate(s), automatic, automation all reduced to automat. 词干提取算法 (Porter’s algorithm) ✎句子划分与决策树 句子划分（Sentence Segmentation） ！，？是相对明确的标点符号 句号“.”的含义模糊 句子边界 缩写表示（Dr.） 数学表示（.02%） 构建二元分类器 Looks at a “.” Decides EndOfSentence / NotEndOfSentence Classifiers: hand-written rules, regular expressions, or machine-learning 决策树（Decision Tree） ，可用来确定单词是否为句子结尾。 决策树的实现： 决策树仅仅是 if-then-else 的语句，有趣的是其选择功能； 难以手动建立决策树结构：手动构建至适用于简单的特征及领域；对于数字要素，选择每个阈值太难，相反，结构通常通过机器学习从训练语料库中得出。 ✎练习 提取“hello world” 1234567import rekey = r"&lt;html&gt;&lt;body&gt;&lt;h1&gt;hello world&lt;h1&gt;&lt;/body&gt;&lt;/html&gt;"p = r"(?&lt;=&lt;h1&gt;).+?(?=&lt;h1&gt;)"pattern = re.compile(p)matcher = re.search(pattern, key)print(matcher.group(0)) 输出：hello world 匹配第一个“python” 1234567import rekey = r"javapythonhtmlvhdlpython"p = r"python"pattern = re.compile(p)matcher = re.search(pattern, key)print(matcher) 输出：&lt;re.Match object; span=(4, 10), match='python'&gt; 找到所有一级标题 123456import rekey = r"&lt;h1&gt;hello world&lt;h1&gt;" #源文本p = r"&lt;h1&gt;.+&lt;h1&gt;" #正则表达式规则pattern = re.compile(p)print(pattern.findall(key)) 输出：['&lt;h1&gt;hello world&lt;h1&gt;'] 匹配“http://”和“https://” 123456import rekey = r"http://www.poshoaiu.com and https://iusdhbfw.com" #源文本p = r"https?://" #正则表达式规则pattern = re.compile(p)print(pattern.findall(key)) 输出：['http://', 'https://'] 多字符匹配 1234567891011import rekey1 = r"12345&lt;hTml&gt;hello&lt;/Html&gt;67890"p1 = r"&lt;[Hh][Tt][Mm][Ll]&gt;.+?&lt;/[Hh][Tt][Mm][Ll]&gt;"pattern1 = re.compile(p1)print(pattern1.findall(key1))key2 = r"mat cat pat"p2 = r"[^p]at"pattern2 = re.compile(p2)print(pattern2.findall(key2)) 输出： 12[&apos;&lt;hTml&gt;hello&lt;/Html&gt;&apos;][&apos;mat&apos;, &apos;cat&apos;]]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NLP 笔记（一）：介绍 NLP]]></title>
+    <url>%2F2019%2F05%2F06%2Fnlp-course-notes%2Fnlp-note1%2F</url>
+    <content type="text"><![CDATA[✎从语言到信息 ✎从语言中提取信息 ✎含义 从以下内容自动提取句意和结构： 人类语言文本和演讲（新闻、社交媒体等） 社交网络 基因组序列 ✎应用实例 信息检索：每天6,586,013,574次网络搜索（估算），基于文本的信息检索很可能成为当今软件中最常用的功能 ； 文本分类：对短信、新闻进行分类； 提取情绪和社会语义：很多的意思都隐藏在内涵中（内涵：除单词的字面意思或主要意义之外，由其引发的想法或感觉。），通常称提取内涵为情感分析。如对餐厅评价进行情感分析，判断差评 or 好评； 计算生物学：比较基因序列；（序列比较的关键之处：寻找基因、决定功能、揭示进化进程。这也是拼写检查的工作方式。Hint：编辑距离算法） 社交网络：由您的亲朋好友组成的网络离线或在线关系。可以计算这些网络的属性，从中提取信息。（社交关系的结构：人作为节点，链接代表关系的建立） ✎通过语言与人类交互 对话系统/聊天机器人：Siri，Google assistant，Facebook M，Cortana等 推荐系统：网易云音乐推荐，豆瓣电影、图书推荐等 问答系统 ✎NLP 概述 ✎背景 为什么语言解释难以实现？ 语言有歧义 存在非标准语言 会不断产生新词 如何在这些问题上取得进展？ 需要什么工具？ 关于语言和世界的知识 一种结合各种知识体系的方法 怎么做？ 从语言数据建立概率模型 模型与算法 正则表达式 (Regular Expressions) 编辑距离与对齐方式 词嵌入（针对词义的向量/神经网络模型） 机器学习分类器（朴素贝叶斯/线性回归/神经网络） 推荐算法（协同过滤） 网络算法 (PageRank) 语言学工具（情绪词典 – Sentiment lexicons） ✎什么是 NLP？ **自然语言处理（NLP）**是计算机科学、 人工智能、 语言学的交集领域。 NLP的目标是让计算机处理或者“理解”自然语言，从而执行譬如预约、买东西、问题回答等有用的任务。但是充分理解和表达语言的含义（甚至定义语言）是件有难度的事情。达到完美的语言理解被称为 AI-complete[1]问题。 ✎NLP 层级 ✎NLP应用 从简单到复杂 拼写检查、关键字搜索、同义词查找 从网站提取信息，如产品价格、日期、地点、人员或公司名称 分类：阅读教材，判断长文本的积极/消极的情绪 机器翻译 口语对话系统 复杂的问答系统 NLP在工业上的应用越发广泛 搜索（书面或口头上） 在线广告匹配 自动/辅助翻译 市场或财务/交易的情绪分析 语音识别 聊天机器人/对话代理：自动化客户支持、控制设备、订购货物 ✎为什么NLP是一门困难的学科？ 表现、学习和使用语言/情景/世界/视觉知识的复杂性 人类语言具有不明确性（与编程和其他正式语言不同） 人类语言的解释取决于现实世界、常识和语境知识 ✎深度学习在NLP中的应用 深度 NLP = 深度学习 + NLP 即结合自然语言处理的思想和目标，采用表示学习和深度学习的方法来解决这些问题 。 深度 NLP 在各个层级上的表示方式都为向量。 在人工智能领域，最困难的问题被非正式地称为 AI-complete 或 AI-hard。——维基百科 ↩]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Machine Learning 笔记（二）：单变量线性回归]]></title>
-    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fdm-note2%2F</url>
+    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fml-note2%2F</url>
     <content type="text"><![CDATA[线性回归 (Linear regression) 是一种以线性模型来建模自变量与因变量关系的方法。 分为： 单变量线性回归 (Linear regression with one variable)：只有一个自变量； 多变量线性回归 (Linear regression with multiple variable)：有多个自变量。 本篇先从单变量线性回归入手。 ✎模型表达 (Model representation) 一个预测房价的例子： 给定某地不同面积房子的价格的数据集，希望通过该数据集构建一个模型，该模型能根据房子的面积来预测其价格。 该例子属于 有监督学习 中的 回归 问题。 使用如下标记描述回归问题： m = Number of training examples （训练样例的数量） x’s = “input” variable / features （输入变量 / 特征） y’s = “output” variable / “target” variable （输出变量 / 目标变量） (x,y) - one training example （一个训练样例） (x(i),y(i)) - ith training example （第 i 个训练样例） h (hypothesis) - hθ(x) = θ0+θ1x （学习算法的解决方案或函数，将 x’s 映射到 y’s） ✎损失函数 (Cost function) Hypothesis: hθ(x) = θ0+θ1x , 参数 θi’s 如何选择？ 情形一：假定 θ0 = 0，Cost function 变为 J(θ1) 情形二：θ0，θ1 都可变，Cost function 为 J(θ0, θ1) ✎]]></content>
       <categories>
         <category>机器学习</category>
@@ -13,7 +51,7 @@
   </entry>
   <entry>
     <title><![CDATA[Machine Learning 笔记（一）：背景，应用领域，基本概念]]></title>
-    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fdm-note1%2F</url>
+    <url>%2F2019%2F05%2F05%2Fmachine-learning-course-notes%2Fml-note1%2F</url>
     <content type="text"><![CDATA[人工智能、机器学习，数据挖掘，神经网络之间的关系： ✎关于课程内容 ✎实践的机器学习和数据挖掘技术 基本概念，核心工具 学习系统的框架, 优化方法, 分类, 回归, 聚类,关联规则， 链接分析 主流技术，典型实际问题的解决方法 深度神经网络， Boosting/随机森林+决策树 并行化机器学习算法（大数据下的机器学习） 应用: 搜索引擎、推荐系统、图像搜索，量化交易等 Kaggle, PASCAL VOC，腾讯社交广告预测比赛，百度快速人像 识别比赛经验分享 ✎Machine Learning Part Optimization method（优化方法） Gradient descent（梯度下降） Stochastic gradient descent（随机梯度下降） Coordinate descent（坐标下降） Regression Linear regression（线性回归） Classification（分类） Logistic Regression (Parallelization)（逻辑回归（并行化）） Boosting + decision trees, Random Forest (Parallelization) Deep Neural Networks（深度神经网络） Clustering（聚类） K-means Recommendation Systems（推荐系统） matrix factorization / field-aware factorization machines ✎Data Mining Part Association Rules Similarity Search Learning to hash Link Analysis Page Rank ✎背景 ✎软件的现状 过去十多年，我们开发的软件系统主要是收集数据 ERP系统=单据电子化 邮件系统=信件电子化 企业运作产生大量的数据 互联网的网页/图片/视频数据 互联网/移动应用中的用户行为数据 金融行情/交易数据，各种经济数据，上市公司财务数据 监控摄像头（小区，交通，商铺）或其他传感器产生的数据 医疗数据 … ✎软件的未来 从收集数据到分析数据，市场上需要“聪明”的软件 能否给我推荐我喜欢的电影/衣服/新闻/游戏/朋友？ 汽车/无人机能否自动驾驶？工业机器人能否代替工人？ 机器能否理解图片内容、视频内容、自然语言？ 机器能否代替人工决策？ … ✎工业中的机器学习 大规模数据+人工特征+线性模型为主 高质量的人工特征（特征工程）+并行化训练+高吞吐量 预测 中等规模的数据，可用非线性模型（如Boosting+决策树， 随机森林） 深度学习 在一些难以获得高质量人工特征的应用中获得巨大成功 图像/视频/语音/自然语言理解，广告点击率预估 关键技术 并行化（分布式）学习算法，内存/训练时间限制 典型场景：给你1000台机器， 10000GB数据，要求你的算法在1小时内完 成训练 高吞吐量预测 典型场景：每个CPU每秒钟要完成800-1000个预测 模型稳定性 增量训练 机器学习人才需求 Developer：负责实现并行化、高吞吐量的算法；特征工程 Researcher：设计新的机器学习算法，提升算法的效果（如准确率） ✎应用成果 微软的“同声翻译” Google 的语言机器人助手 AlphaGo 击败人类顶尖棋手 网页分类 垃圾邮件过滤 手写识别 人脸识别 搜索引擎结果排序 机器翻译 广告排序，广告推荐 相似图片搜索 相机中的人脸检测 ✎基本概念 ✎machine learning vs. data mining 机器学习：从数据中自动分析获得规律，并利用规律对未知数据进行预测 数据挖掘：“数据模型”的发现过程，即从数据中发现有用的“规律” 机器学习擅长的典型场景是人们对数据中的寻找目标（规律）几乎一无所知，例如Netflix电影推荐。但是，当挖掘的目标能够比较清楚地描述时，机器学习的方法并不成功。例如“在web上定位人们的简历”，基于规则的方法优于机器学习方法。 ✎机器学习类型 有监督学习 (Supervised Learning)：从标签化的训练数据集中推导出预测函数的过程，即对训练数据集中的每个样本，都给出对应的“正确答案”（标签 (label)）。 可根据输出变量的类型分为 分类 和 回归 两类： 分类 (classification)：离散变量预测，为定性输出； 回归 (regression)：连续变量预测，为定量输出。 无监督学习 (Unsupervised Learning)：从无标签的训练数据集中推导出预测函数的过程，即只给定训练数据集，不给结果（标签）。 聚类 (clustering)：无监督学习的方法。聚类的结果是产生一组集合，一个集合中的对象与同集合中的对象彼此相似，与其他集合中的对象相异。 半监督学习 (Semi-supervised learning)：有监督学习和无监督学习的中间带。对于半监督学习，其训练数据一部分是有标签的，另一部分没有，而且没标签的数据量一般远大于有标签的数据量（这符合现实情况）。隐藏在半监督学习下的基本规律：数据的分布必然不是完全随机的，通过一些有标签数据的局部特征，以及更多没标签数据的整体分布，就可以得到可以接受甚至是非常好的分类结果。 可根据不同的学习场景分为四大类： 半监督分类 (Semi-supervised classification)：在无标签样本的帮助下使用有标签样本进行训练，获得比只用有标签样本训练得到的分类器性能更优的分类器，弥补有标签样本的数据量不足的缺陷，其中标签取有限离散值。 半监督回归 (Semi-supervised regression)：在无标签样本的帮助下使用有标签样本进行训练，获得比只用有标签样本训练得到的回归器性能更优的回归器，弥补有标签样本的数据量不足的缺陷，其中标签取连续值。 半监督聚类 (Semi-supervised clustering)：在有标签样本的信息帮助下，获得比只用无标签的样本得到的结果更好的簇，提高聚类的精度。 半监督降维 (Semi-supervised dimensionality reduction)：在有标签的样本的信息帮助下找到高维输入数据的低维结构，同时保持原始高维数据和成对约束 (Pair-wise constraints) 的结构不变，即在高维空间中满足正约束 (Must-link constraints) 的样例在低维空间中相距很近，在高维空间中满足负约束 (Cannot-link constraints) 的样例在低维空间中距离很远。 开启 Machine Learning 学习之旅！]]></content>
       <categories>
         <category>机器学习</category>
