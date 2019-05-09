@@ -799,7 +799,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-10 00:19:41" itemprop="dateModified" datetime="2019-05-10T00:19:41+08:00">2019-05-10</time>
+                <time title="修改时间：2019-05-10 00:23:11" itemprop="dateModified" datetime="2019-05-10T00:23:11+08:00">2019-05-10</time>
               
             
           </span>
@@ -880,235 +880,20 @@
 
       
         
-          
-            <h2 id="知识讲解"><a class="header-anchor" href="#知识讲解">✎</a>知识讲解</h2>
+          <h2 id="知识讲解"><a class="header-anchor" href="#知识讲解">✎</a>知识讲解</h2>
 <h3 id="正则表达式"><a class="header-anchor" href="#正则表达式">✎</a>正则表达式</h3>
 <p><strong>正则表达式 (Regular Expressions)</strong> 是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个规定字符串。</p>
 <h4 id="基本语法"><a class="header-anchor" href="#基本语法">✎</a>基本语法</h4>
 <p>析取：字符集合<code>[]</code>，范围表示<code>[A-Z]</code></p>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[wW]oodchuck</td>
-<td>Woodchuck, woodchuck</td>
-</tr>
-<tr>
-<td>[1234567890]</td>
-<td>任一数字</td>
-</tr>
-<tr>
-<td>[A-Z]</td>
-<td>任一大写字母</td>
-</tr>
-<tr>
-<td>[a-z]</td>
-<td>任一小写字母</td>
-</tr>
-<tr>
-<td>[0-9]</td>
-<td>任一数字</td>
-</tr>
-</tbody>
-</table>
-<p>否定析取：<code>[^Ss]</code> (仅当&quot;^&quot;出现在字符集合模式<code>[]</code>的第一个字符时)</p>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[^A-Z]</td>
-<td>任一非大写字母</td>
-</tr>
-<tr>
-<td>[^Ss]</td>
-<td>既不是&quot;S&quot;也不是&quot;s&quot;</td>
-</tr>
-<tr>
-<td>a^b</td>
-<td>与字段相同</td>
-</tr>
-</tbody>
-</table>
-<p>其他析取：析取中的“|”，对匹配条件进行逻辑“或”运算</p>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>groundhog|woodchuck</td>
-<td>groundhog 或 woodchuck</td>
-</tr>
-<tr>
-<td>a|b|c</td>
-<td>= [abc]</td>
-</tr>
-</tbody>
-</table>
-<p>特殊字符：? * + . ^ $（要表示这些特殊符号本身，需要在其前加一个<code>\</code>进行转义）</p>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Matches</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>？</td>
-<td>匹配前面的子表达式一次或零次</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式任意次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除&quot;\n&quot;和&quot;\r&quot;之外的任意单个字符</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配输入字行首，如果设置了RegExp对象的Multiline属性，也匹配“\n”或“\r”之后的位置</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配输入字行尾，如果设置了RegExp对象的Multiline属性，也匹配“\n”或“\r”之前的位置</td>
-</tr>
-</tbody>
-</table>
-<h4 id="举例"><a class="header-anchor" href="#举例">✎</a>举例</h4>
-<p>例子：找到文本中“the”的所有实例。</p>
-<p>错解：</p>
-<ul>
-<li>
-<p><code>[tT]he</code> ，错误返回其他词汇，即匹配本不应被匹配的字符串（<strong>the</strong>re，<strong>the</strong>n，o<strong>the</strong>r）</p>
-<p>错误类型：False positives（误报 Type I）</p>
-</li>
-<li>
-<p><code>the</code> ，遗漏了大写字母开头的实例，即没有匹配到本应被匹配的字符串（<strong>The</strong>）</p>
-<p>错误类型：False negatives（漏报 Type II）</p>
-</li>
-</ul>
-<p>处理错误：降低应用程序中的错误率通常涉及两种对立的工作：</p>
-<ul>
-<li>提高准确性或精确度（最小化False positives）</li>
-<li>提高覆盖率或召回度（最小化False negatives）</li>
-</ul>
-<h4 id="总结"><a class="header-anchor" href="#总结">✎</a>总结</h4>
-<ul>
-<li>正则表达式起着至关重要的作用。对于任何的文本处理来说，正则表达式通常是复杂序列的首选模型；</li>
-<li>对于许多困难的任务，我们使用机器学习分类器，但是正则表达式将作为分类器中的特征值，在获取一般化时非常有用。</li>
-</ul>
-<h3 id="字标记"><a class="header-anchor" href="#字标记">✎</a>字标记</h3>
-<h4 id="文本归一化"><a class="header-anchor" href="#文本归一化">✎</a>文本归一化</h4>
-<p>每个NLP任务都需要做文本归一化（Text Normalization）处理：</p>
-<ol>
-<li>在运行文本中对单词进行分段、标记</li>
-<li>规范字格式</li>
-<li>在运行文本中对句子进行分段</li>
-</ol>
-<h4 id="分词"><a class="header-anchor" href="#分词">✎</a>分词</h4>
-<p>问题：语言问题。不同语言差异较大，很难统一算法。</p>
-<p>中文分词：</p>
-<ul>
-<li>
-<p>中文词汇是由汉字组成的，汉字通常含有一个音节和一个语素，每个词汇平均由2.4个汉字组成；</p>
-</li>
-<li>
-<p>标准基线分割算法：最大匹配算法（也称贪心算法 - Greedy） ，对英语不适用</p>
-<p>给定一个中文词汇表和一个字符串</p>
-<ol>
-<li>在字符串开头启动指针</li>
-<li>在字典中找到与从指针开始的字符串匹配的最长单词</li>
-<li>将指针移动至越过此单词</li>
-<li>跳至第 2 步重复此过程</li>
-</ol>
-</li>
-</ul>
-<h3 id="词语规范化"><a class="header-anchor" href="#词语规范化">✎</a>词语规范化</h3>
-<ul>
-<li><strong>规范化 (Normalization)</strong>：信息检索需要规范化用语，索引文本 &amp; 查询字词必须有相同的格式。</li>
-<li><strong>大写转换 (Case folding)</strong>：由于用户倾向于使用小写字母，经常将所有字母转换为小写；对于情感分析，MT，信息提取等，字母的大小写转换是非常有帮助的。</li>
-<li><strong>词形还原 (Lemmatization)</strong>：将变形或变体形式转换为基本形式（如：am, are, is → be，car, cars, car’s, cars’ → car）。</li>
-</ul>
-<p><strong>语素</strong>：</p>
-<ul>
-<li>构成单词的微小而有意义的单元</li>
-<li>词干（stems）：核心含义单位</li>
-<li>词缀（Affixes）：依附于词干上的单元，通常具有语法功能</li>
-</ul>
-<h3 id="词干提取"><a class="header-anchor" href="#词干提取">✎</a>词干提取</h3>
-<blockquote>
-<p>定义：在信息检索中，将词语缩短至其词干形式。词干提取即是对词缀的粗略删减。</p>
-<p>e.g. automate(s), automatic, automation all reduced to automat.</p>
-</blockquote>
-<p>词干提取算法 (Porter’s algorithm)</p>
-<h3 id="句子划分与决策树"><a class="header-anchor" href="#句子划分与决策树">✎</a>句子划分与决策树</h3>
-<p>句子划分（Sentence Segmentation）</p>
-<ul>
-<li>！，？是相对明确的标点符号</li>
-<li>句号“.”的含义模糊
-<ul>
-<li>句子边界</li>
-<li>缩写表示（Dr.）</li>
-<li>数学表示（.02%）</li>
-</ul>
-</li>
-<li>构建二元分类器
-<ul>
-<li>Looks at a “.”</li>
-<li>Decides EndOfSentence / NotEndOfSentence</li>
-<li>Classifiers: hand-written rules, regular expressions, or machine-learning</li>
-</ul>
-</li>
-</ul>
-<p>决策树（Decision Tree） ，可用来确定单词是否为句子结尾。</p>
-<p>决策树的实现：</p>
-<ul>
-<li>决策树仅仅是 if-then-else 的语句，有趣的是其选择功能；</li>
-<li>难以手动建立决策树结构：手动构建至适用于简单的特征及领域；对于数字要素，选择每个阈值太难，相反，结构通常通过机器学习从训练语料库中得出。</li>
-</ul>
-<h2 id="练习"><a class="header-anchor" href="#练习">✎</a>练习</h2>
-<hr>
-<p>提取“hello world”</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">key = <span class="string">r"&lt;html&gt;&lt;body&gt;&lt;h1&gt;hello world&lt;h1&gt;&lt;/body&gt;&lt;/html&gt;"</span></span><br><span class="line">p = <span class="string">r"(?&lt;=&lt;h1&gt;).+?(?=&lt;h1&gt;)"</span></span><br><span class="line">pattern = re.compile(p)</span><br><span class="line">matcher = re.search(pattern, key)</span><br><span class="line">print(matcher.group(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
-<p>输出：<code>hello world</code></p>
-<hr>
-<p>匹配第一个“python”</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">key = <span class="string">r"javapythonhtmlvhdlpython"</span></span><br><span class="line">p = <span class="string">r"python"</span></span><br><span class="line">pattern = re.compile(p)</span><br><span class="line">matcher = re.search(pattern, key)</span><br><span class="line">print(matcher)</span><br></pre></td></tr></table></figure>
-<p>输出：<code>&lt;re.Match object; span=(4, 10), match='python'&gt;</code></p>
-<hr>
-<p>找到所有一级标题</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">key = <span class="string">r"&lt;h1&gt;hello world&lt;h1&gt;"</span> <span class="comment">#源文本</span></span><br><span class="line">p = <span class="string">r"&lt;h1&gt;.+&lt;h1&gt;"</span> <span class="comment">#正则表达式规则</span></span><br><span class="line">pattern = re.compile(p)</span><br><span class="line">print(pattern.findall(key))</span><br></pre></td></tr></table></figure>
-<p>输出：<code>['&lt;h1&gt;hello world&lt;h1&gt;']</code></p>
-<hr>
-<p>匹配“http://”和“https://”</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">key = <span class="string">r"http://www.poshoaiu.com and https://iusdhbfw.com"</span> <span class="comment">#源文本</span></span><br><span class="line">p = <span class="string">r"https?://"</span> <span class="comment">#正则表达式规则</span></span><br><span class="line">pattern = re.compile(p)</span><br><span class="line">print(pattern.findall(key))</span><br></pre></td></tr></table></figure>
-<p>输出：<code>['http://', 'https://']</code></p>
-<hr>
-<p>多字符匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">key1 = <span class="string">r"12345&lt;hTml&gt;hello&lt;/Html&gt;67890"</span></span><br><span class="line">p1 = <span class="string">r"&lt;[Hh][Tt][Mm][Ll]&gt;.+?&lt;/[Hh][Tt][Mm][Ll]&gt;"</span></span><br><span class="line">pattern1 = re.compile(p1)</span><br><span class="line">print(pattern1.findall(key1))</span><br><span class="line"></span><br><span class="line">key2 = <span class="string">r"mat cat pat"</span></span><br><span class="line">p2 = <span class="string">r"[^p]at"</span></span><br><span class="line">pattern2 = re.compile(p2)</span><br><span class="line">print(pattern2.findall(key2))</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&apos;&lt;hTml&gt;hello&lt;/Html&gt;&apos;]</span><br><span class="line">[&apos;mat&apos;, &apos;cat&apos;]</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/06/nlp-course-notes/nlp-note2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1208,12 +993,24 @@
                 
               
 
-              <time title="创建时间：2019-05-06 09:28:04 / 修改时间：11:15:12" itemprop="dateCreated datePublished" datetime="2019-05-06T09:28:04+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 09:28:04" itemprop="dateCreated datePublished" datetime="2019-05-06T09:28:04+08:00">2019-05-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-10 00:22:48" itemprop="dateModified" datetime="2019-05-10T00:22:48+08:00">2019-05-10</time>
               
             
           </span>
@@ -1294,8 +1091,7 @@
 
       
         
-          
-            <h2 id="从语言到信息"><a class="header-anchor" href="#从语言到信息">✎</a>从语言到信息</h2>
+          <h2 id="从语言到信息"><a class="header-anchor" href="#从语言到信息">✎</a>从语言到信息</h2>
 <h3 id="从语言中提取信息"><a class="header-anchor" href="#从语言中提取信息">✎</a>从语言中提取信息</h3>
 <h4 id="含义"><a class="header-anchor" href="#含义">✎</a>含义</h4>
 <p>从以下内容自动提取句意和结构：</p>
@@ -1304,98 +1100,15 @@
 <li>社交网络</li>
 <li>基因组序列</li>
 </ul>
-<h4 id="应用实例"><a class="header-anchor" href="#应用实例">✎</a>应用实例</h4>
-<ul>
-<li>信息检索：每天6,586,013,574次网络搜索（估算），基于文本的信息检索很可能成为当今软件中最常用的功能 ；</li>
-<li>文本分类：对短信、新闻进行分类；</li>
-<li>提取情绪和社会语义：很多的意思都隐藏在<strong>内涵</strong>中（内涵：除单词的字面意思或主要意义之外，由其引发的想法或感觉。），通常称提取内涵为<strong>情感分析</strong>。如对餐厅评价进行情感分析，判断差评 or 好评；</li>
-<li>计算生物学：比较基因序列；（序列比较的关键之处：寻找基因、决定功能、揭示进化进程。这也是拼写检查的工作方式。Hint：编辑距离算法）</li>
-<li>社交网络：由您的亲朋好友组成的网络离线或在线关系。可以计算这些网络的属性，从中提取信息。（社交关系的结构：人作为节点，链接代表关系的建立）</li>
-</ul>
-<h3 id="通过语言与人类交互"><a class="header-anchor" href="#通过语言与人类交互">✎</a>通过语言与人类交互</h3>
-<ul>
-<li>对话系统/聊天机器人：Siri，Google assistant，Facebook M，Cortana等</li>
-<li>推荐系统：网易云音乐推荐，豆瓣电影、图书推荐等</li>
-<li>问答系统</li>
-</ul>
-<h2 id="nlp-概述"><a class="header-anchor" href="#nlp-概述">✎</a>NLP 概述</h2>
-<h3 id="背景"><a class="header-anchor" href="#背景">✎</a>背景</h3>
-<p>为什么语言解释难以实现？</p>
-<ol>
-<li>语言有歧义</li>
-<li>存在非标准语言</li>
-<li>会不断产生新词</li>
-</ol>
-<p>如何在这些问题上取得进展？</p>
-<ul>
-<li>需要什么工具？
-<ul>
-<li>关于语言和世界的知识</li>
-<li>一种结合各种知识体系的方法</li>
-</ul>
-</li>
-<li>怎么做？
-<ul>
-<li>从语言数据建立概率模型</li>
-</ul>
-</li>
-<li>模型与算法
-<ul>
-<li>正则表达式 (Regular Expressions)</li>
-<li>编辑距离与对齐方式</li>
-<li>词嵌入（针对词义的向量/神经网络模型）</li>
-<li>机器学习分类器（朴素贝叶斯/线性回归/神经网络）</li>
-<li>推荐算法（协同过滤）</li>
-<li>网络算法 (PageRank)</li>
-<li>语言学工具（情绪词典 – Sentiment lexicons）</li>
-</ul>
-</li>
-</ul>
-<h3 id="什么是-nlp？"><a class="header-anchor" href="#什么是-nlp？">✎</a>什么是 NLP？</h3>
-<blockquote>
-<p>**自然语言处理（NLP）**是计算机科学、 人工智能、 语言学的交集领域。</p>
-</blockquote>
-<p>NLP的目标是让计算机处理或者“理解”自然语言，从而执行譬如预约、买东西、问题回答等有用的任务。但是充分理解和表达语言的含义（甚至定义语言）是件有难度的事情。达到完美的语言理解被称为 AI-complete<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>问题。</p>
-<h3 id="nlp-层级"><a class="header-anchor" href="#nlp-层级">✎</a>NLP 层级</h3>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/nlp-levels.png" alt="NLP层级"></p>
-<h3 id="nlp应用"><a class="header-anchor" href="#nlp应用">✎</a>NLP应用</h3>
-<p>从简单到复杂</p>
-<ul>
-<li>拼写检查、关键字搜索、同义词查找</li>
-<li>从网站提取信息，如产品价格、日期、地点、人员或公司名称</li>
-<li>分类：阅读教材，判断长文本的积极/消极的情绪</li>
-<li>机器翻译</li>
-<li>口语对话系统</li>
-<li>复杂的问答系统</li>
-</ul>
-<p>NLP在工业上的应用越发广泛</p>
-<ul>
-<li>搜索（书面或口头上）</li>
-<li>在线广告匹配</li>
-<li>自动/辅助翻译</li>
-<li>市场或财务/交易的情绪分析</li>
-<li>语音识别</li>
-<li>聊天机器人/对话代理：自动化客户支持、控制设备、订购货物</li>
-</ul>
-<h3 id="为什么nlp是一门困难的学科？"><a class="header-anchor" href="#为什么nlp是一门困难的学科？">✎</a>为什么NLP是一门困难的学科？</h3>
-<ul>
-<li>表现、学习和使用语言/情景/世界/视觉知识的复杂性</li>
-<li>人类语言具有不明确性（与编程和其他正式语言不同）</li>
-<li>人类语言的解释取决于现实世界、常识和语境知识</li>
-</ul>
-<h3 id="深度学习在nlp中的应用"><a class="header-anchor" href="#深度学习在nlp中的应用">✎</a>深度学习在NLP中的应用</h3>
-<p>深度 NLP = 深度学习 + NLP</p>
-<p>即结合自然语言处理的思想和目标，采用表示学习和深度学习的方法来解决这些问题 。</p>
-<p>深度 NLP 在各个层级上的表示方式都为向量。</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>在人工智能领域，最困难的问题被非正式地称为 AI-complete 或 AI-hard。——维基百科 <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/06/nlp-course-notes/nlp-note1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
