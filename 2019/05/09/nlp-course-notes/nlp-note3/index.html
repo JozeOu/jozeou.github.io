@@ -96,18 +96,27 @@
 
 
 
-  <meta name="description" content="记录学习经历">
+  <meta name="description" content="✎知识讲解 ✎定义 如何衡量两个字符串有多相似？   拼写纠正：用户键入“graffe”，以下哪个最接近？  graf graft grail giraffe">
 <meta name="keywords" content="nlp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NLP 笔记（三）：">
+<meta property="og:title" content="NLP 笔记（三）：最短编辑距离">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/nlp-course-notes/nlp-note3/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="记录学习经历">
+<meta property="og:description" content="✎知识讲解 ✎定义 如何衡量两个字符串有多相似？   拼写纠正：用户键入“graffe”，以下哪个最接近？  graf graft grail giraffe">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T15:46:37.500Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-8.png">
+<meta property="og:updated_time" content="2019-05-10T08:22:12.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NLP 笔记（三）：">
-<meta name="twitter:description" content="记录学习经历">
+<meta name="twitter:title" content="NLP 笔记（三）：最短编辑距离">
+<meta name="twitter:description" content="✎知识讲解 ✎定义 如何衡量两个字符串有多相似？   拼写纠正：用户键入“graffe”，以下哪个最接近？  graf graft grail giraffe">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-1.png">
 
 
 
@@ -125,7 +134,7 @@
   };
 </script>
 
-  <title>NLP 笔记（三）： | Joze's Blog</title>
+  <title>NLP 笔记（三）：最短编辑距离 | Joze's Blog</title>
   
 
 
@@ -401,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NLP 笔记（三）：
+          <h1 class="post-title" itemprop="name headline">NLP 笔记（三）：最短编辑距离
 
               
             
@@ -427,12 +436,24 @@
                 
               
 
-              <time title="创建时间：2019-05-09 23:45:21 / 修改时间：23:46:37" itemprop="dateCreated datePublished" datetime="2019-05-09T23:45:21+08:00">2019-05-09</time>
+              <time title="创建时间：2019-05-09 23:45:21" itemprop="dateCreated datePublished" datetime="2019-05-09T23:45:21+08:00">2019-05-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-10 16:22:12" itemprop="dateModified" datetime="2019-05-10T16:22:12+08:00">2019-05-10</time>
               
             
           </span>
@@ -478,7 +499,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">1.6k</span>
               
 
               
@@ -512,7 +533,103 @@
       
 
       
-        
+        <h2 id="知识讲解"><a class="header-anchor" href="#知识讲解">✎</a>知识讲解</h2>
+<h3 id="定义"><a class="header-anchor" href="#定义">✎</a>定义</h3>
+<p>如何衡量两个字符串有多相似？</p>
+<ul>
+<li>
+<p>拼写纠正：用户键入“graffe”，以下哪个最接近？</p>
+<ul>
+<li>graf</li>
+<li>graft</li>
+<li>grail</li>
+<li>giraffe</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>
+<p>计算生物学：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-1.png" alt></p>
+</li>
+</ul>
+<hr>
+<p><strong>编辑距离（Edit Distance）</strong>：两个字符串之间的最短编辑距离是指将一个字符串变换为另一个需要的编辑操作（插入(Insertion)，删除(Deletion)，替换(Substitution)）的最小数量。</p>
+<p>例如：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-2.png" alt></p>
+<ul>
+<li>如果每个操作的代价值为1，则此两个字符串之间的距离为5；</li>
+<li>如果替换操作的代价值为2，则距离为8。</li>
+</ul>
+<hr>
+<p>如何得到最短编辑距离？</p>
+<p>尝试：搜索从起始字符串到最终字符串的路径（编辑序列）：</p>
+<ul>
+<li>初始状态：需转换的词语</li>
+<li>操作：插入，删除，替换</li>
+<li>目标状态：需得到的词语</li>
+<li>路径代价：（即我们需尽量缩短的）编辑数量</li>
+</ul>
+<p>这样，求最短编辑距离相当于搜索，但是所有编辑序列的空间很大，我们无法穷举！而且许多不同路径以相同的状态结束，因此无需跟踪所有这些路径，只需求出到最终状态的最短路径即可。</p>
+<hr>
+<p>符号定义：对于两个字符串</p>
+<ul>
+<li><code>X</code> of length n</li>
+<li><code>Y</code> of length m</li>
+</ul>
+<p>我们定义 <code>D(i, j)</code> 为 <code>X[1...i]</code>（X 的前 i 个字符）和 <code>Y[1...j]</code>（Y 的前 j 个字符）间的编辑距离。</p>
+<p>因此 X 和 Y 间的编辑距离为 <code>D(n, m)</code>。</p>
+<h3 id="计算最短编辑距离"><a class="header-anchor" href="#计算最短编辑距离">✎</a>计算最短编辑距离</h3>
+<p>方法：<strong>动态规划（Dynamic Programming）</strong></p>
+<h4 id="动态规划"><a class="header-anchor" href="#动态规划">✎</a>动态规划</h4>
+<ul>
+<li>对 D(n, m) 的表格计算（tabular computation），通过把原问题分解为相对简单的子问题的方式来求解；</li>
+<li>特点：自底向上（Bottom-up）
+<ul>
+<li>对于较小的 i, j 计算 D(i, j)</li>
+<li>对于较大的 i, j ，以之前的计算结果为基础得出 D(i, j)，0 &lt; i &lt; n，0 &lt; j &lt; m</li>
+</ul>
+</li>
+</ul>
+<h4 id="算法实现"><a class="header-anchor" href="#算法实现">✎</a>算法实现</h4>
+<ul>
+<li>
+<p>初始化：D(i, 0) = i，D(0, j) = j</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-3.png" alt></p>
+</li>
+<li>
+<p>递推关系：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-4.png" alt></p>
+</li>
+<li>
+<p>终止：D(n, m) is distance</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-5.png" alt></p>
+</li>
+</ul>
+<h3 id="计算对齐的回溯"><a class="header-anchor" href="#计算对齐的回溯">✎</a>计算对齐的回溯</h3>
+<p><strong>计算对齐（Computing alignments）</strong>：我们经常需要将两个字符串的每个字符彼此对齐，通过保持“回溯（backtrace）”来做到这点。</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-6.png" alt></p>
+<p>回溯得到两个字符串和它们之间的对齐：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-7.png" alt></p>
+<p>Performance：</p>
+<ul>
+<li>Time：O(nm)</li>
+<li>Space：O(nm)</li>
+<li>Backtrace：O(n+m)</li>
+</ul>
+<h3 id="加权最短编辑距离"><a class="header-anchor" href="#加权最短编辑距离">✎</a>加权最短编辑距离</h3>
+<p>为什么要在计算中加权？</p>
+<ul>
+<li>拼写纠正：有些字母比其他字母更容易输入错</li>
+<li>生物学：某些类型的删除或插入更有可能发生</li>
+</ul>
+<p>算法实现：</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/nlp-course-notes/3-8.png" alt></p>
+<h2 id="练习"><a class="header-anchor" href="#练习">✎</a>练习</h2>
+<p>动态规划实现求解最小编辑距离。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minEditDistance</span><span class="params">(word1, word2)</span>:</span></span><br><span class="line">	m = len(word1) + <span class="number">1</span></span><br><span class="line">	n = len(word2) + <span class="number">1</span></span><br><span class="line">	dp = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n)] <span class="keyword">for</span> j <span class="keyword">in</span> range(m)]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		dp[<span class="number">0</span>][i] = i</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">		dp[i][<span class="number">0</span>] = i</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, n):</span><br><span class="line">			<span class="keyword">if</span> word1[i<span class="number">-1</span>] == word2[j<span class="number">-1</span>]:</span><br><span class="line">				dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				dp[i][j] = min(dp[i][j<span class="number">-1</span>]+<span class="number">1</span>, dp[i<span class="number">-1</span>][j]+<span class="number">1</span>, dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> dp[m<span class="number">-1</span>][n<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">word1 = <span class="string">"intention"</span></span><br><span class="line">word2 = <span class="string">"execution"</span></span><br><span class="line">print(minEditDistance(word1, word2))</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -600,8 +717,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -740,6 +866,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识讲解"><span class="nav-number">1.</span> <span class="nav-text">✎知识讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">✎定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算最短编辑距离"><span class="nav-number">1.2.</span> <span class="nav-text">✎计算最短编辑距离</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态规划"><span class="nav-number">1.2.1.</span> <span class="nav-text">✎动态规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法实现"><span class="nav-number">1.2.2.</span> <span class="nav-text">✎算法实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算对齐的回溯"><span class="nav-number">1.3.</span> <span class="nav-text">✎计算对齐的回溯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加权最短编辑距离"><span class="nav-number">1.4.</span> <span class="nav-text">✎加权最短编辑距离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">2.</span> <span class="nav-text">✎练习</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -766,7 +909,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">21k</span>
   
 
   
@@ -775,7 +918,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
   
 </div>
 
