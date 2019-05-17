@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Spring 笔记（二）：IoC 概念详解]]></title>
+    <url>%2F2019%2F05%2F17%2Fspring%2Fspring-note2%2F</url>
+    <content type="text"><![CDATA[✎程序的耦合 耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。 在软件工程中， 耦合指的就是就是对象之间的依赖性。对象之间的耦合越高，维护成本越高。因此对象的设计应使类和构件之间的耦合最小。 软件设计中通常用耦合度和内聚度作为衡量模块独立程度的标准。 划分模块的一个准则就是高内聚，低耦合。 ✎分类 内容耦合：当一个模块直接修改或操作另一个模块的数据时，或一个模块不通过正常入口而转入另一个模块时，这样的耦合被称为内容耦合。内容耦合是最高程度的耦合，应该避免使用之。 公共耦合：两个或两个以上的模块共同引用一个全局数据项，这种耦合被称为公共耦合。在具有大量公共耦合的结构中，确定究竟是哪个模块给全局变量赋了一个特定的值是十分困难的。 外部耦合：一组模块都访问同一全局简单变量而不是同一全局数据结构，而且不是通过参数表传递该全局变量的信息，则称之为外部耦合。 控制耦合：一个模块通过接口向另一个模块传递一个控制信号，接受信号的模块根据信号值而进行适当的动作，这种耦合被称为控制耦合。 标记耦合：若一个模块 A 通过接口向两个模块 B 和 C 传递一个公共参数，那么称模块 B 和 C 之间存在一个标记耦合。 数据耦合：模块之间通过参数来传递数据，那么被称为数据耦合。数据耦合是最低的一种耦合形式，系统中一般都存在这种类型的耦合，因为为了完成一些有意义的功能，往往需要将某些模块的输出数据作为另一些模块的输入数据。 非直接耦合：两个模块之间没有直接关系，它们之间的联系完全是通过主模块的控制和调用来实现的。 总结：耦合是影响软件复杂程度和设计质量的一个重要因素，在设计上我们应采用以下原则：如果模块间必须存在耦合，就尽量使用数据耦合，少用控制耦合，限制公共耦合的范围，尽量避免使用内容耦合。 ✎内聚与耦合 内聚标志一个模块内各个元素彼此结合的紧密程度，它是信息隐蔽和局部化概念的自然扩展。 内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系。 耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂程度、进入或访问一个模块的点以及通过接口的数据。 程序讲究的是低耦合，高内聚。就是同一个模块内的各个元素之间要高度紧密，但是各个模块之间的相互依存度却要不那么紧密。 内聚和耦合是密切相关的，同其他模块存在高耦合的模块意味着低内聚，而高内聚的模块意味着该模块同其他模块之间是低耦合。在进行软件设计时，应力争做到高内聚，低耦合。 ✎例子 在实际开发中，有些依赖关系是必须的，有些依赖关系可以通过优化代码来解除的。应该做到 编译期不依赖，运行时才依赖。 比如： 123public class AccountServiceImpl implements AccountService &#123; private AccountDao accountDao = new AccountDaoImpl();&#125; 上面的代码表示：业务层调用持久层，并且此时业务层在依赖持久层的接口和实现类。如果此时没有持久层实现类，编译将不能通过。 这种编译期依赖关系，应该在我们开发中杜绝。 我们需要优化代码解决。 再比如： 早期我们的 JDBC 操作，注册驱动时，我们为什么不使用 DriverManager 的 register 方法，而是采用 Class.forName 的方式？ 123456789public static void main(String[] args) throws Exception &#123; //1.注册驱动 //DriverManager.registerDriver(new com.mysql.jdbc.Driver()); Class.forName("com.mysql.jdbc.Driver"); //2.获取连接 //3.获取预处理 sql 语句对象 //4.获取结果集 //5.遍历结果集&#125; 原因就是：我们的类依赖了数据库的具体驱动类（MySQL） ，如果这时候更换了数据库品牌（比如 Oracle） ，需要修改源码来更新数据库驱动。这显然不利于程序扩展和维护。 ✎解耦的思路 使用反射来创建对象，而避免使用 new 关键字； 通过读取配置文件来获取要创建的对象全限定类名。 例如： 使用 JDBC 时，是通过反射来注册驱动的，代码如下： 1Class.forName("com.mysql.jdbc.Driver"); // 此处只是一个字符串 此时的好处是，类中不再依赖具体的驱动类，此时就算删除 mysql 的驱动 jar 包，依然可以编译（运行就不要想了，没有驱动不可能运行成功的） 。 同时，也产生了一个新的问题， mysql 驱动的全限定类名字符串是在 java 类中写死的（硬编码），一旦要改还是要修改源码。解决这个问题也很简单，使用配置文件配置。 ✎工厂模式解耦 在实际开发中我们可以把三层的对象都使用配置文件配置起来，当启动服务器应用加载的时候， 让一个类中的方法通过读取配置文件，把这些对象创建出来并存起来。在接下来的使用的时候，直接拿过来用就好了。 那么，这个读取配置文件， 创建和获取三层对象的类就是工厂。 上述思路仍存在两个问题： 存哪去？ 分析：由于有很多对象，肯定要找个集合来存。这时候有 Map 和 List 供选择。到底选 Map 还是 List 就看我们有没有查找需求。有查找需求，选 Map。 答案：在应用加载时，创建一个 Map，用于存放三层对象。我们把这个 Map 称之为容器。 什么是工厂？ 工厂就是负责给我们从容器中获取指定对象的类。这时候我们获取对象的方式发生了改变。 原来：获取对象时，都是采用 new 的方式。 是主动的； 现在：获取对象时，是跟工厂要，然后由工厂为我们查找或者创建对象。 是被动的。 这种被动接收的方式获取对象的思想就是控制反转，它是 spring 框架的核心之一。 ✎控制反转 **控制反转（Inversion of Control，IoC）**是一种设计思想，简单说就是获取 Java 对象的过程从之前 new 出来，变成了从 Spring 工厂获取（由 Spring 来负责控制对象的生命周期和对象之间的关系），控制反转，转移的就是获取对象的主动权/控制权。 作用：削减计算机程序的耦合，设计出松耦合、更优良的程序。 实现原理：通过配置文件将需要生产的对象的信息进行定义，在运行时，当对象 A 需要对象 B，Spring 工厂会通过反射生成配置文件定义的类对应的对象。 ✎依赖注入 **依赖注入（Dependency Injection，DI）**是 spring 框架核心 IoC 的具体实现。即在运行时，动态地将某个依赖关系注入到程序中，从而向某个对象提供它所需要的其他对象。 IoC 和 DI 的关系：同一个概念的不同角度描述。]]></content>
+      <categories>
+        <category>Spring框架</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spring 笔记（一）：Spring 概述]]></title>
+    <url>%2F2019%2F05%2F16%2Fspring%2Fspring-note1%2F</url>
+    <content type="text"><![CDATA[✎Spring 是什么 Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control，反转控制）和 AOP（Aspect Oriented Programming，面向切面编程）为内核，提供了展现层 Spring MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的 Java EE 企业应用开源框架。 ✎Spring 的发展历程 1997 年，IBM 提出了 EJB 的思想 1998 年，SUN 制定开发标准规范 EJB1.0 1999 年， EJB1.1 发布；2001 年，EJB2.0 发布；2003 年，EJB2.1 发布；2006 年， EJB3.0 发布 Rod Johnson（spring 之父） Expert One-to-One J2EE Design and Development (2002) 阐述了 J2EE 使用 EJB 开发设计的优点及解决方案 Expert One-to-One J2EE Development without EJB (2004)，阐述了 J2EE 开发不使用 EJB 的解决方式（Spring 雏形） 2017 年 9 月份发布了 spring 的最新版本 spring 5.0 通用版（GA） ✎Spring 的优势 方便解耦，简化开发：通过 Spring 提供的 IoC 容器，可以将对象间的依赖关系交由 Spring 进行控制，避免硬编码所造成的过度程序耦合。用户也不必再为单例模式类、属性文件解析等这些很底层的需求编写代码，可以更专注于上层的应用。 AOP 编程的支持：通过 Spring 的 AOP 功能，方便进行面向切面的编程，许多不容易用传统 OOP 实现的功能可以通过 AOP 轻松应付。 声明式事务的支持：可以将我们从单调烦闷的事务管理代码中解脱出来，通过声明式方式灵活的进行事务的管理，提高开发效率和质量。 方便程序的测试：可以用非容器依赖的编程方式进行几乎所有的测试工作，测试不再是昂贵的操作，而是随手可做的事情。 方便集成各种优秀框架：Spring 可以降低各种框架的使用难度，提供了对各种优秀框架（Struts、Hibernate、Hessian、 Quartz等）的直接支持。 降低 JavaEE API 的使用难度：Spring 对 JavaEE API（如 JDBC、 JavaMail、远程调用等）进行了薄薄的封装层，使这些 API 的使用难度大为降低。 Java 源码是经典学习范例：Spring 的源代码设计精妙、结构清晰、匠心独用，处处体现着大师对 Java 设计模式灵活运用以及对 Java 技术的高深造诣。它的源代码无疑是 Java 技术的最佳实践的范例。 ✎Spring 体系结构]]></content>
+      <categories>
+        <category>Spring框架</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JDBC 详解]]></title>
+    <url>%2F2019%2F05%2F16%2Fjava%2Fjdbc%2F</url>
+    <content type="text"><![CDATA[✎JDBC 概述 **JDBC（Java DataBase Connectivity，java 数据库连接）**是一种用于执行 SQL 语句的 Java API。JDBC 是 Java 访问数据库的标准规范，可以为不同的关系型数据库提供统一访问，它由一组用 Java 语言编写的接口和类组成。 JDBC 需要连接驱动，驱动是两个设备要进行通信，需满足一定通信数据格式，数据格式由设备提供商规定。设备提供商为设备提供驱动软件，通过软件可以与该设备进行通信。 ✎JDBC 原理 Java提供访问数据库规范称为JDBC，而生产厂商提供规范的实现类称为驱动。 JDBC 是接口，驱动是接口的实现，没有驱动将无法完成数据库连接，从而不能操作数据库！每个数据库厂商都需要提供自己的驱动，用来连接自己公司的数据库，也就是说驱动一般都由数据库生成厂商提供。 ✎JDBC 入门案例 ✎准备数据 12345678910111213141516171819# 创建数据库create database mydb;# 使用数据库use mydb;# 创建表create table account( id int primary key auto_increment, name varchar(20), money float);# 初始化数据insert into account(name,money)values ('aaa',1000), ('bbb',2000), ('ccc',3000); ✎添加依赖 在 Maven 项目中添加 mysql 连接依赖 1234567&lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.16&lt;/version&gt; &lt;/dependency&gt;&lt;/dependencies&gt; ✎实现 注意：mysql 8 与之前版本的操作有所不同。 12345678910111213141516171819202122232425262728public static void main(String[] args) throws ClassNotFoundException, SQLException &#123; // 1.注册驱动，使用反射 // Class.forName("com.mysql.jdbc.Driver"); // mysql 8 Class.forName("com.mysql.cj.jdbc.Driver"); // 2.获取连接 // String url = "jdbc://mysql://localhost:3306/mydb"; // mysql 8 String url = "jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"; Connection conn = DriverManager.getConnection(url,"root", "1234"); // 3.获取语句执行对象 Statement statement = conn.createStatement(); // 4.执行 SQL 语句 ResultSet rs = statement.executeQuery("select * from account"); // 5.处理结果集 while (rs.next()) &#123; // 获得一行数据 int id = rs.getInt("id"); String name = rs.getString("name"); float money = rs.getFloat("money") System.out.println(id + "." + name + " has $" + money); &#125; // 6.释放资源 rs.close(); statement.close(); conn.close();&#125; ✎API 详解 ✎注册驱动 代码：Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;); JDBC 规范定义驱动接口：java.sql.Driver mysql 8 驱动包提供了实现类：com.mysql.cj.jdbc.Driver 使用 Class.forName() 加载一个使用字符串描述的驱动类。 如果使用 Class.forName() 将类加载到内存，该类的静态代码将自动执行。通过查询 com.mysql.jdbc.Driver 源码，我们发现 Driver 类“自动”将自己进行注册。 12345678910public class Driver extends NonRegisteringDriver implements java.sql.Driver &#123; static &#123; try &#123; java.sql.DriverManager.registerDriver(new Driver()); &#125; catch (SQLException E) &#123; throw new RuntimeException("Can't register driver!"); &#125; &#125; ……&#125; 另一种方法：DriverManager 工具类提供注册驱动的方法 registerDriver()，方法的形参是 java.sql.Driver，因此可以通过语句 DriverManager.registerDriver(new com.mysql.jdbc.Driver());进行注册；但不推荐使用，因为存在以下不足： 程序耦合； 硬编码，后期不易于程序扩展和维护； 驱动被注册两次。 ✎获取连接 代码：Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC”, ”root”, ”1234”); 获取连接需要方法 DriverManager.getConnection(url, username, password)，三个参数分别表示： url：需要连接数据库的位置（地址） user：用户名 password：密码 ✎获取执行对象 代码：Statement statement = conn.createStatement(); ✎执行 SQL 语句 常用方法： int executeUpdate(String sql); - 执行 insert, update, delete 语句 ResultSet executeQuery(String sql); - 执行 select 语句 boolean execute(String sql); - 执行 select 语句时返回 true，执行其他的语句返回 false ✎处理结果集 ResultSet 实际上就是一张二维的表格，我们可以调用其 boolean next(); 方法指向下一行记录；再使用 T getT(int colIndex / String colLabel) 方法（列下标从1开始）来获取指定列的数据； 12rs.next(); // 指向下一行rs.getInt(1); // 获取该行第一列的整型数据 常用方法： Object getObject(int colIndex / String colLabel) - 获得任意对象 String getString(int colIndex / String colLabel) - 获得字符串 int getInt(int colIndex / String colLabel) - 获得整型 double getDouble(int colIndex / String colLabel) - 获得双精度浮点型 ✎释放资源 与 IO 流一样，使用后的资源需要关闭！关闭的顺序是 先得到的后关闭，后得到的先关闭。 ✎JDBC 工具类 对数据库进行”增删改查“都需要先”获取数据库连接“，可以封装一个工具类 JdbcUtils，提供获取连接对象的方法，从而实现代码复用。 12345678910111213141516171819202122232425public class JdbcUtils &#123; private static String driver = "com.mysql.cj.jdbc.Driver"; private static String url = "jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"; private static String username = "root"; private static String password = "8203843"; static &#123; try &#123; // 注册驱动 Class.forName(driver); &#125; catch (Exception e) &#123; throw new RuntimeException(e); &#125; &#125; /** * 获取连接 * @return 数据库的连接 * @throws SQLException */ public static Connection getConnection() throws SQLException &#123; Connection conn = DriverManager.getConnection(url, username, password); return conn; &#125;&#125; ✎JDBC 增删改查 1234567891011121314151617181920212223242526272829public static void main(String[] args) throws SQLException &#123; // 使用JDBC 工具类获取数据库连接 Connection conn = JdbcUtils.getConnection(); // 获取语句执行对象 Statement statement = conn.createStatement(); // 增 int r = statement.executeUpdate("insert into account(name,money) values('ddd',500)"); System.out.println("插入操作返回值：" + r); // 删 r = statement.executeUpdate("delete from account where id = 1"); System.out.println("删除操作返回值：" + r); // 改 r = statement.executeUpdate("update account set name='cat' where id = 3"); System.out.println("修改操作返回值：" + r); // 查 ResultSet rs = statement.executeQuery("select * from account where id = 3"); if(rs.next())&#123; int id = rs.getInt("id"); String name = rs.getString("name"); float money = rs.getFloat("money"); System.out.println(id + "." + name + " has $" + money); &#125; else&#123; System.out.println("没有数据"); &#125; // 释放资源 rs.close(); statement.close(); conn.close();&#125; ✎预处理对象 SQL注入问题：用户输入的内容作为了SQL语句语法的一部分，改变了原有SQL真正的意义。 例如登录案例 SQL 语句如下: 1select * from 用户表 where name=账号 and password=密码; 此时，当用户输入正确的账号与密码后，查询到了信息则让用户登录；但是当用户输入的账号为 xxx，密码为 'xxx' or 'a'='a'时，则真正执行的 SQL 语句变为： 1select * from 用户表 where name='xxx' and password='xxx' or 'a'='a'; 此时，上述查询语句 where 后条件始终为真，会查询出数据库中全部记录的，用户就直接登录成功了，这便是SQL注入问题。 如何解决？使用预处理对象 PreparedStatement PreparedStatement 处理的每条 sql 语句中所有的实际参数都必须使用占位符 ? 来替换。 1234567891011121314151617public static void main(String[] args) throws SQLException &#123; // 使用JDBC 工具类获取数据库连接 Connection conn = JdbcUtils.getConnection(); // 含占位符的 sql 语句 String sql = "update account set name=? where id = ?"; // 获取预处理对象 PreparedStatement psmt = conn.prepareStatement(sql); // 设置实际参数，序号从1开始 psmt.setString(1, "dog"); psmt.setInt(2, 4); // 执行 int r = psmt.executeUpdate(); System.out.println("修改操作返回值：" + r); // 释放资源 psmt.close(); conn.close();&#125;]]></content>
+      <categories>
+        <category>Java学习</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>JDBC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[NLP 笔记（三）：最短编辑距离]]></title>
     <url>%2F2019%2F05%2F09%2Fnlp-course-notes%2Fnlp-note3%2F</url>
     <content type="text"><![CDATA[✎知识讲解 ✎定义 如何衡量两个字符串有多相似？ 拼写纠正：用户键入“graffe”，以下哪个最接近？ graf graft grail giraffe 计算生物学： 编辑距离（Edit Distance）：两个字符串之间的最短编辑距离是指将一个字符串变换为另一个需要的编辑操作（插入(Insertion)，删除(Deletion)，替换(Substitution)）的最小数量。 例如： 如果每个操作的代价值为1，则此两个字符串之间的距离为5； 如果替换操作的代价值为2，则距离为8。 如何得到最短编辑距离？ 尝试：搜索从起始字符串到最终字符串的路径（编辑序列）： 初始状态：需转换的词语 操作：插入，删除，替换 目标状态：需得到的词语 路径代价：（即我们需尽量缩短的）编辑数量 这样，求最短编辑距离相当于搜索，但是所有编辑序列的空间很大，我们无法穷举！而且许多不同路径以相同的状态结束，因此无需跟踪所有这些路径，只需求出到最终状态的最短路径即可。 符号定义：对于两个字符串 X of length n Y of length m 我们定义 D(i, j) 为 X[1...i]（X 的前 i 个字符）和 Y[1...j]（Y 的前 j 个字符）间的编辑距离。 因此 X 和 Y 间的编辑距离为 D(n, m)。 ✎计算最短编辑距离 方法：动态规划（Dynamic Programming） ✎动态规划 对 D(n, m) 的表格计算（tabular computation），通过把原问题分解为相对简单的子问题的方式来求解； 特点：自底向上（Bottom-up） 对于较小的 i, j 计算 D(i, j) 对于较大的 i, j ，以之前的计算结果为基础得出 D(i, j)，0 &lt; i &lt; n，0 &lt; j &lt; m ✎算法实现 初始化：D(i, 0) = i，D(0, j) = j 递推关系： 终止：D(n, m) is distance ✎计算对齐的回溯 计算对齐（Computing alignments）：我们经常需要将两个字符串的每个字符彼此对齐，通过保持“回溯（backtrace）”来做到这点。 回溯得到两个字符串和它们之间的对齐： Performance： Time：O(nm) Space：O(nm) Backtrace：O(n+m) ✎加权最短编辑距离 为什么要在计算中加权？ 拼写纠正：有些字母比其他字母更容易输入错 生物学：某些类型的删除或插入更有可能发生 算法实现： ✎练习 动态规划实现求解最小编辑距离。 12345678910111213141516171819202122def minEditDistance(word1, word2): m = len(word1) + 1 n = len(word2) + 1 dp = [[0 for i in range(n)] for j in range(m)] for i in range(n): dp[0][i] = i for i in range(m): dp[i][0] = i for i in range(1, m): for j in range(1, n): if word1[i-1] == word2[j-1]: dp[i][j] = dp[i-1][j-1] else: dp[i][j] = min(dp[i][j-1]+1, dp[i-1][j]+1, dp[i-1][j-1]+2) return dp[m-1][n-1]word1 = "intention"word2 = "execution"print(minEditDistance(word1, word2))]]></content>
@@ -75,9 +111,9 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>idea</tag>
         <tag>git</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -88,10 +124,10 @@
         <category>IDEA 配置</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>idea</tag>
         <tag>maven</tag>
         <tag>webapp</tag>
+        <tag>tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -102,8 +138,8 @@
         <category>Java开发环境搭建</category>
       </categories>
       <tags>
-        <tag>tutorial</tag>
         <tag>idea</tag>
+        <tag>tutorial</tag>
         <tag>java</tag>
       </tags>
   </entry>
@@ -116,8 +152,8 @@
       </categories>
       <tags>
         <tag>tutorial</tag>
-        <tag>jdk</tag>
         <tag>java</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -139,8 +175,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -151,9 +187,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>tutorial</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -164,9 +200,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>tutorial</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>

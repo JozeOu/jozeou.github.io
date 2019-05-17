@@ -383,6 +383,682 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/spring/spring-note2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ruizhi Ou">
+      <meta itemprop="description" content="记录学习经历">
+      <meta itemprop="image" content="/images/curry.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joze's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/17/spring/spring-note2/" class="post-title-link" itemprop="url">Spring 笔记（二）：IoC 概念详解</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-17 17:21:46 / 修改时间：22:44:53" itemprop="dateCreated datePublished" datetime="2019-05-17T17:21:46+08:00">2019-05-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring框架/" itemprop="url" rel="index"><span itemprop="name">Spring框架</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="程序的耦合"><a class="header-anchor" href="#程序的耦合">✎</a>程序的耦合</h2>
+<ul>
+<li><strong>耦合性(Coupling)</strong>，也叫<strong>耦合度</strong>，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。</li>
+<li>在软件工程中， 耦合指的就是就是对象之间的依赖性。对象之间的耦合越高，维护成本越高。因此对象的设计应使类和构件之间的耦合最小。 软件设计中通常用<strong>耦合度</strong>和<strong>内聚度</strong>作为衡量模块独立程度的标准。 划分模块的一个准则就是<strong>高内聚，低耦合</strong>。</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/17/spring/spring-note2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/spring/spring-note1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ruizhi Ou">
+      <meta itemprop="description" content="记录学习经历">
+      <meta itemprop="image" content="/images/curry.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joze's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/spring/spring-note1/" class="post-title-link" itemprop="url">Spring 笔记（一）：Spring 概述</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 23:16:19 / 修改时间：23:50:46" itemprop="dateCreated datePublished" datetime="2019-05-16T23:16:19+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring框架/" itemprop="url" rel="index"><span itemprop="name">Spring框架</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="spring-是什么"><a class="header-anchor" href="#spring-是什么">✎</a>Spring 是什么</h2>
+<p>Spring 是分层的 Java SE/EE 应用 <strong>full-stack</strong> 轻量级开源框架，以 IoC（Inverse Of Control，反转控制）和 AOP（Aspect Oriented Programming，面向切面编程）为内核，提供了展现层 Spring MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的 Java EE 企业应用开源框架。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/16/spring/spring-note1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/java/jdbc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ruizhi Ou">
+      <meta itemprop="description" content="记录学习经历">
+      <meta itemprop="image" content="/images/curry.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joze's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/16/java/jdbc/" class="post-title-link" itemprop="url">JDBC 详解</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-16 23:03:41" itemprop="dateCreated datePublished" datetime="2019-05-16T23:03:41+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-17 22:48:04" itemprop="dateModified" datetime="2019-05-17T22:48:04+08:00">2019-05-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java学习/" itemprop="url" rel="index"><span itemprop="name">Java学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jdbc-概述"><a class="header-anchor" href="#jdbc-概述">✎</a>JDBC 概述</h2>
+<ul>
+<li>**JDBC（Java DataBase Connectivity，java 数据库连接）**是一种用于执行 SQL 语句的 Java API。JDBC 是 Java 访问数据库的标准规范，可以为不同的关系型数据库提供统一访问，它由一组用 Java 语言编写的接口和类组成。</li>
+<li>JDBC 需要连接驱动，驱动是两个设备要进行通信，需满足一定通信数据格式，数据格式由设备提供商规定。设备提供商为设备提供驱动软件，通过软件可以与该设备进行通信。</li>
+</ul>
+<h2 id="jdbc-原理"><a class="header-anchor" href="#jdbc-原理">✎</a>JDBC 原理</h2>
+<p>Java提供访问数据库规范称为JDBC，而生产厂商提供规范的实现类称为驱动。</p>
+<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/java/jdbc/01.png" alt></p>
+<p>JDBC 是接口，驱动是接口的实现，没有驱动将无法完成数据库连接，从而不能操作数据库！每个数据库厂商都需要提供自己的驱动，用来连接自己公司的数据库，也就是说驱动一般都由数据库生成厂商提供。</p>
+<h2 id="jdbc-入门案例"><a class="header-anchor" href="#jdbc-入门案例">✎</a>JDBC 入门案例</h2>
+<h3 id="准备数据"><a class="header-anchor" href="#准备数据">✎</a>准备数据</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> mydb;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用数据库</span></span><br><span class="line"><span class="keyword">use</span> mydb;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">account</span>(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">	money <span class="built_in">float</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">account</span>(<span class="keyword">name</span>,money)</span><br><span class="line"><span class="keyword">values</span></span><br><span class="line">       (<span class="string">'aaa'</span>,<span class="number">1000</span>),</span><br><span class="line">       (<span class="string">'bbb'</span>,<span class="number">2000</span>),</span><br><span class="line">       (<span class="string">'ccc'</span>,<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="添加依赖"><a class="header-anchor" href="#添加依赖">✎</a>添加依赖</h3>
+<p>在 Maven 项目中添加 mysql 连接依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a class="header-anchor" href="#实现">✎</a>实现</h3>
+<p>注意：mysql 8 与之前版本的操作有所不同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    	<span class="keyword">throws</span> ClassNotFoundException, SQLException </span>&#123;</span><br><span class="line">    <span class="comment">// 1.注册驱动，使用反射</span></span><br><span class="line">    <span class="comment">// Class.forName("com.mysql.jdbc.Driver");</span></span><br><span class="line">    <span class="comment">// mysql 8</span></span><br><span class="line">    Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">    <span class="comment">// 2.获取连接</span></span><br><span class="line">    <span class="comment">// String url = "jdbc://mysql://localhost:3306/mydb";</span></span><br><span class="line">    <span class="comment">// mysql 8</span></span><br><span class="line">    String url = <span class="string">"jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line">    Connection conn = DriverManager.getConnection(url,<span class="string">"root"</span>, <span class="string">"1234"</span>);</span><br><span class="line">    <span class="comment">// 3.获取语句执行对象</span></span><br><span class="line">    Statement statement = conn.createStatement();</span><br><span class="line">    <span class="comment">// 4.执行 SQL 语句</span></span><br><span class="line">    ResultSet rs = statement.executeQuery(<span class="string">"select * from account"</span>);</span><br><span class="line">    <span class="comment">// 5.处理结果集</span></span><br><span class="line">    <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">        <span class="comment">// 获得一行数据</span></span><br><span class="line">        <span class="keyword">int</span> id = rs.getInt(<span class="string">"id"</span>);</span><br><span class="line">        String name = rs.getString(<span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">float</span> money = rs.getFloat(<span class="string">"money"</span>)</span><br><span class="line">            System.out.println(id + <span class="string">"."</span> + name + <span class="string">" has $"</span> + money);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 6.释放资源</span></span><br><span class="line">    rs.close();</span><br><span class="line">    statement.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="api-详解"><a class="header-anchor" href="#api-详解">✎</a>API 详解</h3>
+<h4 id="注册驱动"><a class="header-anchor" href="#注册驱动">✎</a>注册驱动</h4>
+<ul>
+<li>代码：<code>Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);</code></li>
+<li>JDBC 规范定义驱动接口：<code>java.sql.Driver</code></li>
+<li>mysql 8 驱动包提供了实现类：<code>com.mysql.cj.jdbc.Driver</code></li>
+<li>使用 <code>Class.forName()</code> 加载一个使用字符串描述的驱动类。</li>
+</ul>
+<p>如果使用 <code>Class.forName()</code> 将类加载到内存，该类的静态代码将自动执行。通过查询 <code>com.mysql.jdbc.Driver</code> 源码，我们发现 Driver 类“自动”将自己进行注册。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> <span class="keyword">extends</span> <span class="title">NonRegisteringDriver</span> <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">sql</span>.<span class="title">Driver</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">   			java.sql.DriverManager.registerDriver(<span class="keyword">new</span> Driver());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException E) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Can't register driver!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一种方法：<code>DriverManager</code> 工具类提供注册驱动的方法 <code>registerDriver()</code>，方法的形参是 <code>java.sql.Driver</code>，因此可以通过语句 <code>DriverManager.registerDriver(new com.mysql.jdbc.Driver());</code>进行注册；但不推荐使用，因为存在以下不足：</p>
+<ol>
+<li>程序耦合；</li>
+<li>硬编码，后期不易于程序扩展和维护；</li>
+<li>驱动被注册两次。</li>
+</ol>
+<h4 id="获取连接"><a class="header-anchor" href="#获取连接">✎</a>获取连接</h4>
+<ul>
+<li>代码：<code>Connection conn = DriverManager.getConnection(“jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC”, ”root”, ”1234”);</code></li>
+<li>获取连接需要方法 <code>DriverManager.getConnection(url, username, password)</code>，三个参数分别表示：
+<ul>
+<li><strong>url</strong>：需要连接数据库的位置（地址）</li>
+<li><strong>user</strong>：用户名</li>
+<li><strong>password</strong>：密码</li>
+</ul>
+</li>
+</ul>
+<h4 id="获取执行对象"><a class="header-anchor" href="#获取执行对象">✎</a>获取执行对象</h4>
+<p>代码：<code>Statement statement = conn.createStatement();</code></p>
+<h4 id="执行-sql-语句"><a class="header-anchor" href="#执行-sql-语句">✎</a>执行 SQL 语句</h4>
+<p>常用方法：</p>
+<ul>
+<li><code>int executeUpdate(String sql);</code> - 执行 insert, update, delete 语句</li>
+<li><code>ResultSet executeQuery(String sql);</code> - 执行 select 语句</li>
+<li><code>boolean execute(String sql);</code> - 执行 select 语句时返回 true，执行其他的语句返回 false</li>
+</ul>
+<h4 id="处理结果集"><a class="header-anchor" href="#处理结果集">✎</a>处理结果集</h4>
+<p><strong>ResultSet</strong> 实际上就是一张二维的表格，我们可以调用其 <code>boolean next();</code> 方法指向下一行记录；再使用 <code>T getT(int colIndex / String colLabel)</code> 方法（列下标从1开始）来获取指定列的数据；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rs.next(); <span class="comment">// 指向下一行</span></span><br><span class="line">rs.getInt(<span class="number">1</span>); <span class="comment">// 获取该行第一列的整型数据</span></span><br></pre></td></tr></table></figure>
+<p>常用方法：</p>
+<ul>
+<li><code>Object getObject(int colIndex / String colLabel)</code>  -  获得任意对象</li>
+<li><code>String getString(int colIndex / String colLabel)</code> - 获得字符串</li>
+<li><code>int getInt(int colIndex / String colLabel)</code> - 获得整型</li>
+<li><code>double getDouble(int colIndex / String colLabel)</code> - 获得双精度浮点型</li>
+</ul>
+<h4 id="释放资源"><a class="header-anchor" href="#释放资源">✎</a>释放资源</h4>
+<p>与 IO 流一样，使用后的资源需要关闭！关闭的顺序是 <strong>先得到的后关闭，后得到的先关闭</strong>。</p>
+<h2 id="jdbc-工具类"><a class="header-anchor" href="#jdbc-工具类">✎</a>JDBC 工具类</h2>
+<p>对数据库进行”增删改查“都需要先”获取数据库连接“，可以封装一个工具类  JdbcUtils，提供获取连接对象的方法，从而实现代码复用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcUtils</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"com.mysql.cj.jdbc.Driver"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String username = <span class="string">"root"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String password = <span class="string">"8203843"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 注册驱动</span></span><br><span class="line">            Class.forName(driver);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取连接</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 数据库的连接</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection conn = DriverManager.getConnection(url, username, password);</span><br><span class="line">        <span class="keyword">return</span> conn;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="jdbc-增删改查"><a class="header-anchor" href="#jdbc-增删改查">✎</a>JDBC 增删改查</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="comment">// 使用JDBC 工具类获取数据库连接</span></span><br><span class="line">    Connection conn = JdbcUtils.getConnection();</span><br><span class="line">    <span class="comment">// 获取语句执行对象</span></span><br><span class="line">    Statement statement = conn.createStatement();</span><br><span class="line">    <span class="comment">// 增</span></span><br><span class="line">    <span class="keyword">int</span> r = statement.executeUpdate(<span class="string">"insert into account(name,money) values('ddd',500)"</span>);</span><br><span class="line">    System.out.println(<span class="string">"插入操作返回值："</span> + r);</span><br><span class="line">    <span class="comment">// 删</span></span><br><span class="line">    r = statement.executeUpdate(<span class="string">"delete from account where id = 1"</span>);</span><br><span class="line">    System.out.println(<span class="string">"删除操作返回值："</span> + r);</span><br><span class="line">    <span class="comment">// 改</span></span><br><span class="line">    r = statement.executeUpdate(<span class="string">"update account set name='cat' where id = 3"</span>);</span><br><span class="line">    System.out.println(<span class="string">"修改操作返回值："</span> + r);</span><br><span class="line">    <span class="comment">// 查</span></span><br><span class="line">    ResultSet rs = statement.executeQuery(<span class="string">"select * from account where id = 3"</span>);</span><br><span class="line">    <span class="keyword">if</span>(rs.next())&#123;</span><br><span class="line">        <span class="keyword">int</span> id = rs.getInt(<span class="string">"id"</span>);</span><br><span class="line">        String name = rs.getString(<span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">float</span> money = rs.getFloat(<span class="string">"money"</span>);</span><br><span class="line">        System.out.println(id + <span class="string">"."</span> + name + <span class="string">" has $"</span> + money);</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"没有数据"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 释放资源</span></span><br><span class="line">    rs.close();</span><br><span class="line">    statement.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="预处理对象"><a class="header-anchor" href="#预处理对象">✎</a>预处理对象</h2>
+<p><strong>SQL注入问题</strong>：用户输入的内容作为了SQL语句语法的一部分，改变了原有SQL真正的意义。</p>
+<p>例如登录案例 SQL 语句如下:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 用户表 <span class="keyword">where</span> <span class="keyword">name</span>=账号 <span class="keyword">and</span> <span class="keyword">password</span>=密码;</span><br></pre></td></tr></table></figure>
+<p>此时，当用户输入正确的账号与密码后，查询到了信息则让用户登录；但是当用户输入的账号为 <code>xxx</code>，密码为 <code>'xxx' or 'a'='a'</code>时，则真正执行的 SQL 语句变为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 用户表 <span class="keyword">where</span> <span class="keyword">name</span>=<span class="string">'xxx'</span> <span class="keyword">and</span> <span class="keyword">password</span>=<span class="string">'xxx'</span> <span class="keyword">or</span> <span class="string">'a'</span>=<span class="string">'a'</span>;</span><br></pre></td></tr></table></figure>
+<p>此时，上述查询语句 where 后条件始终为真，会查询出数据库中全部记录的，用户就直接登录成功了，这便是SQL注入问题。</p>
+<p>如何解决？使用预处理对象 PreparedStatement</p>
+<p><strong>PreparedStatement</strong> 处理的每条 sql 语句中所有的实际参数都必须使用占位符 ? 来替换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="comment">// 使用JDBC 工具类获取数据库连接</span></span><br><span class="line">    Connection conn = JdbcUtils.getConnection();</span><br><span class="line">    <span class="comment">// 含占位符的 sql 语句</span></span><br><span class="line">    String sql = <span class="string">"update account set name=? where id = ?"</span>;</span><br><span class="line">    <span class="comment">// 获取预处理对象</span></span><br><span class="line">    PreparedStatement psmt = conn.prepareStatement(sql);</span><br><span class="line">    <span class="comment">// 设置实际参数，序号从1开始</span></span><br><span class="line">    psmt.setString(<span class="number">1</span>, <span class="string">"dog"</span>);</span><br><span class="line">    psmt.setInt(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="comment">// 执行</span></span><br><span class="line">    <span class="keyword">int</span> r = psmt.executeUpdate();</span><br><span class="line">    System.out.println(<span class="string">"修改操作返回值："</span> + r);</span><br><span class="line">    <span class="comment">// 释放资源</span></span><br><span class="line">    psmt.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/nlp-course-notes/nlp-note3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1819,634 +2495,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/idea/idea-add-maven/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ruizhi Ou">
-      <meta itemprop="description" content="记录学习经历">
-      <meta itemprop="image" content="/images/curry.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joze's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/26/idea/idea-add-maven/" class="post-title-link" itemprop="url">IntelliJ IDEA 创建 Maven Web App 项目</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-26 20:11:37" itemprop="dateCreated datePublished" datetime="2019-04-26T20:11:37+08:00">2019-04-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-03 21:55:54" itemprop="dateModified" datetime="2019-05-03T21:55:54+08:00">2019-05-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IDEA-配置/" itemprop="url" rel="index"><span itemprop="name">IDEA 配置</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">235</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="安装-maven"><a class="header-anchor" href="#安装-maven">✎</a>安装 Maven</h2>
-<h3 id="下载-maven"><a class="header-anchor" href="#下载-maven">✎</a>下载 Maven</h3>
-<p>在哪下载？ <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven 官网</a></p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-maven/01.png" alt></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/26/idea/idea-add-maven/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/idea/intellij-idea-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ruizhi Ou">
-      <meta itemprop="description" content="记录学习经历">
-      <meta itemprop="image" content="/images/curry.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joze's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/21/idea/intellij-idea-tutorial/" class="post-title-link" itemprop="url">IntelliJ IDEA 安装及使用教程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-21 09:56:26" itemprop="dateCreated datePublished" datetime="2019-04-21T09:56:26+08:00">2019-04-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-03 22:58:45" itemprop="dateModified" datetime="2019-05-03T22:58:45+08:00">2019-05-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java开发环境搭建/" itemprop="url" rel="index"><span itemprop="name">Java开发环境搭建</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a class="header-anchor" href="#前言">✎</a>前言</h2>
-<p>IntelliJ IDEA（简称 IDEA），是 Java 语言开发的集成环境，IDEA 在业界被公认为最好的 Java 开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE 支持、各类版本工具（Git、SVN、GitHub 等）、JUnit、CVS 整合、代码分析和创新的 GUI 设计等方面的功能都值得称道。</p>
-<p>来开始领略 IntelliJ IDEA 的魅力吧！</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/21/idea/intellij-idea-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/java/jdk-install-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ruizhi Ou">
-      <meta itemprop="description" content="记录学习经历">
-      <meta itemprop="image" content="/images/curry.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joze's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/20/java/jdk-install-tutorial/" class="post-title-link" itemprop="url">Win10 安装 JDK 及配置环境变量</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-20 17:02:37" itemprop="dateCreated datePublished" datetime="2019-04-20T17:02:37+08:00">2019-04-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-21 09:59:55" itemprop="dateModified" datetime="2019-04-21T09:59:55+08:00">2019-04-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java开发环境搭建/" itemprop="url" rel="index"><span itemprop="name">Java开发环境搭建</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">718</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="下载-jdk"><a class="header-anchor" href="#下载-jdk">✎</a>下载 JDK</h2>
-<p>下载地址：<a href="https://www.oracle.com/technetwork/java/javaee/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Oracle 官网</a></p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/jdk-install-tutorial/01.png" alt></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/20/java/jdk-install-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2495,7 +2543,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2524,7 +2572,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2567,7 +2617,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2643,7 +2697,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">32k</span>
   
 
   
@@ -2652,7 +2706,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
   
 </div>
 
