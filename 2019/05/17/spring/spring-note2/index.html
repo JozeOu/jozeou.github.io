@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
+  <meta name="description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过接口传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
 <meta name="keywords" content="java,spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 笔记（二）：IoC 概念详解">
 <meta property="og:url" content="http://yoursite.com/2019/05/17/spring/spring-note2/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
+<meta property="og:description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过接口传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-17T14:44:53.260Z">
+<meta property="og:updated_time" content="2019-05-18T02:28:49.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 笔记（二）：IoC 概念详解">
-<meta name="twitter:description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
+<meta name="twitter:description" content="✎程序的耦合  耦合性(Coupling)，也叫耦合度，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过接口传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。">
 
 
 
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="创建时间：2019-05-17 17:21:46 / 修改时间：22:44:53" itemprop="dateCreated datePublished" datetime="2019-05-17T17:21:46+08:00">2019-05-17</time>
+              <time title="创建时间：2019-05-17 17:21:46" itemprop="dateCreated datePublished" datetime="2019-05-17T17:21:46+08:00">2019-05-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-18 10:28:49" itemprop="dateModified" datetime="2019-05-18T10:28:49+08:00">2019-05-18</time>
               
             
           </span>
@@ -514,7 +526,7 @@
       
         <h2 id="程序的耦合"><a class="header-anchor" href="#程序的耦合">✎</a>程序的耦合</h2>
 <ul>
-<li><strong>耦合性(Coupling)</strong>，也叫<strong>耦合度</strong>，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过界面传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。</li>
+<li><strong>耦合性(Coupling)</strong>，也叫<strong>耦合度</strong>，是对模块间关联程度的度量。耦合的强弱取决于模块间接口的复杂性、调用模块的方式以及通过接口传送数据的多少。模块间的耦合度是指模块之间的依赖关系，包括控制关系、调用关系、数据传递关系。模块间联系越多，其耦合性越强，同时表明其独立性越差( 降低耦合性，可以提高其独立性)。 耦合性存在于各个领域，而非软件设计中独有的，但是我们只讨论软件工程中的耦合。</li>
 <li>在软件工程中， 耦合指的就是就是对象之间的依赖性。对象之间的耦合越高，维护成本越高。因此对象的设计应使类和构件之间的耦合最小。 软件设计中通常用<strong>耦合度</strong>和<strong>内聚度</strong>作为衡量模块独立程度的标准。 划分模块的一个准则就是<strong>高内聚，低耦合</strong>。</li>
 </ul>
 <a id="more"></a>
@@ -579,9 +591,9 @@
 <p>这种被动接收的方式获取对象的思想就是控制反转，它是 spring 框架的核心之一。</p>
 <h2 id="控制反转"><a class="header-anchor" href="#控制反转">✎</a>控制反转</h2>
 <ul>
-<li>**控制反转（Inversion of Control，IoC）**是一种设计思想，简单说就是获取 Java 对象的过程从之前 new 出来，变成了从 Spring 工厂获取（由 Spring 来负责控制对象的生命周期和对象之间的关系），控制反转，转移的就是获取对象的主动权/控制权。</li>
+<li>**控制反转（Inversion of Control，IoC）**是一种设计思想，简单说就是创建 Java 对象的过程从之前 new 出来，变成了由 Spring 工厂创建出来（由 Spring 来负责控制对象的生命周期和对象之间的关系），控制反转，转移的就是创建对象的主动权/控制权。</li>
 <li>作用：削减计算机程序的耦合，设计出松耦合、更优良的程序。</li>
-<li>实现原理：通过配置文件将需要生产的对象的信息进行定义，在运行时，当对象 A 需要对象 B，Spring 工厂会通过反射生成配置文件定义的类对应的对象。</li>
+<li>实现原理：通过配置文件将需要创建的对象的信息进行定义，在运行时，当对象 A 需要对象 B，Spring 工厂会通过反射生成配置文件定义的类对应的对象。</li>
 </ul>
 <h2 id="依赖注入"><a class="header-anchor" href="#依赖注入">✎</a>依赖注入</h2>
 <ul>
@@ -635,6 +647,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/18/spring/spring-note3/" rel="prev" title="Spring 笔记（三）：使用 spring 的 IOC 解决程序耦合">
+                Spring 笔记（三）：使用 spring 的 IOC 解决程序耦合 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -705,7 +721,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -876,7 +892,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">35k</span>
   
 
   
@@ -885,7 +901,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">32 分钟</span>
   
 </div>
 
