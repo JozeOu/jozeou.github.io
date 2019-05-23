@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[NLP 笔记（五）：分词与词性标注]]></title>
     <url>%2F2019%2F05%2F23%2Fnlp-course-notes%2Fnlp-note5%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[✎知识讲解 ✎概述 词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义 不同语言的词法分析 曲折语（如，英语、德语、俄语等）：用词的形态变化表示语法关系，一个形态成分可以表示若干种不同的语法意义，词根和词干与语词的附加成分结合紧密。词法分析：词的形态变化分析，即词的形态还原 分析语（孤立语）（如，汉语）：分词 黏着语（如，日语）：分词＋形态还原 ✎英语的形态分析 基本任务：单词识别+形态还原 ✎英语单词的识别 例： Mr.Green is a good English teacher. I’ll see prof.Zhang home after the concert. 识别结果： Mr./Green/ is/ a/ good/ English/ teacher/. I/ will/ see/ prof./Zhang/ home/ after/ the/ concert/. 英语中常见的特殊形式的单词识别： prof., Mr., Ms. Co., Oct. 等放入词典 Let’s / let’s → let + us {it, that, this, there, what, where}'s → {it, that, this, there, what, where}+ is I’am → I + am can’t → can + not; won’t → will + not {is, was, are, were, has, have, had}n’ t → {is, was, are, were, has, have, had} + not X’ve → X + have; X’ll → X + will; X’re → X + are he’s → he + is / has；she’s → she + is / has X’d Y → X + would (如果 Y 为单词原型 ) → X + had (如果 Y 为过去分词 ) ✎英语单词的形态还原 有规律变化单词的形态还原 -ed 结尾的动词过去式 -ing结尾的现在分词 -s 结尾的动词单数第三人称 –er/est 结尾的形容词比较级、最高级 动词、名词、形容词、副词不规则变化单词的形态还原 …… ✎汉语分词 自动分词是汉语句法分析的基础 主要问题：汉语中什么是词？ 单字词？词与短语？如，花草，湖边，房顶，鸭蛋，小鸟，担水，一层，翻过。。。 ✎歧义切分字段 组合型歧义 (Combinatorial ambiguities) 可以理解为汉字串 AB 满足 A, B, AB 同时为词 123门把手弄坏了门/ 把/ 手/ 弄/ 坏/ 了/门/ 把手/ 弄/ 坏/ 了/ 123他将来我校讲学他/ 将/ 来/ 我/ 校/ 讲学他/ 将来/ 我/ 校/ 讲学 “将来”、“现在”、“才能”、“学生会”等，都是组合型歧义字段 交集型歧义 (Overlapped ambiguities) 可以理解为汉字串 AXB 满足 AX, XB 同时为词 1234中国人为了实现自己的梦想中国/ 人为/ 了/ 实现/ 自己/ 的/ 梦想中国人/ 为了/ 实现/ 自己/ 的/ 梦想中/ 国人/ 为了/ 实现/ 自己/ 的/ 梦想 “大学生”、“研究生物”、“从小学起”、“为人民工作”、“中国产品质量”、“部分居民生活水平”等等，都是交集型歧义字段 ✎汉语自动分词基本规则 未登录词的识别 未登录词即没有被收录在分词词表中但必须切分出来的词，包括各类专有名词（人名、地名、企业名等）、缩写词、新增词汇等等。文本中的人名、地名、组织结构名等命名实体通常是不可能在词典中穷尽列出的。对于这些词的识别，称为命名实体识别（Named Entity Recongition）。 合并原则 语义或语类上无法由组合成分直接得到的应该合并为一个分词单位。比如：好吃、好看、好听、进出口、或多或少、六月、邮递员、现代化… 切分原则 有明显分隔符标记的应该切分 12上、 下课 → 上/ 下课洗了个澡 → 洗/ 了/ 个/ 澡 内部结构复杂、合并起来过于冗长的词尽量切分 123喜欢/ 不/ 喜欢、 参加/ 不/ 参加看/ 清楚、 讨论/ 完毕太空/ 计划/ 室、 塑料/ 制品/ 业 ✎汉语自动分词基本算法 有词典切分 / 无词典切分 基于规则分析方法 / 基于统计方法 ✎基于规则分析方法 最大匹配法（Maximum Matching, MM）**，属于有词典切分，机械切分 按匹配的方向分为： 正向最大匹配算法 (Forward MM, FMM) 逆向最大匹配算法 (Backward MM, BMM) 双向最大匹配算法（Bi-directional MM） FMM算法思想 假定词典中最长的单词长度为m，从左至右取待分词的前m个字符串作为匹配字段。 查找字典，如果字典中存在和匹配字段相同的词语，则匹配成功，否则去掉匹配字段的最后一个字符重新匹配 重复以上过程直到匹配全部完成 BMM是FMM的逆向思维，从右至左，匹配不成功，将匹配字段的最前一个字符去掉重新匹配 双向最大匹配法是将FMM和BMM的到的结果进行比较，从而决定正确的分词方法。定义的匹配规则如下： 如果正反向匹配算法得到的结果相同，我们则认为分词正确，返回任意一个结果即可； 如果正反向匹配算法得到的结果不同，选择分词数量较少的结果。 优点： 程序简单易行，开发周期短； 仅需要很少的语言资源（词表），不需要任何词法、句法、语义资源。 缺点： 切分歧义消解的能力差； 切分正确率不高，一般在95％左右。 最少分词法（最短路径法） 基于词典，每个句子将生成一个有向无环图, 每个字作为图的一个定点, 边代表可能的分词 若赋给相应的边长一个权值（该权值可以是常数，也可以是构成的词的属性值），然后针对该切分图，在起点到终点的所有路径中，求出最短路径，该最短路径上包含的词就是该句子的切分结果。 优点： 切分原则符合汉语自身规律； 需要的语言资源（词表）也不多 。 缺点： 对许多歧义字段难以区分，最短路径有多条时，选择最终的输出结果缺乏应有的标准 字串长度较大和选取的最短路径数增大时，长度相同的路径数急剧增加，选择最终正确的结果困难越来越大 ✎基于统计分析方法 每个字都是词的最小单元，如果相连的字在不同的文本中出现的频率越多，这就越有可能是一个词。因此我们可以用相邻字出现的频率来衡量组词的可能性，当频率高于某个阈值时，我们可以认为这些字可能会构成一个词。 主要统计模型： N 元文法模型（N-gram），隐马尔可夫模型（HiddenMarkov Model，HMM），最大熵模型（ME），条件随机场（Conditional Random Fields，CRF）等 优点： 减少了很多手工标注知识库（语义词典、规则等）的工作 在训练语料规模足够大和覆盖领域足够多的情况下，可以获得较高的切分正确率 缺点： 训练语料的规模和覆盖领域不好把握 计算量较大 ✎词性标注 词性（part-of-speech, POS）标注（tagging）的主要任务是消除词性兼类歧义。 基本方法： 基于规则的词性标注方法（根据词性及词语结构定义规则） 基于统计模型的词性标注方法（n-gram, HMM…） 规则和统计方法相结合的词性标注方法 基于有限状态变换机的词性标注方法 基于神经网络的词性标注方法 ✎分词与词性标注结果评测 评测指标： 正确率(Correct ratio/Precision, C): 测试结果中正确结果的个数占系统所有输出结果的比例 召回率(找回率) (Recall ratio, R): 测试结果中正确结果的个数占标准答案总数的比例 测度值(F-Measure): 正确率与找回率的综合值 $$ F-measure=\frac{(\beta ^{2}+1)\times C\times R}{\beta ^{2}\times C+R}\times 100% 一般地，\beta=1 $$ 分词算法评价例子： 句子：我是中国人 分词：我是/ 中国人 答案：我/ 是/ 中国人 识别出的个体总数：2，正确识别的个体总数：1 答案中存在的个体总数：3，正确识别的个体总数：1 正确率(Precision) = 1/2 = 50.00% 召回率(Recall) = 1/3 = 33.33% F值 = (1/2) * (1/3) * 2 / (1/2 + 1/3) = 40.00% ✎练习 使用正向最大匹配算法，利用给定的数据：字典文件 corpus.dict.txt，对语料 corpus.sentence.txt 进行分词，将分词的结果输出到文件 corpus.out.txt 中。 使用 jieba/ntlk 等工具，查看词性标注结果 正向最大匹配算法图： 代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364import reimport jieba# 加载字典def load_word_list(): max_length = 0 word_dict = set() for line in open('./data/corpus.dict.txt',encoding='utf-8',errors='ignore').readlines(): tmp = len(line) if(max_length &lt; tmp): max_length = tmp word_dict.add(line.strip()) return &#123; 'max_length':max_length, 'word_dict':word_dict &#125;# 去标点def remove_punctuation(line): punc = "[！？。｡＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃《》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏.!\"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`&#123;|&#125;~]+" line = re.sub(punc, "", line) return line# 最大正向匹配def max_left_match(line): dictionary = load_word_list() s1 = line # 待切分字串 s2 = "" # 输出词串 max_length = dictionary['max_length'] # 最大词长 word_dict = dictionary['word_dict'] while s1.strip() != '': length = max_length word = s1[0:length] while word not in word_dict: length -= 1 word = s1[0:length] if length == 1: break s2 += word + "/" s1 = s1[length:] return s2# 测试def main(): fo = open('./data/corpus.out.txt', 'w', encoding='utf-8') fl = open('./data/corpus.label.txt', 'w', encoding='utf-8') for line in open('./data/corpus.sentence.txt',encoding='utf-8',errors='ignore').readlines(): # 去标点 line = remove_punctuation(line) # 最大匹配 new_line = max_left_match(line) # 结果 fo.write(new_line) # 使用jieba进行词性标注 import jieba.posseg as pseg words = pseg.cut(line) for word, flag in words: label = word + " " + flag + "\n" fl.write(label) fo.close() fl.close()if __name__ == "__main__": main()]]></content>
       <categories>
         <category>NLP</category>
       </categories>
@@ -210,8 +210,8 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>hexo</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -222,9 +222,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -235,9 +235,9 @@
         <category>个人博客网站搭建</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>tutorial</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>

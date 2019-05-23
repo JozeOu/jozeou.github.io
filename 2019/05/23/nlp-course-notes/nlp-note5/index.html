@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="记录学习经历">
+  <meta name="description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
 <meta name="keywords" content="nlp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP 笔记（五）：分词与词性标注">
 <meta property="og:url" content="http://yoursite.com/2019/05/23/nlp-course-notes/nlp-note5/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="记录学习经历">
+<meta property="og:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-23T03:42:57.224Z">
+<meta property="og:image" content="f:%5CStudy%5CCoderLife%5CGitRepo%5Cblog-images%5Cnlp-course-notes%5C5-1.png">
+<meta property="og:updated_time" content="2019-05-23T15:01:05.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP 笔记（五）：分词与词性标注">
-<meta name="twitter:description" content="记录学习经历">
+<meta name="twitter:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
+<meta name="twitter:image" content="f:%5CStudy%5CCoderLife%5CGitRepo%5Cblog-images%5Cnlp-course-notes%5C5-1.png">
 
 
 
@@ -427,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：11:42:57" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
+              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：23:01:05" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
             
 
             
@@ -478,7 +480,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">5.7k</span>
               
 
               
@@ -492,7 +494,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -512,7 +514,221 @@
       
 
       
-        
+        <h2 id="知识讲解"><a class="header-anchor" href="#知识讲解">✎</a>知识讲解</h2>
+<h3 id="概述"><a class="header-anchor" href="#概述">✎</a>概述</h3>
+<ul>
+<li>词法分析的主要任务是词性标注和词义标注</li>
+<li>词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。</li>
+<li>词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁</li>
+<li>词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义</li>
+</ul>
+<p>不同语言的词法分析</p>
+<ul>
+<li>曲折语（如，英语、德语、俄语等）：用词的形态变化表示语法关系，一个形态成分可以表示若干种不同的语法意义，词根和词干与语词的附加成分结合紧密。词法分析：词的形态变化分析，即词的形态还原</li>
+<li>分析语（孤立语）（如，汉语）：分词</li>
+<li>黏着语（如，日语）：分词＋形态还原</li>
+</ul>
+<h3 id="英语的形态分析"><a class="header-anchor" href="#英语的形态分析">✎</a>英语的形态分析</h3>
+<p>基本任务：单词识别+形态还原</p>
+<h4 id="英语单词的识别"><a class="header-anchor" href="#英语单词的识别">✎</a>英语单词的识别</h4>
+<p>例：</p>
+<ol>
+<li>Mr.Green is a good English teacher.</li>
+<li>I’ll see prof.Zhang home after the concert.</li>
+</ol>
+<p>识别结果：</p>
+<ol>
+<li>Mr./Green/ is/ a/ good/ English/ teacher/.</li>
+<li>I/ will/ see/ prof./Zhang/ home/ after/ the/ concert/.</li>
+</ol>
+<hr>
+<p>英语中常见的特殊形式的单词识别：</p>
+<ul>
+<li>prof., Mr., Ms. Co., Oct. 等放入词典</li>
+<li>Let’s / let’s → let + us</li>
+<li>{it, that, this, there, what, where}'s → {it, that, this, there, what, where}+ is</li>
+<li>I’am → I + am</li>
+<li>can’t → can + not; won’t → will + not</li>
+<li>{is, was, are, were, has, have, had}n’ t → {is, was, are, were, has, have, had} + not</li>
+<li>X’ve → X + have; X’ll → X + will; X’re → X + are</li>
+<li>he’s → he + is / has；she’s → she + is / has</li>
+<li>X’d Y → X + would (如果 Y 为单词原型 ) → X + had (如果 Y 为过去分词 )</li>
+</ul>
+<h4 id="英语单词的形态还原"><a class="header-anchor" href="#英语单词的形态还原">✎</a>英语单词的形态还原</h4>
+<p>有规律变化单词的形态还原</p>
+<ul>
+<li>-ed 结尾的动词过去式</li>
+<li>-ing结尾的现在分词</li>
+<li>-s 结尾的动词单数第三人称</li>
+<li>–er/est 结尾的形容词比较级、最高级</li>
+<li>动词、名词、形容词、副词不规则变化单词的形态还原</li>
+<li>……</li>
+</ul>
+<h3 id="汉语分词"><a class="header-anchor" href="#汉语分词">✎</a>汉语分词</h3>
+<p>自动分词是汉语句法分析的基础</p>
+<p>主要问题：汉语中什么是词？</p>
+<p>单字词？词与短语？如，花草，湖边，房顶，鸭蛋，小鸟，担水，一层，翻过。。。</p>
+<h4 id="歧义切分字段"><a class="header-anchor" href="#歧义切分字段">✎</a>歧义切分字段</h4>
+<ul>
+<li>
+<p>组合型歧义 (Combinatorial ambiguities)</p>
+<p>可以理解为汉字串 AB 满足 A, B, AB 同时为词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">门把手弄坏了</span><br><span class="line">门/ 把/ 手/ 弄/ 坏/ 了/</span><br><span class="line">门/ 把手/ 弄/ 坏/ 了/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">他将来我校讲学</span><br><span class="line">他/ 将/ 来/ 我/ 校/ 讲学</span><br><span class="line">他/ 将来/ 我/ 校/ 讲学</span><br></pre></td></tr></table></figure>
+<p>“将来”、“现在”、“才能”、“学生会”等，都是组合型歧义字段</p>
+</li>
+<li>
+<p>交集型歧义 (Overlapped ambiguities)</p>
+<p>可以理解为汉字串 AXB 满足 AX, XB 同时为词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">中国人为了实现自己的梦想</span><br><span class="line">中国/ 人为/ 了/ 实现/ 自己/ 的/ 梦想</span><br><span class="line">中国人/ 为了/ 实现/ 自己/ 的/ 梦想</span><br><span class="line">中/ 国人/ 为了/ 实现/ 自己/ 的/ 梦想</span><br></pre></td></tr></table></figure>
+<p>“大学生”、“研究生物”、“从小学起”、“为人民工作”、“中国产品质量”、“部分居民生活水平”等等，都是交集型歧义字段</p>
+</li>
+</ul>
+<h4 id="汉语自动分词基本规则"><a class="header-anchor" href="#汉语自动分词基本规则">✎</a>汉语自动分词基本规则</h4>
+<ul>
+<li>
+<p>未登录词的识别</p>
+<p>未登录词即没有被收录在分词词表中但必须切分出来的词，包括各类专有名词（人名、地名、企业名等）、缩写词、新增词汇等等。文本中的人名、地名、组织结构名等命名实体通常是不可能在词典中穷尽列出的。对于这些词的识别，称为<strong>命名实体识别（Named Entity Recongition）</strong>。</p>
+</li>
+<li>
+<p>合并原则</p>
+<p>语义或语类上无法由组合成分直接得到的应该合并为一个分词单位。比如：好吃、好看、好听、进出口、或多或少、六月、邮递员、现代化…</p>
+</li>
+<li>
+<p>切分原则</p>
+<ul>
+<li>
+<p>有明显分隔符标记的应该切分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">上、 下课 → 上/ 下课</span><br><span class="line">洗了个澡 → 洗/ 了/ 个/ 澡</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>内部结构复杂、合并起来过于冗长的词尽量切分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">喜欢/ 不/ 喜欢、 参加/ 不/ 参加</span><br><span class="line">看/ 清楚、 讨论/ 完毕</span><br><span class="line">太空/ 计划/ 室、 塑料/ 制品/ 业</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="汉语自动分词基本算法"><a class="header-anchor" href="#汉语自动分词基本算法">✎</a>汉语自动分词基本算法</h4>
+<ul>
+<li>有词典切分 / 无词典切分</li>
+<li>基于规则分析方法 / 基于统计方法</li>
+</ul>
+<h5 id="基于规则分析方法"><a class="header-anchor" href="#基于规则分析方法">✎</a>基于规则分析方法</h5>
+<ol>
+<li>最大匹配法（Maximum Matching, MM）**，属于有词典切分，机械切分</li>
+</ol>
+<p>按匹配的方向分为：</p>
+<ul>
+<li>正向最大匹配算法 (Forward MM, FMM)</li>
+<li>逆向最大匹配算法 (Backward MM, BMM)</li>
+<li>双向最大匹配算法（Bi-directional MM）</li>
+</ul>
+<a id="more"></a>
+<p>FMM算法思想</p>
+<ol>
+<li>假定词典中最长的单词长度为m，从左至右取待分词的前m个字符串作为匹配字段。</li>
+<li>查找字典，如果字典中存在和匹配字段相同的词语，则匹配成功，否则去掉匹配字段的最后一个字符重新匹配</li>
+<li>重复以上过程直到匹配全部完成</li>
+</ol>
+<p>BMM是FMM的逆向思维，从右至左，匹配不成功，将匹配字段的最前一个字符去掉重新匹配</p>
+<p>双向最大匹配法是将FMM和BMM的到的结果进行比较，从而决定正确的分词方法。定义的匹配规则如下：</p>
+<ul>
+<li>如果正反向匹配算法得到的结果相同，我们则认为分词正确，返回任意一个结果即可；</li>
+<li>如果正反向匹配算法得到的结果不同，选择分词数量较少的结果。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>程序简单易行，开发周期短；</li>
+<li>仅需要很少的语言资源（词表），不需要任何词法、句法、语义资源。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>切分歧义消解的能力差；</li>
+<li>切分正确率不高，一般在95％左右。</li>
+</ul>
+<ol start="2">
+<li>最少分词法（最短路径法）</li>
+</ol>
+<ul>
+<li>基于词典，每个句子将生成一个有向无环图, 每个字作为图的一个定点, 边代表可能的分词</li>
+<li>若赋给相应的边长一个权值（该权值可以是常数，也可以是构成的词的属性值），然后针对该切分图，在起点到终点的所有路径中，求出最短路径，该最短路径上包含的词就是该句子的切分结果。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>切分原则符合汉语自身规律；</li>
+<li>需要的语言资源（词表）也不多 。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>对许多歧义字段难以区分，最短路径有多条时，选择最终的输出结果缺乏应有的标准</li>
+<li>字串长度较大和选取的最短路径数增大时，长度相同的路径数急剧增加，选择最终正确的结果困难越来越大</li>
+</ul>
+<h5 id="基于统计分析方法"><a class="header-anchor" href="#基于统计分析方法">✎</a>基于统计分析方法</h5>
+<ul>
+<li>每个字都是词的最小单元，如果相连的字在不同的文本中出现的频率越多，这就越有可能是一个词。因此我们可以用相邻字出现的频率来衡量组词的可能性，当频率高于某个阈值时，我们可以认为这些字可能会构成一个词。</li>
+<li>主要统计模型： N 元文法模型（N-gram），隐马尔可夫模型（HiddenMarkov Model，HMM），最大熵模型（ME），条件随机场（Conditional Random Fields，CRF）等</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>
+<p>减少了很多手工标注知识库（语义词典、规则等）的工作</p>
+</li>
+<li>
+<p>在训练语料规模足够大和覆盖领域足够多的情况下，可以获得较高的切分正确率</p>
+</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>训练语料的规模和覆盖领域不好把握</li>
+<li>计算量较大</li>
+</ul>
+<h3 id="词性标注"><a class="header-anchor" href="#词性标注">✎</a>词性标注</h3>
+<p>词性（part-of-speech, POS）标注（tagging）的主要任务是消除词性兼类歧义。</p>
+<p>基本方法：</p>
+<ul>
+<li>基于规则的词性标注方法（根据词性及词语结构定义规则）</li>
+<li>基于统计模型的词性标注方法（n-gram, HMM…）</li>
+<li>规则和统计方法相结合的词性标注方法</li>
+<li>基于有限状态变换机的词性标注方法</li>
+<li>基于神经网络的词性标注方法</li>
+</ul>
+<h3 id="分词与词性标注结果评测"><a class="header-anchor" href="#分词与词性标注结果评测">✎</a>分词与词性标注结果评测</h3>
+<p>评测指标：</p>
+<ul>
+<li>
+<p>正确率(Correct ratio/Precision, C): 测试结果中正确结果的个数占系统所有输出结果的比例</p>
+</li>
+<li>
+<p>召回率(找回率) (Recall ratio, R): 测试结果中正确结果的个数占标准答案总数的比例</p>
+</li>
+<li>
+<p>测度值(F-Measure): 正确率与找回率的综合值<br>
+$$<br>
+F-measure=\frac{(\beta ^{2}+1)\times C\times R}{\beta ^{2}\times C+R}\times 100% 一般地，\beta=1<br>
+$$</p>
+</li>
+</ul>
+<p>分词算法评价例子：</p>
+<ul>
+<li>句子：我是中国人</li>
+<li>分词：我是/ 中国人</li>
+<li>答案：我/ 是/ 中国人</li>
+<li>识别出的个体总数：2，正确识别的个体总数：1</li>
+<li>答案中存在的个体总数：3，正确识别的个体总数：1</li>
+<li>正确率(Precision) = 1/2 = 50.00%</li>
+<li>召回率(Recall) = 1/3 = 33.33%</li>
+<li>F值 = (1/2) * (1/3) * 2 / (1/2 + 1/3) = 40.00%</li>
+</ul>
+<h2 id="练习"><a class="header-anchor" href="#练习">✎</a>练习</h2>
+<ol>
+<li>使用正向最大匹配算法，利用给定的数据：字典文件 corpus.dict.txt，对语料 corpus.sentence.txt 进行分词，将分词的结果输出到文件 corpus.out.txt 中。</li>
+<li>使用 jieba/ntlk 等工具，查看词性标注结果</li>
+</ol>
+<p>正向最大匹配算法图：</p>
+<p><img src="F:%5CStudy%5CCoderLife%5CGitRepo%5Cblog-images%5Cnlp-course-notes%5C5-1.png" alt></p>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载字典</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_word_list</span><span class="params">()</span>:</span></span><br><span class="line">    max_length = <span class="number">0</span></span><br><span class="line">    word_dict = set()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'./data/corpus.dict.txt'</span>,encoding=<span class="string">'utf-8'</span>,errors=<span class="string">'ignore'</span>).readlines():</span><br><span class="line">        tmp = len(line)</span><br><span class="line">        <span class="keyword">if</span>(max_length &lt; tmp):</span><br><span class="line">            max_length = tmp</span><br><span class="line">        word_dict.add(line.strip())</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">'max_length'</span>:max_length,</span><br><span class="line">            <span class="string">'word_dict'</span>:word_dict</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去标点</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_punctuation</span><span class="params">(line)</span>:</span></span><br><span class="line">    punc = <span class="string">"[！？。｡＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃《》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏.!\"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`&#123;|&#125;~]+"</span></span><br><span class="line">    line = re.sub(punc, <span class="string">""</span>, line)</span><br><span class="line">    <span class="keyword">return</span> line</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大正向匹配</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">max_left_match</span><span class="params">(line)</span>:</span></span><br><span class="line">    dictionary = load_word_list()</span><br><span class="line">    s1 = line <span class="comment"># 待切分字串</span></span><br><span class="line">    s2 = <span class="string">""</span> <span class="comment"># 输出词串</span></span><br><span class="line">    max_length = dictionary[<span class="string">'max_length'</span>] <span class="comment"># 最大词长</span></span><br><span class="line">    word_dict = dictionary[<span class="string">'word_dict'</span>]</span><br><span class="line">    <span class="keyword">while</span> s1.strip() != <span class="string">''</span>:</span><br><span class="line">        length = max_length</span><br><span class="line">        word = s1[<span class="number">0</span>:length]</span><br><span class="line">        <span class="keyword">while</span> word <span class="keyword">not</span> <span class="keyword">in</span> word_dict:</span><br><span class="line">            length -= <span class="number">1</span></span><br><span class="line">            word = s1[<span class="number">0</span>:length]</span><br><span class="line">            <span class="keyword">if</span> length == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        s2 += word + <span class="string">"/"</span></span><br><span class="line">        s1 = s1[length:]</span><br><span class="line">    <span class="keyword">return</span> s2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    fo = open(<span class="string">'./data/corpus.out.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    fl = open(<span class="string">'./data/corpus.label.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'./data/corpus.sentence.txt'</span>,encoding=<span class="string">'utf-8'</span>,errors=<span class="string">'ignore'</span>).readlines():</span><br><span class="line">        <span class="comment"># 去标点</span></span><br><span class="line">        line = remove_punctuation(line)</span><br><span class="line">        <span class="comment"># 最大匹配</span></span><br><span class="line">        new_line = max_left_match(line)</span><br><span class="line">        <span class="comment"># 结果</span></span><br><span class="line">        fo.write(new_line)</span><br><span class="line">        <span class="comment"># 使用jieba进行词性标注</span></span><br><span class="line">        <span class="keyword">import</span> jieba.posseg <span class="keyword">as</span> pseg</span><br><span class="line">        words = pseg.cut(line)</span><br><span class="line">        <span class="keyword">for</span> word, flag <span class="keyword">in</span> words:</span><br><span class="line">            label = word + <span class="string">" "</span> + flag +  <span class="string">"\n"</span></span><br><span class="line">            fl.write(label)</span><br><span class="line">    fo.close()</span><br><span class="line">    fl.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -600,8 +816,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -746,6 +971,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识讲解"><span class="nav-number">1.</span> <span class="nav-text">✎知识讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">✎概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#英语的形态分析"><span class="nav-number">1.2.</span> <span class="nav-text">✎英语的形态分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#英语单词的识别"><span class="nav-number">1.2.1.</span> <span class="nav-text">✎英语单词的识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#英语单词的形态还原"><span class="nav-number">1.2.2.</span> <span class="nav-text">✎英语单词的形态还原</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汉语分词"><span class="nav-number">1.3.</span> <span class="nav-text">✎汉语分词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#歧义切分字段"><span class="nav-number">1.3.1.</span> <span class="nav-text">✎歧义切分字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉语自动分词基本规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">✎汉语自动分词基本规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉语自动分词基本算法"><span class="nav-number">1.3.3.</span> <span class="nav-text">✎汉语自动分词基本算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基于规则分析方法"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">✎基于规则分析方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于统计分析方法"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">✎基于统计分析方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词性标注"><span class="nav-number">1.4.</span> <span class="nav-text">✎词性标注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分词与词性标注结果评测"><span class="nav-number">1.5.</span> <span class="nav-text">✎分词与词性标注结果评测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">2.</span> <span class="nav-text">✎练习</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -772,7 +1014,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">43k</span>
+    <span title="站点总字数">49k</span>
   
 
   
@@ -781,7 +1023,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">39 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
   
 </div>
 
