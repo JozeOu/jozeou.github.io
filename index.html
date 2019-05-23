@@ -428,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：23:01:05" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
+              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：23:06:00" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
             
 
             
@@ -521,107 +521,6 @@
 <li>词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。</li>
 <li>词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁</li>
 <li>词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义</li>
-</ul>
-<p>不同语言的词法分析</p>
-<ul>
-<li>曲折语（如，英语、德语、俄语等）：用词的形态变化表示语法关系，一个形态成分可以表示若干种不同的语法意义，词根和词干与语词的附加成分结合紧密。词法分析：词的形态变化分析，即词的形态还原</li>
-<li>分析语（孤立语）（如，汉语）：分词</li>
-<li>黏着语（如，日语）：分词＋形态还原</li>
-</ul>
-<h3 id="英语的形态分析"><a class="header-anchor" href="#英语的形态分析">✎</a>英语的形态分析</h3>
-<p>基本任务：单词识别+形态还原</p>
-<h4 id="英语单词的识别"><a class="header-anchor" href="#英语单词的识别">✎</a>英语单词的识别</h4>
-<p>例：</p>
-<ol>
-<li>Mr.Green is a good English teacher.</li>
-<li>I’ll see prof.Zhang home after the concert.</li>
-</ol>
-<p>识别结果：</p>
-<ol>
-<li>Mr./Green/ is/ a/ good/ English/ teacher/.</li>
-<li>I/ will/ see/ prof./Zhang/ home/ after/ the/ concert/.</li>
-</ol>
-<hr>
-<p>英语中常见的特殊形式的单词识别：</p>
-<ul>
-<li>prof., Mr., Ms. Co., Oct. 等放入词典</li>
-<li>Let’s / let’s → let + us</li>
-<li>{it, that, this, there, what, where}'s → {it, that, this, there, what, where}+ is</li>
-<li>I’am → I + am</li>
-<li>can’t → can + not; won’t → will + not</li>
-<li>{is, was, are, were, has, have, had}n’ t → {is, was, are, were, has, have, had} + not</li>
-<li>X’ve → X + have; X’ll → X + will; X’re → X + are</li>
-<li>he’s → he + is / has；she’s → she + is / has</li>
-<li>X’d Y → X + would (如果 Y 为单词原型 ) → X + had (如果 Y 为过去分词 )</li>
-</ul>
-<h4 id="英语单词的形态还原"><a class="header-anchor" href="#英语单词的形态还原">✎</a>英语单词的形态还原</h4>
-<p>有规律变化单词的形态还原</p>
-<ul>
-<li>-ed 结尾的动词过去式</li>
-<li>-ing结尾的现在分词</li>
-<li>-s 结尾的动词单数第三人称</li>
-<li>–er/est 结尾的形容词比较级、最高级</li>
-<li>动词、名词、形容词、副词不规则变化单词的形态还原</li>
-<li>……</li>
-</ul>
-<h3 id="汉语分词"><a class="header-anchor" href="#汉语分词">✎</a>汉语分词</h3>
-<p>自动分词是汉语句法分析的基础</p>
-<p>主要问题：汉语中什么是词？</p>
-<p>单字词？词与短语？如，花草，湖边，房顶，鸭蛋，小鸟，担水，一层，翻过。。。</p>
-<h4 id="歧义切分字段"><a class="header-anchor" href="#歧义切分字段">✎</a>歧义切分字段</h4>
-<ul>
-<li>
-<p>组合型歧义 (Combinatorial ambiguities)</p>
-<p>可以理解为汉字串 AB 满足 A, B, AB 同时为词</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">门把手弄坏了</span><br><span class="line">门/ 把/ 手/ 弄/ 坏/ 了/</span><br><span class="line">门/ 把手/ 弄/ 坏/ 了/</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">他将来我校讲学</span><br><span class="line">他/ 将/ 来/ 我/ 校/ 讲学</span><br><span class="line">他/ 将来/ 我/ 校/ 讲学</span><br></pre></td></tr></table></figure>
-<p>“将来”、“现在”、“才能”、“学生会”等，都是组合型歧义字段</p>
-</li>
-<li>
-<p>交集型歧义 (Overlapped ambiguities)</p>
-<p>可以理解为汉字串 AXB 满足 AX, XB 同时为词</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">中国人为了实现自己的梦想</span><br><span class="line">中国/ 人为/ 了/ 实现/ 自己/ 的/ 梦想</span><br><span class="line">中国人/ 为了/ 实现/ 自己/ 的/ 梦想</span><br><span class="line">中/ 国人/ 为了/ 实现/ 自己/ 的/ 梦想</span><br></pre></td></tr></table></figure>
-<p>“大学生”、“研究生物”、“从小学起”、“为人民工作”、“中国产品质量”、“部分居民生活水平”等等，都是交集型歧义字段</p>
-</li>
-</ul>
-<h4 id="汉语自动分词基本规则"><a class="header-anchor" href="#汉语自动分词基本规则">✎</a>汉语自动分词基本规则</h4>
-<ul>
-<li>
-<p>未登录词的识别</p>
-<p>未登录词即没有被收录在分词词表中但必须切分出来的词，包括各类专有名词（人名、地名、企业名等）、缩写词、新增词汇等等。文本中的人名、地名、组织结构名等命名实体通常是不可能在词典中穷尽列出的。对于这些词的识别，称为<strong>命名实体识别（Named Entity Recongition）</strong>。</p>
-</li>
-<li>
-<p>合并原则</p>
-<p>语义或语类上无法由组合成分直接得到的应该合并为一个分词单位。比如：好吃、好看、好听、进出口、或多或少、六月、邮递员、现代化…</p>
-</li>
-<li>
-<p>切分原则</p>
-<ul>
-<li>
-<p>有明显分隔符标记的应该切分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">上、 下课 → 上/ 下课</span><br><span class="line">洗了个澡 → 洗/ 了/ 个/ 澡</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>内部结构复杂、合并起来过于冗长的词尽量切分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">喜欢/ 不/ 喜欢、 参加/ 不/ 参加</span><br><span class="line">看/ 清楚、 讨论/ 完毕</span><br><span class="line">太空/ 计划/ 室、 塑料/ 制品/ 业</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="汉语自动分词基本算法"><a class="header-anchor" href="#汉语自动分词基本算法">✎</a>汉语自动分词基本算法</h4>
-<ul>
-<li>有词典切分 / 无词典切分</li>
-<li>基于规则分析方法 / 基于统计方法</li>
-</ul>
-<h5 id="基于规则分析方法"><a class="header-anchor" href="#基于规则分析方法">✎</a>基于规则分析方法</h5>
-<ol>
-<li>最大匹配法（Maximum Matching, MM）**，属于有词典切分，机械切分</li>
-</ol>
-<p>按匹配的方向分为：</p>
-<ul>
-<li>正向最大匹配算法 (Forward MM, FMM)</li>
-<li>逆向最大匹配算法 (Backward MM, BMM)</li>
-<li>双向最大匹配算法（Bi-directional MM）</li>
 </ul>
           <!--noindex-->
           

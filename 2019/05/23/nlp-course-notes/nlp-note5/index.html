@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
+  <meta name="description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义">
 <meta name="keywords" content="nlp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP 笔记（五）：分词与词性标注">
 <meta property="og:url" content="http://yoursite.com/2019/05/23/nlp-course-notes/nlp-note5/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
+<meta property="og:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="f:%5CStudy%5CCoderLife%5CGitRepo%5Cblog-images%5Cnlp-course-notes%5C5-1.png">
-<meta property="og:updated_time" content="2019-05-23T15:01:05.302Z">
+<meta property="og:updated_time" content="2019-05-23T15:06:00.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP 笔记（五）：分词与词性标注">
-<meta name="twitter:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义  不同语言的词法分析  曲折语（如，英语、德语、俄语等）：用词的形">
+<meta name="twitter:description" content="✎知识讲解 ✎概述  词法分析的主要任务是词性标注和词义标注 词性是词汇的基本属性。进行词性标注通常有基于规则和基于统计的两种方法。 词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁 词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义">
 <meta name="twitter:image" content="f:%5CStudy%5CCoderLife%5CGitRepo%5Cblog-images%5Cnlp-course-notes%5C5-1.png">
 
 
@@ -429,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：23:01:05" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
+              <time title="创建时间：2019-05-23 11:41:28 / 修改时间：23:06:00" itemprop="dateCreated datePublished" datetime="2019-05-23T11:41:28+08:00">2019-05-23</time>
             
 
             
@@ -522,6 +522,7 @@
 <li>词性或称词类（Part-of-Speech, POS）是词汇最重要的特性，是连接词汇到句法的桥梁</li>
 <li>词义标注的重点就是解决如何确定多义词在具体语境中的义项问题。标注过程中，通常是先确定语境，再明确词义</li>
 </ul>
+<a id="more"></a>
 <p>不同语言的词法分析</p>
 <ul>
 <li>曲折语（如，英语、德语、俄语等）：用词的形态变化表示语法关系，一个形态成分可以表示若干种不同的语法意义，词根和词干与语词的附加成分结合紧密。词法分析：词的形态变化分析，即词的形态还原</li>
@@ -623,7 +624,6 @@
 <li>逆向最大匹配算法 (Backward MM, BMM)</li>
 <li>双向最大匹配算法（Bi-directional MM）</li>
 </ul>
-<a id="more"></a>
 <p>FMM算法思想</p>
 <ol>
 <li>假定词典中最长的单词长度为m，从左至右取待分词的前m个字符串作为匹配字段。</li>
