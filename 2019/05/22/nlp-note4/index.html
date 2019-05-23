@@ -96,34 +96,18 @@
 
 
 
-  <meta name="description" content="环境前提：IntelliJ IDEA, Github 账号，Git 配置 ✎配置 Git 和 Github File -&amp;gt; Setting -&amp;gt; Version Control -&amp;gt;Git 在 Path to Git executable 选择 git 安装后的 git.exe 文件，然后点击 Test，测试设置是否成功">
-<meta name="keywords" content="github,idea,git">
+  <meta name="description" content="✎知识讲解 自然语言处理的两种基本方法：   基于规则的分析方法  规则库开发 推导方法设计  理论基础：形式语言与自动机理论   基于语料库的统计方法  语料库建设 统计模型建立  理论基础：数理统计、信息论、语料库">
+<meta name="keywords" content="nlp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IntelliJ IDEA 上传项目到 Github">
-<meta property="og:url" content="http://yoursite.com/2019/05/03/idea/idea-add-git/index.html">
+<meta property="og:title" content="NLP 笔记（四）：语言模型">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/nlp-note4/index.html">
 <meta property="og:site_name" content="Joze&#39;s Blog">
-<meta property="og:description" content="环境前提：IntelliJ IDEA, Github 账号，Git 配置 ✎配置 Git 和 Github File -&amp;gt; Setting -&amp;gt; Version Control -&amp;gt;Git 在 Path to Git executable 选择 git 安装后的 git.exe 文件，然后点击 Test，测试设置是否成功">
+<meta property="og:description" content="✎知识讲解 自然语言处理的两种基本方法：   基于规则的分析方法  规则库开发 推导方法设计  理论基础：形式语言与自动机理论   基于语料库的统计方法  语料库建设 统计模型建立  理论基础：数理统计、信息论、语料库">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/01.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/02.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/03.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/04.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/05.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/06.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/07.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/08.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/09.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/10.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/11.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/12.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/13.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/14.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/15.png">
-<meta property="og:updated_time" content="2019-05-04T13:50:24.776Z">
+<meta property="og:updated_time" content="2019-05-23T15:10:13.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IntelliJ IDEA 上传项目到 Github">
-<meta name="twitter:description" content="环境前提：IntelliJ IDEA, Github 账号，Git 配置 ✎配置 Git 和 Github File -&amp;gt; Setting -&amp;gt; Version Control -&amp;gt;Git 在 Path to Git executable 选择 git 安装后的 git.exe 文件，然后点击 Test，测试设置是否成功">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/01.png">
+<meta name="twitter:title" content="NLP 笔记（四）：语言模型">
+<meta name="twitter:description" content="✎知识讲解 自然语言处理的两种基本方法：   基于规则的分析方法  规则库开发 推导方法设计  理论基础：形式语言与自动机理论   基于语料库的统计方法  语料库建设 统计模型建立  理论基础：数理统计、信息论、语料库">
 
 
 
@@ -131,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/03/idea/idea-add-git/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/22/nlp-note4/">
 
 
 
@@ -141,7 +125,7 @@
   };
 </script>
 
-  <title>IntelliJ IDEA 上传项目到 Github | Joze's Blog</title>
+  <title>NLP 笔记（四）：语言模型 | Joze's Blog</title>
   
 
 
@@ -400,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/idea/idea-add-git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/nlp-note4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ruizhi Ou">
@@ -417,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">IntelliJ IDEA 上传项目到 Github
+          <h1 class="post-title" itemprop="name headline">NLP 笔记（四）：语言模型
 
               
             
@@ -443,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 15:18:51" itemprop="dateCreated datePublished" datetime="2019-05-03T15:18:51+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-22 10:31:27" itemprop="dateCreated datePublished" datetime="2019-05-22T10:31:27+08:00">2019-05-22</time>
             
 
             
@@ -460,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-04 21:50:24" itemprop="dateModified" datetime="2019-05-04T21:50:24+08:00">2019-05-04</time>
+                <time title="修改时间：2019-05-23 23:10:13" itemprop="dateModified" datetime="2019-05-23T23:10:13+08:00">2019-05-23</time>
               
             
           </span>
@@ -477,7 +461,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IDEA-配置/" itemprop="url" rel="index"><span itemprop="name">IDEA 配置</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NLP/" itemprop="url" rel="index"><span itemprop="name">NLP</span></a></span>
 
                 
                 
@@ -506,7 +490,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">994</span>
+                <span title="本文字数">5.8k</span>
               
 
               
@@ -520,7 +504,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -540,47 +524,204 @@
       
 
       
-        <p>环境前提：<code>IntelliJ IDEA</code>, <code>Github 账号</code>，<code>Git 配置</code></p>
-<h2 id="配置-git-和-github"><a class="header-anchor" href="#配置-git-和-github">✎</a>配置 Git 和 Github</h2>
-<p>File -&gt; Setting -&gt; Version Control -&gt;Git</p>
-<p>在 <code>Path to Git executable</code> 选择 git 安装后的 <code>git.exe</code> 文件，然后点击 <code>Test</code>，测试设置是否成功</p>
+        <h2 id="知识讲解"><a class="header-anchor" href="#知识讲解">✎</a>知识讲解</h2>
+<p>自然语言处理的两种基本方法：</p>
+<ol>
+<li>
+<p>基于规则的分析方法</p>
+<ul>
+<li>规则库开发</li>
+<li>推导方法设计</li>
+</ul>
+<p>理论基础：形式语言与自动机理论</p>
+</li>
+<li>
+<p>基于语料库的统计方法</p>
+<ul>
+<li>语料库建设</li>
+<li>统计模型建立</li>
+</ul>
+<p>理论基础：数理统计、信息论、语料库</p>
+</li>
+</ol>
 <a id="more"></a>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/01.png" alt></p>
-<p>File -&gt; Setting -&gt; Version Control -&gt;GitHub</p>
-<p>点击 <code>+</code> 进行 <code>Add account</code>, 填写 Github 账号的用户名和密码，<code>Log in</code></p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/02.png" alt></p>
-<h2 id="创建本地仓库"><a class="header-anchor" href="#创建本地仓库">✎</a>创建本地仓库</h2>
-<p>VCS -&gt; Import into Version Control -&gt; Create Git Repository…</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/03.png" alt></p>
-<p>在弹窗中选择项目所在的本地目录，点击 OK，此时项目文件全部变成红色</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/04.png" alt></p>
-<h2 id="上传项目到本地仓库"><a class="header-anchor" href="#上传项目到本地仓库">✎</a>上传项目到本地仓库</h2>
-<p>项目上右键 -&gt; Git -&gt; Add, 此时项目文件变成绿色（文件处于暂存区，并没有进入到版本库）</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/05.png" alt></p>
-<p>项目上右键 -&gt; Git -&gt; Commit Directory</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/06.png" alt></p>
-<p>在弹窗中输入 Commit Message，点击 commit，此时项目文件从暂存区进入版本库中，项目文件变成白色</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/07.png" alt></p>
-<h2 id="上传项目到-github-远程仓库"><a class="header-anchor" href="#上传项目到-github-远程仓库">✎</a>上传项目到 Github 远程仓库</h2>
-<p>VCS -&gt; Import into Version Control -&gt; Share Project on GitHub</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/08.png" alt></p>
-<p>在弹窗中输入仓库名和描述，点击 Share, 即开始在 Github 中创建远程仓库并上传项目文件（若未配置 Github, 会弹窗要求输入用户名和密码）</p>
-<p>注意：会进行语法检查，若存在错误或警告会给出确认提示，点击 Commit 即可</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/09.png" alt></p>
-<p>上传成功后 IDEA 右下角会给出提示</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/10.png" alt></p>
-<p>查看 Github 远程仓库，项目上传成功！</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/11.png" alt></p>
-<h2 id="提交修改"><a class="header-anchor" href="#提交修改">✎</a>提交修改</h2>
-<p>项目上右键 -&gt; Git -&gt; Add, 将修改加入本地仓库暂存区</p>
-<p>项目上右键 -&gt; Git -&gt; Commit Directory, 查看有变动的文件并输入 Commit Message, 点击 Commit and Push…</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/12.png" alt></p>
-<p>弹出 Push 框，点击 Push</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/13.png" alt></p>
-<p>查看 Github 远程仓库，提交修改成功！</p>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/14.png" alt></p>
-<h2 id="其他仓库操作"><a class="header-anchor" href="#其他仓库操作">✎</a>其他仓库操作</h2>
-<p><img src="https://raw.githubusercontent.com/JozeOu/blog-images/master/idea-add-git/15.png" alt></p>
+<h3 id="预备知识"><a class="header-anchor" href="#预备知识">✎</a>预备知识</h3>
+<h4 id="概率论基础"><a class="header-anchor" href="#概率论基础">✎</a>概率论基础</h4>
+<p>熟悉以下概念及定理：</p>
+<ul>
+<li>概率</li>
+<li>最大似然估计(Maximization likelihood estimation, MLE)</li>
+<li>条件概率 (conditional probability)</li>
+<li>全概率公式</li>
+<li>贝叶斯法则(Bayes’ theorem)</li>
+<li>贝叶斯决策理论 (Bayesian decision theory )</li>
+<li>二项式分布 (binomial distribution)</li>
+<li>期望 (expectation)和方差 (variance)</li>
+</ul>
+<h4 id="信息论基础"><a class="header-anchor" href="#信息论基础">✎</a>信息论基础</h4>
+<p>熟悉以下概念：</p>
+<ul>
+<li>熵 (entropy)</li>
+<li>联合熵 (joint entropy)</li>
+<li>条件熵 (conditional entropy)</li>
+<li>相对熵 (relative entropy or Kullback-Leibler divergence)</li>
+<li>交叉熵 (cross entropy)</li>
+<li>困惑度(perplexity)</li>
+</ul>
+<p>熵是信息论中重要的基本概念。 熵又称为自信息（self-information），表示信源 X 每发一个符号（不论发什么符号）所提供的平均信息量。熵也可以被视为描述一个随机变量的不确定性的数量。一个随机变量的熵越大，它的不确定性越大。那么，正确估计其值的可能性就越小。越不确定的随机变量越需要大的信息量用以确定其值。</p>
+<h4 id="语料库"><a class="header-anchor" href="#语料库">✎</a>语料库</h4>
+<p><strong>语料库(corpus)</strong> 就是存放语言材料的仓库（语言数据库）<br>
+语料库一词在语言学上意指大量的文本，通常经过整理，具有既定格式与标记。其具备三个显著的特点：</p>
+<ul>
+<li>语料库中存放的是在语言的实际使用中真实出现过的语言材料</li>
+<li>语料库以电子计算机为载体承载语言知识的基础资源，但并不等于语言知识</li>
+<li>真实语料需要经过加工（分析和处理），才能成为有用的资源（生语料库是指收集之后未加工的语料库，相对而言，熟语料库是经过加工的语料库）</li>
+</ul>
+<p><strong>语料库语言学(corpus linguistics)</strong> 是基于语料库进行语言学研究。</p>
+<p>研究的内容：</p>
+<ul>
+<li>语料库的建设与编纂</li>
+<li>语料库的加工和管理技术</li>
+<li>语言研究中语料库的使用</li>
+<li>语料库语言学在计算语言学中的应用</li>
+</ul>
+<hr>
+<p><strong>语料库的类型</strong></p>
+<p>按内容构成和目的划分</p>
+<ul>
+<li>异质的（heterogeneous）：最简单的语料收集方法，没有特定的语料收集原则，广泛收集并原样存储各种语料</li>
+<li>同质的（homogeneous）：只收集同一类内容的语料</li>
+<li>系统的（Systematic）：根据预先确定的原则和比例收集语料，使语料具有平衡性和系统性，能够代表某一范围内的语言事实</li>
+<li>专用的（specialized）：只收集用于某一特定用途的语料</li>
+</ul>
+<p>按语言种类划分</p>
+<ul>
+<li>单语的（Monolingual）</li>
+<li>双语的（Bilingual）</li>
+<li>多语的（Multilingual），多语种语料库又可以再分为比较语料库（comparable corpora）和平行语料库（parallel corpora）。比较语料库的目的侧重于特定语言现象的对比，而平行语料库的目的侧重于获取对应的翻译实例。</li>
+</ul>
+<p>按语料选取的时间划分</p>
+<ul>
+<li>共时语料库（syn-chronic corpus）：为了对语言进行共时研究而建立的语料库</li>
+<li>历时语料库（diachronic corpus）：为了对语言进行历时研究而建立的语料库</li>
+</ul>
+<hr>
+<p>语料库设计需要考虑的问题</p>
+<ul>
+<li>代表性：一个语料库具有代表性，是指在该语料库上获得的分析结果可以概括成为这种语言整体或其指定部分的特性</li>
+<li>规模性：一般而言，在保证质量的前提下应足够大；随着语料库的增大，垃圾语料越来越多，语料达到一定规模以后，语料库功能不能随之增长</li>
+<li>结构性：目的地收集语料的集合，必须以电子形式存在，计算机可读的语料集合结构性体现在语料库中语料记录的代码、元数据项、数据类型、数据宽度、取值范围、完整性约束。</li>
+<li>平衡性：理想的情况是收入语料库的文本在题材、语体、时间跨度等方面有一个合理的平衡</li>
+<li>语料库的管理与维护：错误修正或改善版本升级语料库的检索系统、分析和处理工具的维护等</li>
+</ul>
+<h3 id="语言模型"><a class="header-anchor" href="#语言模型">✎</a>语言模型</h3>
+<p>在实际应用中，我们需要解决一类问题，即一个句子出现的概率（一个句子是否合理可以通过它出现的可能性大小来判定），例如：</p>
+<ul>
+<li>机器翻译： P(hign winds tonite) &gt; P(large winds tonite)</li>
+<li>拼写纠错 ：P(about fifteen minutes from) &gt; P(about fifteen minuets from)</li>
+<li>语音识别 ：P(I saw a van) &gt;&gt; P(eye awe of an)</li>
+<li>音字转换：P(你现在干什么 | nixianzaiganshenme) &gt; P(你西安在干什么 | nixianzaiganshenme)</li>
+<li>自动文摘、问答系统等</li>
+</ul>
+<hr>
+<p>语言模型的定义：</p>
+<p>一个语言模型通常构建为字符串 s 的概率分布 p(s)，这里 p(s) 试图反映的是字符串 s作为一个句子出现的频率，对于一个由n个基元构成的句子 s = w<sub>1</sub>, w<sub>2</sub>, … , w<sub>n</sub>，其概率计算公式可以表示为：<br>
+$$<br>
+P(s)=P(w_1)P(w_2|w_1)P(w_3|w_1 ,w_2)…P(w_n |w_1 ,w_2 … w_{n-1})=\prod_{i=1}^{n}P(w_i |w_1 …w_{i-1})<br>
+$$<br>
+当 i=1 时，<br>
+$$<br>
+P(s)=P(w_1|w_0)=P(w_1)<br>
+$$<br>
+说明：</p>
+<ul>
+<li>w<sub>i</sub> 可以是字、词、短语或者词类等，称为统计基元</li>
+<li>w<sub>i</sub> (1 ≤ i ≤ n) 的概率由已产生的 i-1 个词 w<sub>1</sub>, … , w<sub>i-1</sub> 决定；一般得，我们把前 i-1个词构成的一个序列，称为 w<sub>i</sub> 的历史 (history)</li>
+</ul>
+<hr>
+<p>计算 P 最简单的方法是直接计数做除法<br>
+$$<br>
+P(w_i |w_1 ,w_2 …w_{i-1})=\frac{count(w_1 …w_{i-1},w_i)}{count(w_1 …w_{i-1})}<br>
+$$<br>
+比如，对于句子 <strong>NLP is so interesting</strong> 有：</p>
+<p>P(“NLP is so interesting”) = P(NLP)✖P(is | NLP)✖P(so | NLP is) ✖P(interesting | NLP is so)</p>
+<p>那么，这些概率的计算方法如下：<br>
+$$<br>
+P(interesting|NLP,is,so)=\frac{count(NLP,is,so,interesting)}{count(NLP,is,so)}<br>
+$$<br>
+这里，我们面临两个重要问题：</p>
+<ol>
+<li>参数空间过大：随着历史基元数量的增加，不同的“历史” 按指数级增长。假设词汇表有 L 个不同的基元，那么i 基元就有 L<sup>i-1</sup> 种不同的历史情况，按照公式，我们必须考虑在所有 L<sup>i-1</sup> 种不同历史情况下产生第 i 个基元的概率。那么模型中有 L<sup>i</sup> 个自由参数。假如L=5000，i=3，那么自由参数的数目就是1250亿个！这使我们几乎不可能从训练数据中正确地估计出这些参数。</li>
+</ol>
+<p>问题的解决：<strong>马尔可夫假设（Markov Assumption）</strong><br>
+为了解决第2个问题，基于马尔可夫假设提出：下一个词的出现仅依赖于它前面的一个或者几个词。那么，假设下一个词依赖于前 k 个词，那么我们的 ，计算简化如下：<br>
+$$<br>
+P(s)\approx \prod_{i=1}^{n}P(w_i |w_{i-k} …w_{i-1})<br>
+$$<br>
+也就是说：<br>
+$$<br>
+P(w_i |w_1 …w_{i-1})\approx P(w_i |w_{i-k} …w_{i-1})<br>
+$$<br>
+这种情况下的语言模型称为 <strong>n 元文法(n-gram)</strong></p>
+<ul>
+<li>当 k = 0时，即基元 w<sub>i</sub> 不与任何词相关，每个词之间相互独立；此时对应的模型叫做一元模型(Unigram model)， n-gram 被称为一阶马尔可夫链(uni-gram 或 monogram)</li>
+<li>当 k = 1时, 即基元 w<sub>i</sub> 仅依赖与它前面的一个词，此时对应的模型称为二元模型(Bigram model)或者2阶马尔可夫链(bi-gram)</li>
+<li>当 k = 2时, 即基元 w<sub>i</sub> 仅依赖与它前面的两个词，n-gram 被称为3阶马尔可夫链(tri-gram)</li>
+</ul>
+<p>同样地，我们能拓展到4-gram，5-gram…</p>
+<ul>
+<li>当 k = n-1 时，对应的模型为 n 元模型，即 N-gram</li>
+</ul>
+<p>总的来说，N-gram 仍是一个不足的语言模型，因为有些句子存在长依赖关系 (long-distance dependencies)</p>
+<p>通常来说，对于依赖词的个数</p>
+<ul>
+<li>
+<p>n 值愈大，下一个词出现的依赖条件更多，辨别力更大</p>
+</li>
+<li>
+<p>n 值愈小，统计数据在训练语料库中出现的次数更多，统计信息更可靠</p>
+</li>
+</ul>
+<p>在实际使用经验中，我们常选取 bi-gram 或者 tri-gram 模型</p>
+<p>N-gram概率的计算：极大似然估计（The Maximum Likelihood Estimate，MLE）</p>
+<p>语言模型性能的评价：Lower perplexity（困惑度） = better model</p>
+<ol start="2">
+<li>数据稀疏(Sparse Data)严重：如果按这样计算，某些的句子中一系列词同时出现的次数是很少的，组合阶数高时尤其明显，这可能导致过多的条件概率趋于0</li>
+</ol>
+<p>问题的解决：<strong>数据平滑</strong></p>
+<p>数据平滑(Data Smoothing) 的基本思想：调整最大似然估计的概率值，使零概率增值，使非零概率下调，“劫富济<br>
+贫”，消除零概率，改进模型的整体正确率</p>
+<ul>
+<li>基本约束：<br>
+$$<br>
+\sum P(w_i |w_1 ,w_2 …w_{i-1})=1<br>
+$$</li>
+</ul>
+<ul>
+<li>基本目标：测试样本语言模型的困惑度越小越好</li>
+</ul>
+<p><strong>加一平滑法Add-one (Laplace) smoothing</strong>（最常用）</p>
+<p>基本思想：每种情况出现的次数加一，即保证每个 n-gram 在训练语料中至少出现 1次</p>
+<p>其他方法：</p>
+<ul>
+<li>减值法 (Discounting)</li>
+<li>古德-图灵（Good-Turing）估计法</li>
+<li>Back-off（后退）方法</li>
+<li>绝对减值法</li>
+<li>插值法（Interpolation）</li>
+<li>Stupid backoff</li>
+</ul>
+<h2 id="练习"><a class="header-anchor" href="#练习">✎</a>练习</h2>
+<p>了解基础的 Python NTLK 操作， 给定文本 text_en.txt，完成文本预处理：</p>
+<ol>
+<li>分词、 提取词干</li>
+<li>去停用词</li>
+<li>标点符号过滤</li>
+<li>低频词过滤（n &lt;= threshold）</li>
+<li>绘制离散图， 查看指定单词（Elizabeth, Darcy, Wickham, Bingley, Jane） 在文中的分布位置</li>
+<li>对前 20 个有意义的高频词， 绘制频率分布图</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nltk</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">text = open(<span class="string">u'text_en.txt'</span>, encoding=<span class="string">'utf-8'</span>, errors=<span class="string">'ignore'</span>).read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分词、提取词干</span></span><br><span class="line">words=nltk.word_tokenize(text)</span><br><span class="line"><span class="keyword">from</span> nltk.stem <span class="keyword">import</span> LancasterStemmer</span><br><span class="line">stemmerlan=LancasterStemmer()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">	words[i] = stemmerlan.stem(words[i])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去停用词</span></span><br><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> stopwords</span><br><span class="line">stops=set(stopwords.words(<span class="string">'english'</span>))</span><br><span class="line">words_no_stop = [word <span class="keyword">for</span> word <span class="keyword">in</span> words <span class="keyword">if</span> word.lower() <span class="keyword">not</span> <span class="keyword">in</span> stops]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标点符号过滤</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filter_punctuation</span><span class="params">(words)</span>:</span></span><br><span class="line">	new_words = []</span><br><span class="line">	illegal_char = string.punctuation + <span class="string">'【·！ …（） —： “”？ 《》 、 ； 】 '</span></span><br><span class="line">	pattern=re.compile(<span class="string">'[%s]'</span> % re.escape(illegal_char))</span><br><span class="line">	<span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">		new_word = pattern.sub(<span class="string">u''</span>, word)</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> new_word == <span class="string">u''</span>:</span><br><span class="line">			new_words.append(new_word)</span><br><span class="line">	<span class="keyword">return</span> new_words</span><br><span class="line">words_no_punc = filter_punctuation(words_no_stop)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 低频词过滤</span></span><br><span class="line"><span class="keyword">from</span> nltk.probability <span class="keyword">import</span> FreqDist</span><br><span class="line">fdist = FreqDist(words_no_punc)</span><br><span class="line">words_no_low_fre = [key <span class="keyword">for</span> key <span class="keyword">in</span> fdist <span class="keyword">if</span> fdist[key] &gt; <span class="number">20</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入文件</span></span><br><span class="line">f = open(<span class="string">'words.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words_no_low_fre:</span><br><span class="line">	f.write(word+<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制离散图， 查看指定单词（Elizabeth, Darcy, Wickham, Bingley, Jane） 在文中的分布位置</span></span><br><span class="line">nltk_text = nltk.text.Text(nltk.word_tokenize(text))</span><br><span class="line"></span><br><span class="line">check_words = [<span class="string">'Elizabeth'</span>, <span class="string">'Darcy'</span>, <span class="string">'Wickham'</span>, <span class="string">'Bingley'</span>, <span class="string">'Jane'</span>]</span><br><span class="line">nltk_text.dispersion_plot(check_words[:])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对前 20 个有意义的高频词， 绘制频率分布图</span></span><br><span class="line">fdist.plot(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -604,11 +745,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/idea/" rel="tag"># idea</a>
-          
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/nlp/" rel="tag"># nlp</a>
           
         </div>
       
@@ -621,8 +758,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/26/idea/idea-add-maven/" rel="next" title="IntelliJ IDEA 创建 Maven Web App 项目">
-                <i class="fa fa-chevron-left"></i> IntelliJ IDEA 创建 Maven Web App 项目
+              <a href="/2019/05/20/spring/spring-note4/" rel="next" title="Spring 笔记（四）：">
+                <i class="fa fa-chevron-left"></i> Spring 笔记（四）：
               </a>
             
           </div>
@@ -631,8 +768,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/04/idea/idea-add-tomcat/" rel="prev" title="IntelliJ IDEA 配置 Tomcat 运行 Java Web 项目">
-                IntelliJ IDEA 配置 Tomcat 运行 Java Web 项目 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/23/nlp-course-notes/nlp-note5/" rel="prev" title="NLP 笔记（五）：分词与词性标注">
+                NLP 笔记（五）：分词与词性标注 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -842,7 +979,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-git-和-github"><span class="nav-number">1.</span> <span class="nav-text">✎配置 Git 和 Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地仓库"><span class="nav-number">2.</span> <span class="nav-text">✎创建本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传项目到本地仓库"><span class="nav-number">3.</span> <span class="nav-text">✎上传项目到本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传项目到-github-远程仓库"><span class="nav-number">4.</span> <span class="nav-text">✎上传项目到 Github 远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交修改"><span class="nav-number">5.</span> <span class="nav-text">✎提交修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他仓库操作"><span class="nav-number">6.</span> <span class="nav-text">✎其他仓库操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识讲解"><span class="nav-number">1.</span> <span class="nav-text">✎知识讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预备知识"><span class="nav-number">1.1.</span> <span class="nav-text">✎预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概率论基础"><span class="nav-number">1.1.1.</span> <span class="nav-text">✎概率论基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息论基础"><span class="nav-number">1.1.2.</span> <span class="nav-text">✎信息论基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语料库"><span class="nav-number">1.1.3.</span> <span class="nav-text">✎语料库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语言模型"><span class="nav-number">1.2.</span> <span class="nav-text">✎语言模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">2.</span> <span class="nav-text">✎练习</span></a></li></ol></div>
             
 
           </div>
