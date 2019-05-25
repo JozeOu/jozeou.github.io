@@ -585,7 +585,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/nlp-note4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/nlp-course-notes/nlp-note4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ruizhi Ou">
@@ -605,7 +605,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/22/nlp-note4/" class="post-title-link" itemprop="url">NLP 笔记（四）：语言模型</a>
+                <a href="/2019/05/22/nlp-course-notes/nlp-note4/" class="post-title-link" itemprop="url">NLP 笔记（四）：语言模型</a>
               
             
           </h1>
@@ -751,7 +751,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/05/22/nlp-note4/#more" rel="contents">
+              <a class="btn" href="/2019/05/22/nlp-course-notes/nlp-note4/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -831,7 +831,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/20/spring/spring-note4/" class="post-title-link" itemprop="url">Spring 笔记（四）：</a>
+                <a href="/2019/05/20/spring/spring-note4/" class="post-title-link" itemprop="url">Spring 笔记（四）：基于注解的 IoC 配置</a>
               
             
           </h1>
@@ -856,12 +856,24 @@
                 
               
 
-              <time title="创建时间：2019-05-20 15:46:23 / 修改时间：15:51:44" itemprop="dateCreated datePublished" datetime="2019-05-20T15:46:23+08:00">2019-05-20</time>
+              <time title="创建时间：2019-05-20 15:46:23" itemprop="dateCreated datePublished" datetime="2019-05-20T15:46:23+08:00">2019-05-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-25 12:50:35" itemprop="dateModified" datetime="2019-05-25T12:50:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -907,7 +919,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">0</span>
+                <span title="本文字数">8.2k</span>
               
 
               
@@ -921,7 +933,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -942,9 +954,19 @@
 
       
         
+          <h2 id="前言"><a class="header-anchor" href="#前言">✎</a>前言</h2>
+<p>注解配置和 xml 配置 bean 对象的特点和实现的功能都是一样的，都是降低程序间的耦合，只是配置的形式不一样。</p>
+<p>基于注解整合时，导入约束时需要多导入一个 context 名称空间下的约束。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--告知spring在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context名称空间和约束中--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.ourzh"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
           
-            
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/20/spring/spring-note4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -1061,7 +1083,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-20 15:46:08" itemprop="dateModified" datetime="2019-05-20T15:46:08+08:00">2019-05-20</time>
+                <time title="修改时间：2019-05-24 19:24:36" itemprop="dateModified" datetime="2019-05-24T19:24:36+08:00">2019-05-24</time>
               
             
           </span>
@@ -2673,7 +2695,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">55k</span>
+    <span title="站点总字数">63k</span>
   
 
   
@@ -2682,7 +2704,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">50 分钟</span>
+    <span title="站点阅读时长">57 分钟</span>
   
 </div>
 
